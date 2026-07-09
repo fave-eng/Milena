@@ -1,12 +1,653 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Milena's English Space</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
-*{box-sizing:border-box;margin:0;padding:0}:root{--indigo:#4f46e5;--violet:#8b5cf6;--rose:#f43f5e;--emerald:#10b981;--amber:#f59e0b;--sky:#0ea5e9;--dark:#0f172a;--bg:#f1f5f9;--card:#fff;--muted:#64748b;--border:#e2e8f0}body{font-family:Inter,sans-serif;background:var(--bg);color:#0f172a;padding-bottom:110px;min-height:100vh}.hero{padding:44px 24px 56px;color:white;position:relative;overflow:hidden}.hero:before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.15) 1px,transparent 1px);background-size:28px 28px}.page{max-width:780px;margin:0 auto;padding:0 20px}.hero .page{position:relative;z-index:1}.back{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:700}.badge{display:inline-flex;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:800;margin-top:18px;margin-bottom:14px}.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(30px,6vw,46px);font-weight:800}.hero p{opacity:.84;margin-top:8px;line-height:1.55;max-width:620px}.wave{background:var(--bg);line-height:0}.wave svg{width:100%;display:block}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0}.stat{background:white;border:1.5px solid var(--border);border-radius:20px;padding:16px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.05)}.num{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800}.lbl{font-size:11px;color:var(--muted);font-weight:700;margin-top:2px}.section{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:28px 0 14px}.empty{background:white;border:1.5px dashed var(--border);border-radius:22px;padding:28px;text-align:center;color:var(--muted);line-height:1.55}.nav{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f172a;border-radius:100px;padding:12px 20px;display:flex;gap:4px;box-shadow:0 8px 32px rgba(15,23,42,.3);z-index:100}.nav a{color:rgba(255,255,255,.65);font-size:12px;font-weight:700;text-decoration:none;padding:7px 12px;border-radius:100px;white-space:nowrap}.nav a.active,.nav a:hover{background:var(--indigo);color:white}@media(max-width:680px){.stats{grid-template-columns:1fr}.nav{padding:10px}.nav a{padding:6px 8px}}
-.hero{background:linear-gradient(135deg,#0ea5e9,#4f46e5 55%,#8b5cf6)}.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:white;border:1.5px solid var(--border);border-radius:22px;padding:22px;text-decoration:none;color:inherit;box-shadow:0 2px 12px rgba(0,0,0,.05);transition:.2s}.card:hover{transform:translateY(-2px);border-color:#a5b4fc}.icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px}.g{background:#dbeafe}.v{background:#fff1f2}.h{background:#ede9fe}.card h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;margin-bottom:6px}.card p{font-size:13px;color:var(--muted);line-height:1.45}.progress{background:var(--dark);border-radius:22px;padding:24px;margin-top:26px;color:white;box-shadow:0 8px 28px rgba(15,23,42,.18)}.progress h3{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px}.prow{margin-top:16px}.plabel{display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.76);margin-bottom:7px;gap:12px}.track{height:7px;border-radius:100px;background:rgba(255,255,255,.12);overflow:hidden}.fill{height:100%;border-radius:100px;background:linear-gradient(90deg,#38bdf8,#8b5cf6);width:0;transition:.5s}@media(max-width:680px){.quick-grid{grid-template-columns:1fr}}
-</style></head><body><div class="hero"><div class="page"><div class="badge">✨ English Space</div><h1>Milena's English</h1><p>A2 · Outcomes A2 2nd edition · личный кабинет</p></div></div><div class="wave"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="#f1f5f9"/></svg></div><main class="page"><div class="stats"><div class="stat"><div class="num" id="statGrammar">0</div><div class="lbl">Grammar пройдено</div></div><div class="stat"><div class="num" id="statWords">0</div><div class="lbl">Слов выучено</div></div><div class="stat"><div class="num" id="statHw">0</div><div class="lbl">ДЗ выполнено</div></div></div><div class="section">Быстрый доступ</div><div class="quick-grid"><a class="card" href="grammar-hub.html"><div class="icon g">📖</div><h3>Grammar</h3><p>Скоро здесь появится грамматика наших уроков.</p></a><a class="card" href="vocabulary-hub.html"><div class="icon v">💥</div><h3>Vocabulary</h3><p>Рекомендую сначала повторить слова: слушай, отмечай сложные и возвращайся к ним.</p></a><a class="card" href="homework.html"><div class="icon h">📝</div><h3>Homework</h3><p>Рекомендую сначала повторить слова, а потом переходить к заданиям.</p></a></div><div class="progress"><h3>📊 Общий прогресс</h3><div class="prow"><div class="plabel"><span>Grammar</span><span id="grammarLabel">0 / 0</span></div><div class="track"><div class="fill" id="grammarBar"></div></div></div><div class="prow"><div class="plabel"><span>Vocabulary</span><span id="wordsLabel">0 / 0</span></div><div class="track"><div class="fill" id="wordsBar"></div></div></div><div class="prow"><div class="plabel"><span>Homework</span><span id="hwLabel">0 / 0</span></div><div class="track"><div class="fill" id="hwBar"></div></div></div></div></main><nav class="nav"><a class="active" href="index.html">🏠 Home</a><a href="grammar-hub.html">📖 Grammar</a><a href="homework.html">📝 HW</a><a href="vocabulary-hub.html">💥 Vocab</a></nav><script src="config.js"></script><script>
-const C=window.APP_CONFIG||{},api=C.SB_URL?C.SB_URL+'/rest/v1':'',headers=C.SB_KEY?{apikey:C.SB_KEY,Authorization:'Bearer '+C.SB_KEY}:{};
-function pct(a,b){return b?Math.round(a/b*100):0}function setBar(id,a,b){document.getElementById(id).style.width=Math.min(100,pct(a,b))+'%'}
-function lessonsFrom(row){return Object.entries((row&&row.published_lessons)||{}).filter(([_,x])=>x&&x.published!==false).sort((a,b)=>Number(a[0])-Number(b[0]))}
-function doneScore(x){if(!x)return false;if(typeof x==='object')return !!(x.score_text||x.percent||x.score||x.done);return String(x).trim()!==''&&String(x).trim()!=='0/0'}
-function known(x){if(!x)return 0;if(typeof x==='object')return Number(x.known||0);return Number(x||0)}
-function reset(){statGrammar.textContent=0;statWords.textContent=0;statHw.textContent=0;grammarLabel.textContent='0 / 0';wordsLabel.textContent='0 / 0';hwLabel.textContent='0 / 0';setBar('grammarBar',0,0);setBar('wordsBar',0,0);setBar('hwBar',0,0)}
-window.addEventListener('load',async()=>{reset();if(!api||!C.STUDENT)return;try{const r=await fetch(`${api}/progress?student=eq.${C.STUDENT}&select=published_lessons,hw_scores,vocab_progress,grammar_results`,{headers});const d=(await r.json())[0]||{};const items=lessonsFrom(d),hw=d.hw_scores||{},vocab=d.vocab_progress||{},grammar=d.grammar_results||{};const hwItems=items.filter(([_,x])=>x.homework_url),grItems=items.filter(([_,x])=>x.grammar_url),vItems=items.filter(([_,x])=>x.vocab_url);const hwDone=hwItems.filter(([k])=>doneScore(hw[k])).length;const grDone=grItems.filter(([k])=>grammar[k]).length;const words=vItems.reduce((s,[k])=>s+known(vocab[k]),0);const vocabTotal=vItems.reduce((s,[_,x])=>s+Number(x.vocab_total||0),0);statGrammar.textContent=grDone;statWords.textContent=words;statHw.textContent=hwDone;grammarLabel.textContent=`${grDone} / ${grItems.length}`;wordsLabel.textContent=`${words} / ${vocabTotal}`;hwLabel.textContent=`${hwDone} / ${hwItems.length}`;setBar('grammarBar',grDone,grItems.length);setBar('wordsBar',words,vocabTotal);setBar('hwBar',hwDone,hwItems.length)}catch(e){console.warn(e)}});
-</script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Milena's English Space</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --indigo:#4f46e5;
+      --violet:#8b5cf6;
+      --rose:#f43f5e;
+      --emerald:#10b981;
+      --amber:#f59e0b;
+      --sky:#0ea5e9;
+      --dark:#0f172a;
+      --bg:#f1f5f9;
+      --card:#fff;
+      --muted:#64748b;
+      --border:#e2e8f0;
+    }
+    body{
+      font-family:Inter,sans-serif;
+      background:var(--bg);
+      color:#0f172a;
+      padding-bottom:110px;
+      min-height:100vh;
+    }
+    .hero{
+      background:linear-gradient(135deg,#0ea5e9,#4f46e5 55%,#8b5cf6);
+      padding:48px 24px 58px;
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background-image:radial-gradient(circle,rgba(255,255,255,.15) 1px,transparent 1px);
+      background-size:28px 28px;
+    }
+    .page{
+      max-width:780px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+    .hero .page{position:relative}
+    .badge{
+      display:inline-flex;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.3);
+      border-radius:100px;
+      padding:6px 14px;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:16px;
+    }
+    .hero h1{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(30px,6vw,48px);
+      font-weight:800;
+    }
+    .hero p{
+      opacity:.84;
+      margin-top:8px;
+      line-height:1.55;
+    }
+    .wave{
+      background:var(--bg);
+      line-height:0;
+    }
+    .wave svg{
+      width:100%;
+      display:block;
+    }
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin:26px 0;
+    }
+    .stat{
+      background:white;
+      border:1.5px solid var(--border);
+      border-radius:20px;
+      padding:16px;
+      text-align:center;
+      box-shadow:0 2px 12px rgba(0,0,0,.05);
+    }
+    .num{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:26px;
+      font-weight:800;
+    }
+    .lbl{
+      font-size:11px;
+      color:var(--muted);
+      font-weight:700;
+      margin-top:2px;
+    }
+    .section{
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin:28px 0 14px;
+    }
+    .quick-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .card{
+      background:white;
+      border:1.5px solid var(--border);
+      border-radius:22px;
+      padding:22px;
+      text-decoration:none;
+      color:inherit;
+      box-shadow:0 2px 12px rgba(0,0,0,.05);
+      transition:.2s;
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:#a5b4fc;
+    }
+    .icon{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:24px;
+      margin-bottom:14px;
+    }
+    .g{background:#dbeafe}
+    .v{background:#fff1f2}
+    .h{background:#ede9fe}
+    .card h3{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:16px;
+      margin-bottom:6px;
+    }
+    .card p{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+    .progress{
+      background:var(--dark);
+      border-radius:22px;
+      padding:24px;
+      margin-top:26px;
+      color:white;
+      box-shadow:0 8px 28px rgba(15,23,42,.18);
+    }
+    .progress h3{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:18px;
+    }
+    .prow{
+      margin-top:16px;
+    }
+    .plabel{
+      display:flex;
+      justify-content:space-between;
+      font-size:13px;
+      color:rgba(255,255,255,.76);
+      margin-bottom:7px;
+      gap:12px;
+    }
+    .track{
+      height:7px;
+      border-radius:100px;
+      background:rgba(255,255,255,.12);
+      overflow:hidden;
+    }
+    .fill{
+      height:100%;
+      border-radius:100px;
+      background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+      width:0;
+      transition:.5s;
+    }
+
+    .verb-day{
+      margin-top:26px;
+      background:linear-gradient(135deg,#f43f5e,#8b5cf6);
+      border-radius:24px;
+      padding:24px;
+      color:white;
+      box-shadow:0 8px 28px rgba(79,70,229,.22);
+      position:relative;
+      overflow:hidden;
+    }
+    .verb-day:before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background-image:radial-gradient(circle,rgba(255,255,255,.18) 1px,transparent 1px);
+      background-size:24px 24px;
+      pointer-events:none;
+    }
+    .verb-day-inner{position:relative}
+    .verb-label{
+      display:inline-flex;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.28);
+      border-radius:100px;
+      padding:5px 12px;
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:14px;
+    }
+    .verb-main{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin:10px 0 14px;
+    }
+    .verb-form{
+      background:rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.24);
+      border-radius:18px;
+      padding:14px;
+      text-align:center;
+    }
+    .verb-form b{
+      display:block;
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(18px,4vw,30px);
+      line-height:1.15;
+    }
+    .verb-form span{
+      display:block;
+      margin-top:5px;
+      font-size:11px;
+      opacity:.78;
+      font-weight:700;
+    }
+    .verb-ru{
+      font-size:16px;
+      font-weight:800;
+      margin-top:8px;
+    }
+    .verb-example{
+      margin-top:8px;
+      opacity:.86;
+      line-height:1.55;
+      font-size:14px;
+    }
+
+    .verbs-card{
+      background:white;
+      border:1.5px solid var(--border);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 2px 12px rgba(0,0,0,.05);
+    }
+    .verbs-head{
+      padding:20px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      border-bottom:1px solid var(--border);
+    }
+    .verbs-head h3{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:20px;
+      font-weight:800;
+    }
+    .verbs-head p{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+      margin-top:4px;
+    }
+    .table-wrap{
+      overflow-x:auto;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:620px;
+    }
+    th,td{
+      padding:11px 16px;
+      border-bottom:1px solid var(--border);
+      text-align:left;
+      font-size:13px;
+    }
+    th{
+      color:var(--muted);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      background:#f8fafc;
+    }
+    td b{
+      font-family:'Plus Jakarta Sans',sans-serif;
+    }
+    tr:last-child td{border-bottom:none}
+
+    .book-card{
+      margin:26px 0 0;
+      background:white;
+      border:1.5px solid var(--border);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 2px 12px rgba(0,0,0,.05);
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+    .book-cover{
+      width:70px;
+      height:92px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#0ea5e9,#4f46e5,#8b5cf6);
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-weight:800;
+      line-height:1.15;
+      flex-shrink:0;
+      box-shadow:0 8px 22px rgba(79,70,229,.22);
+    }
+    .book-info h3{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:20px;
+      font-weight:800;
+      margin-bottom:5px;
+    }
+    .book-info p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .nav{
+      position:fixed;
+      bottom:24px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#0f172a;
+      border-radius:100px;
+      padding:12px 20px;
+      display:flex;
+      gap:4px;
+      box-shadow:0 8px 32px rgba(15,23,42,.3);
+      z-index:100;
+    }
+    .nav a{
+      color:rgba(255,255,255,.65);
+      font-size:12px;
+      font-weight:700;
+      text-decoration:none;
+      padding:7px 12px;
+      border-radius:100px;
+      white-space:nowrap;
+    }
+    .nav a.active,.nav a:hover{
+      background:var(--indigo);
+      color:white;
+    }
+    @media(max-width:680px){
+      .stats,.quick-grid{grid-template-columns:1fr}
+      .verb-main{grid-template-columns:1fr}
+      .book-card{align-items:flex-start}
+      .nav{padding:10px}
+      .nav a{padding:6px 8px}
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="page">
+      <div class="badge">✨ English Space</div>
+      <h1>Milena's English</h1>
+      <p>A1 · Outcomes A2 2nd edition · личный кабинет</p>
+    </div>
+  </div>
+
+  <div class="wave">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none">
+      <path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="#f1f5f9"/>
+    </svg>
+  </div>
+
+  <main class="page">
+    <div class="stats">
+      <div class="stat">
+        <div class="num" id="statGrammar">0</div>
+        <div class="lbl">Grammar пройдено</div>
+      </div>
+      <div class="stat">
+        <div class="num" id="statWords">0</div>
+        <div class="lbl">Слов выучено</div>
+      </div>
+      <div class="stat">
+        <div class="num" id="statHw">0</div>
+        <div class="lbl">ДЗ выполнено</div>
+      </div>
+    </div>
+
+    <div class="section">Быстрый доступ</div>
+    <div class="quick-grid">
+      <a class="card" href="grammar-hub.html">
+        <div class="icon g">📖</div>
+        <h3>Grammar</h3>
+        <p>Скоро здесь появится грамматика наших уроков.</p>
+      </a>
+      <a class="card" href="vocabulary-hub.html">
+        <div class="icon v">💥</div>
+        <h3>Vocabulary</h3>
+        <p>Рекомендую сначала повторить слова: слушай, отмечай сложные и возвращайся к ним.</p>
+      </a>
+      <a class="card" href="homework.html">
+        <div class="icon h">📝</div>
+        <h3>Homework</h3>
+        <p>Рекомендую сначала повторить слова, а потом переходить к заданиям.</p>
+      </a>
+    </div>
+
+    <div class="progress">
+      <h3>📊 Общий прогресс</h3>
+      <div class="prow">
+        <div class="plabel"><span>Grammar</span><span id="grammarLabel">0 / 0</span></div>
+        <div class="track"><div class="fill" id="grammarBar"></div></div>
+      </div>
+      <div class="prow">
+        <div class="plabel"><span>Vocabulary</span><span id="wordsLabel">0 / 0</span></div>
+        <div class="track"><div class="fill" id="wordsBar"></div></div>
+      </div>
+      <div class="prow">
+        <div class="plabel"><span>Homework</span><span id="hwLabel">0 / 0</span></div>
+        <div class="track"><div class="fill" id="hwBar"></div></div>
+      </div>
+    </div>
+
+    <section class="verb-day" id="verbDay">
+      <div class="verb-day-inner">
+        <div class="verb-label">Irregular verb of the day</div>
+        <h2>Неправильный глагол дня</h2>
+        <div class="verb-main">
+          <div class="verb-form"><b id="v1">be</b><span>V1</span></div>
+          <div class="verb-form"><b id="v2">was / were</b><span>V2</span></div>
+          <div class="verb-form"><b id="v3">been</b><span>V3</span></div>
+        </div>
+        <div class="verb-ru" id="vRu">быть</div>
+        <div class="verb-example" id="vExample">I am at home. Yesterday I was at school.</div>
+      </div>
+    </section>
+
+    <div class="section">Неправильные глаголы</div>
+    <section class="verbs-card">
+      <div class="verbs-head">
+        <div>
+          <h3>Irregular Verbs Table</h3>
+          <p>Повторяй понемногу: сначала V1–V2, потом добавляй V3.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>V1</th>
+              <th>V2</th>
+              <th>V3</th>
+              <th>Перевод</th>
+              <th>Пример</th>
+            </tr>
+          </thead>
+          <tbody id="verbsTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="section">Учебник</div>
+    <section class="book-card">
+      <div class="book-cover">Outcomes<br>A2</div>
+      <div class="book-info">
+        <h3>Outcomes A2 2nd edition</h3>
+        <p>Основной учебник, по которому мы идём на уроках. Все задания, словари и домашняя работа будут связаны с этим курсом.</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="nav">
+    <a class="active" href="index.html">🏠 Home</a>
+    <a href="grammar-hub.html">📖 Grammar</a>
+    <a href="homework.html">📝 HW</a>
+    <a href="vocabulary-hub.html">💥 Vocab</a>
+  </nav>
+
+  <script src="config.js"></script>
+  <script>
+    const C = window.APP_CONFIG || {};
+    const api = C.SB_URL ? C.SB_URL + '/rest/v1' : '';
+    const headers = C.SB_KEY ? {apikey:C.SB_KEY,Authorization:'Bearer '+C.SB_KEY} : {};
+
+    function pct(a,b){return b ? Math.round(a / b * 100) : 0}
+    function setBar(id,a,b){
+      const el = document.getElementById(id);
+      if(el) el.style.width = Math.min(100,pct(a,b)) + '%';
+    }
+    function lessonsFrom(row){
+      return Object.entries((row && row.published_lessons) || {})
+        .filter(([_,x]) => x && x.published !== false)
+        .sort((a,b) => Number(a[0]) - Number(b[0]));
+    }
+    function doneScore(x){
+      if(!x) return false;
+      if(typeof x === 'object') return !!(x.score_text || x.percent || x.score || x.done);
+      return String(x).trim() !== '' && String(x).trim() !== '0/0';
+    }
+    function known(x){
+      if(!x) return 0;
+      if(typeof x === 'object') return Number(x.known || 0);
+      return Number(x || 0);
+    }
+    function resetProgress(){
+      statGrammar.textContent = 0;
+      statWords.textContent = 0;
+      statHw.textContent = 0;
+      grammarLabel.textContent = '0 / 0';
+      wordsLabel.textContent = '0 / 0';
+      hwLabel.textContent = '0 / 0';
+      setBar('grammarBar',0,0);
+      setBar('wordsBar',0,0);
+      setBar('hwBar',0,0);
+    }
+
+    window.addEventListener('load', async () => {
+      resetProgress();
+      renderIrregularVerbs();
+      renderVerbOfTheDay();
+
+      if(!api || !C.STUDENT) return;
+
+      try{
+        const r = await fetch(`${api}/progress?student=eq.${C.STUDENT}&select=published_lessons,hw_scores,vocab_progress,grammar_results`,{headers});
+        const d = (await r.json())[0] || {};
+        const items = lessonsFrom(d);
+        const hw = d.hw_scores || {};
+        const vocab = d.vocab_progress || {};
+        const grammar = d.grammar_results || {};
+
+        const hwItems = items.filter(([_,x]) => x.homework_url);
+        const grItems = items.filter(([_,x]) => x.grammar_url);
+        const vItems = items.filter(([_,x]) => x.vocab_url);
+
+        const hwDone = hwItems.filter(([k]) => doneScore(hw[k])).length;
+        const grDone = grItems.filter(([k]) => grammar[k]).length;
+        const words = vItems.reduce((s,[k]) => s + known(vocab[k]), 0);
+        const vocabTotal = vItems.reduce((s,[_,x]) => s + Number(x.vocab_total || 0), 0);
+
+        statGrammar.textContent = grDone;
+        statWords.textContent = words;
+        statHw.textContent = hwDone;
+
+        grammarLabel.textContent = `${grDone} / ${grItems.length}`;
+        wordsLabel.textContent = `${words} / ${vocabTotal}`;
+        hwLabel.textContent = `${hwDone} / ${hwItems.length}`;
+
+        setBar('grammarBar',grDone,grItems.length);
+        setBar('wordsBar',words,vocabTotal);
+        setBar('hwBar',hwDone,hwItems.length);
+      }catch(e){
+        console.warn(e);
+      }
+    });
+
+    const IRREGULAR_VERBS = [
+      {v1:'be',v2:'was / were',v3:'been',ru:'быть',ex:'I am at home. Yesterday I was at school.'},
+      {v1:'become',v2:'became',v3:'become',ru:'становиться',ex:'She became a nurse.'},
+      {v1:'begin',v2:'began',v3:'begun',ru:'начинать',ex:'The lesson began at five.'},
+      {v1:'break',v2:'broke',v3:'broken',ru:'ломать',ex:'I broke my phone yesterday.'},
+      {v1:'bring',v2:'brought',v3:'brought',ru:'приносить',ex:'He brought his book.'},
+      {v1:'buy',v2:'bought',v3:'bought',ru:'покупать',ex:'I bought a new notebook.'},
+      {v1:'come',v2:'came',v3:'come',ru:'приходить',ex:'She came home late.'},
+      {v1:'do',v2:'did',v3:'done',ru:'делать',ex:'I did my homework.'},
+      {v1:'drink',v2:'drank',v3:'drunk',ru:'пить',ex:'He drank coffee.'},
+      {v1:'drive',v2:'drove',v3:'driven',ru:'водить машину',ex:'My dad drove to work.'},
+      {v1:'eat',v2:'ate',v3:'eaten',ru:'есть',ex:'We ate pizza.'},
+      {v1:'feel',v2:'felt',v3:'felt',ru:'чувствовать',ex:'I felt tired.'},
+      {v1:'find',v2:'found',v3:'found',ru:'находить',ex:'She found her keys.'},
+      {v1:'get',v2:'got',v3:'got',ru:'получать; становиться',ex:'I got a message.'},
+      {v1:'give',v2:'gave',v3:'given',ru:'давать',ex:'He gave me advice.'},
+      {v1:'go',v2:'went',v3:'gone',ru:'идти; ехать',ex:'They went to school.'},
+      {v1:'have',v2:'had',v3:'had',ru:'иметь',ex:'I had a busy day.'},
+      {v1:'hear',v2:'heard',v3:'heard',ru:'слышать',ex:'I heard a noise.'},
+      {v1:'know',v2:'knew',v3:'known',ru:'знать',ex:'I knew the answer.'},
+      {v1:'leave',v2:'left',v3:'left',ru:'уходить; оставлять',ex:'She left at six.'},
+      {v1:'make',v2:'made',v3:'made',ru:'делать; создавать',ex:'I made breakfast.'},
+      {v1:'meet',v2:'met',v3:'met',ru:'встречать',ex:'We met after class.'},
+      {v1:'put',v2:'put',v3:'put',ru:'класть',ex:'I put the book on the table.'},
+      {v1:'read',v2:'read',v3:'read',ru:'читать',ex:'She read the text.'},
+      {v1:'run',v2:'ran',v3:'run',ru:'бегать; управлять',ex:'He ran in the park.'},
+      {v1:'say',v2:'said',v3:'said',ru:'сказать',ex:'She said hello.'},
+      {v1:'see',v2:'saw',v3:'seen',ru:'видеть',ex:'I saw a film.'},
+      {v1:'send',v2:'sent',v3:'sent',ru:'отправлять',ex:'I sent an email.'},
+      {v1:'speak',v2:'spoke',v3:'spoken',ru:'говорить',ex:'We spoke English.'},
+      {v1:'take',v2:'took',v3:'taken',ru:'брать',ex:'He took a photo.'},
+      {v1:'teach',v2:'taught',v3:'taught',ru:'учить; преподавать',ex:'She taught English.'},
+      {v1:'tell',v2:' told',v3:'told',ru:'рассказывать; говорить',ex:'He told me a story.'},
+      {v1:'think',v2:'thought',v3:'thought',ru:'думать',ex:'I thought about it.'},
+      {v1:'understand',v2:'understood',v3:'understood',ru:'понимать',ex:'I understood the question.'},
+      {v1:'write',v2:'wrote',v3:'written',ru:'писать',ex:'She wrote a report.'}
+    ];
+
+    function renderIrregularVerbs(){
+      const tbody = document.getElementById('verbsTable');
+      if(!tbody) return;
+      tbody.innerHTML = IRREGULAR_VERBS.map(v => `
+        <tr>
+          <td><b>${v.v1}</b></td>
+          <td>${v.v2}</td>
+          <td>${v.v3}</td>
+          <td>${v.ru}</td>
+          <td>${v.ex}</td>
+        </tr>
+      `).join('');
+    }
+
+    function dayOfYear(date){
+      const start = new Date(date.getFullYear(),0,0);
+      const diff = date - start + ((start.getTimezoneOffset() - date.getTimezoneOffset()) * 60000);
+      return Math.floor(diff / 86400000);
+    }
+
+    function renderVerbOfTheDay(){
+      const i = dayOfYear(new Date()) % IRREGULAR_VERBS.length;
+      const v = IRREGULAR_VERBS[i];
+      v1.textContent = v.v1;
+      v2.textContent = v.v2;
+      v3.textContent = v.v3;
+      vRu.textContent = v.ru;
+      vExample.textContent = v.ex;
+    }
+  </script>
+</body>
+</html>
