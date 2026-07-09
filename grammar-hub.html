@@ -1,6 +1,179 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Grammar Hub — Milena</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
-*{box-sizing:border-box;margin:0;padding:0}:root{--indigo:#4f46e5;--emerald:#10b981;--rose:#f43f5e;--bg:#f1f5f9;--card:#fff;--border:#e2e8f0;--muted:#64748b;--dark:#0f172a}body{font-family:Inter,sans-serif;background:var(--bg);padding-bottom:110px;color:#0f172a}.hero{background:linear-gradient(135deg,#0ea5e9,#4f46e5,#8b5cf6);padding:40px 24px 56px;color:white}.page{max-width:760px;margin:0 auto;padding:0 20px}.back{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:700}.badge{display:inline-block;margin-top:18px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:800}.hero h1{font-family:'Plus Jakarta Sans';font-size:clamp(28px,5vw,42px);margin-top:14px}.hero p{opacity:.8;margin-top:6px}.wave{line-height:0;background:var(--bg)}.wave svg{width:100%;display:block}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0}.stat{background:white;border:1.5px solid var(--border);border-radius:18px;padding:15px;text-align:center}.num{font-family:'Plus Jakarta Sans';font-size:24px;font-weight:800}.lbl{font-size:11px;color:var(--muted);font-weight:700}.section{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:2px;text-transform:uppercase;margin:28px 0 14px}.list{display:flex;flex-direction:column;gap:14px}.card{display:block;text-decoration:none;color:inherit;background:white;border:1.5px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05)}.main{padding:18px 20px;display:flex;gap:16px;align-items:center}.icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;background:#dbeafe}.info{flex:1}.lesson{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:1px}.title{font-family:'Plus Jakarta Sans';font-size:17px;font-weight:800;margin:4px 0}.meta{font-size:13px;color:var(--muted)}.pill{font-size:12px;font-weight:800;border-radius:100px;padding:5px 10px}.done{background:#d1fae5;color:#065f46}.todo{background:#ede9fe;color:#5b21b6}.help{background:#ffe4e6;color:#9f1239}.empty{background:white;border:1.5px dashed var(--border);border-radius:20px;padding:28px;text-align:center;color:var(--muted)}.nav{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f172a;border-radius:100px;padding:12px 20px;display:flex;gap:4px}.nav a{color:rgba(255,255,255,.65);font-size:12px;font-weight:700;text-decoration:none;padding:7px 12px;border-radius:100px}.nav a.active,.nav a:hover{background:#4f46e5;color:white}@media(max-width:640px){.stats{grid-template-columns:1fr}.nav{padding:10px}.nav a{padding:6px 8px}}
-</style></head><body><div class="hero"><div class="page"><a class="back" href="index.html">← На главную</a><br><div class="badge">📖 Grammar Hub</div><h1>Grammar</h1><p>Самостоятельное изучение + мини-тест с объяснениями.</p></div></div><div class="wave"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="#f1f5f9"/></svg></div><main class="page"><div class="stats"><div class="stat"><div class="num" id="doneNum">0</div><div class="lbl">Пройдено</div></div><div class="stat"><div class="num" id="helpNum">0</div><div class="lbl">Нужен урок</div></div><div class="stat"><div class="num" id="totalNum">0</div><div class="lbl">Всего тем</div></div></div><div class="section">Темы</div><div class="list" id="list"><div class="empty">Загружаю темы…</div></div></main><nav class="nav"><a href="index.html">🏠 Home</a><a class="active" href="grammar-hub.html">📖 Grammar</a><a href="homework.html">📝 HW</a><a href="vocabulary-hub.html">💥 Vocab</a></nav><script src="config.js"></script><script>
-const C=window.APP_CONFIG,api=C.SB_URL+'/rest/v1',headers={apikey:C.SB_KEY,Authorization:'Bearer '+C.SB_KEY};
-window.addEventListener('load',async()=>{try{const r=await fetch(`${api}/progress?student=eq.${C.STUDENT}&select=published_lessons,grammar_results`,{headers});const d=(await r.json())[0]||{};const lessons=d.published_lessons||{}, results=d.grammar_results||{};const items=Object.entries(lessons).filter(([_,x])=>x&&x.published!==false&&x.grammar_url).sort((a,b)=>Number(a[0])-Number(b[0]));const done=items.filter(([k])=>results[k]).length, help=items.filter(([k])=>results[k]&&results[k].needs_lesson).length;doneNum.textContent=done;helpNum.textContent=help;totalNum.textContent=items.length;if(!items.length){list.innerHTML='<div class="empty">Пока нет опубликованных grammar-тем.</div>';return}list.innerHTML=items.map(([k,x])=>{const res=results[k];const cls=res?(res.needs_lesson?'help':'done'):'todo';const txt=res?(res.needs_lesson?'❗ Тему не поняла':'✅ Тему поняла'):'🧠 Пройти тест';return `<a class="card" href="${x.grammar_url}"><div class="main"><div class="icon">📖</div><div class="info"><div class="lesson">Lesson ${k}</div><div class="title">${x.grammar_title||x.title||'Grammar'}</div><div class="meta">${res?`Результат: ${res.score_text||''}`:'Изучи тему и пройди мини-тест'}</div></div><span class="pill ${cls}">${txt}</span></div></a>`}).join('')}catch(e){list.innerHTML='<div class="empty">Не удалось загрузить Supabase. Проверь config.js.</div>'}});
-</script></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Grammar Hub — Milena</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --indigo:#4f46e5;
+      --bg:#f1f5f9;
+      --card:#fff;
+      --border:#e2e8f0;
+      --muted:#64748b;
+    }
+    body{
+      font-family:Inter,sans-serif;
+      background:var(--bg);
+      color:#0f172a;
+      padding-bottom:110px;
+      min-height:100vh;
+    }
+    .hero{
+      background:linear-gradient(135deg,#0ea5e9,#4f46e5,#8b5cf6);
+      padding:40px 24px 56px;
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background-image:radial-gradient(circle,rgba(255,255,255,.15) 1px,transparent 1px);
+      background-size:28px 28px;
+      pointer-events:none;
+    }
+    .page{
+      max-width:760px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+    .hero .page{position:relative;z-index:1}
+    .back{
+      color:rgba(255,255,255,.8);
+      text-decoration:none;
+      font-size:13px;
+      font-weight:700;
+    }
+    .badge{
+      display:inline-block;
+      margin-top:18px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.3);
+      border-radius:100px;
+      padding:6px 14px;
+      font-size:12px;
+      font-weight:800;
+    }
+    .hero h1{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(28px,5vw,42px);
+      margin-top:14px;
+      font-weight:800;
+    }
+    .hero p{
+      opacity:.82;
+      margin-top:8px;
+      font-size:15px;
+      line-height:1.55;
+      max-width:560px;
+    }
+    .wave{
+      line-height:0;
+      background:var(--bg);
+    }
+    .wave svg{
+      width:100%;
+      display:block;
+    }
+    .coming-card{
+      background:var(--card);
+      border:1.5px solid var(--border);
+      border-radius:24px;
+      padding:34px 24px;
+      margin:28px 0;
+      box-shadow:0 2px 12px rgba(0,0,0,.05);
+      text-align:center;
+    }
+    .coming-icon{
+      width:64px;
+      height:64px;
+      border-radius:20px;
+      background:#dbeafe;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      margin:0 auto 16px;
+    }
+    .coming-card h2{
+      font-family:'Plus Jakarta Sans',sans-serif;
+      font-size:clamp(22px,4vw,30px);
+      font-weight:800;
+      margin-bottom:8px;
+    }
+    .coming-card p{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.6;
+      max-width:480px;
+      margin:0 auto;
+    }
+    .nav{
+      position:fixed;
+      bottom:24px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#0f172a;
+      border-radius:100px;
+      padding:12px 20px;
+      display:flex;
+      gap:4px;
+      box-shadow:0 8px 32px rgba(15,23,42,.3);
+      z-index:100;
+    }
+    .nav a{
+      color:rgba(255,255,255,.65);
+      font-size:12px;
+      font-weight:700;
+      text-decoration:none;
+      padding:7px 12px;
+      border-radius:100px;
+      white-space:nowrap;
+    }
+    .nav a.active,.nav a:hover{
+      background:var(--indigo);
+      color:white;
+    }
+    @media(max-width:640px){
+      .nav{padding:10px}
+      .nav a{padding:6px 8px}
+      .coming-card{padding:28px 18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="page">
+      <a class="back" href="index.html">← На главную</a><br>
+      <div class="badge">📖 Grammar Hub</div>
+      <h1>Grammar</h1>
+      <p>Скоро здесь появится грамматика наших уроков.</p>
+    </div>
+  </div>
+
+  <div class="wave">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none">
+      <path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="#f1f5f9"/>
+    </svg>
+  </div>
+
+  <main class="page">
+    <section class="coming-card">
+      <div class="coming-icon">📖</div>
+      <h2>Скоро здесь появится грамматика наших уроков</h2>
+      <p>Пока можно перейти к словам или домашней работе.</p>
+    </section>
+  </main>
+
+  <nav class="nav">
+    <a href="index.html">🏠 Home</a>
+    <a class="active" href="grammar-hub.html">📖 Grammar</a>
+    <a href="homework.html">📝 HW</a>
+    <a href="vocabulary-hub.html">💥 Vocab</a>
+  </nav>
+</body>
+</html>
