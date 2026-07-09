@@ -2,7 +2,7 @@
 window.APP_CONFIG = {
   STUDENT: 'milena',
   STUDENT_NAME: 'Милена',
-  LEVEL: 'A2',
+  LEVEL: 'A1',
   COURSE: 'Outcomes A2 2nd edition',
   SB_URL: 'https://cbpvujtyuepioqmrreji.supabase.co',
   SB_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNicHZ1anR5dWVwaW9xbXJyZWppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM2MDY4NTMsImV4cCI6MjA5OTE4Mjg1M30.W_5ms3GRCRJhcww9zeYZU3MxcIE87pfQlHynzHoAb4U',
