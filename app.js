@@ -49,7 +49,7 @@
       // This keeps homework numbering sequential when vocabulary or grammar materials are added.
       number: inferredNumber,
       title: safeText(rawLesson.title, `Lesson ${inferredNumber}`),
-      subtitle: safeText(rawLesson.subtitle, 'Interactive homework assignment'),
+      subtitle: safeText(rawLesson.subtitle, 'Интерактивное домашнее задание'),
       status: safeText(rawLesson.status, 'available'),
       page: `lesson.html?id=${encodeURIComponent(id)}`,
       blocks: Array.isArray(rawLesson.blocks) ? rawLesson.blocks : []
@@ -257,7 +257,7 @@
       this.timers[section] = window.setTimeout(() => {
         window.ProgressService.syncToCloud(section).catch((error) => {
           console.error('Cloud save error:', error);
-          showToast('Could not save progress to Supabase');
+          showToast('Не удалось сохранить прогресс в Supabase');
         });
       }, 450);
     }
@@ -502,7 +502,7 @@
   function progressMarkup(label, value, total, tone = '') {
     const percent = safePercent(value, total);
     return `<div class="progress-row">
-      <div class="progress-row-head"><strong>${escapeHtml(label)}</strong><span>${Number(value) || 0} of ${Number(total) || 0}</span></div>
+      <div class="progress-row-head"><strong>${escapeHtml(label)}</strong><span>${Number(value) || 0} из ${Number(total) || 0}</span></div>
       <div class="progress-track" role="progressbar" aria-label="${escapeHtml(label)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${percent}">
         <div class="progress-fill ${tone}" style="width:${percent}%"></div>
       </div>
@@ -539,9 +539,9 @@
     if (byId('grammar-stat-passed')) byId('grammar-stat-passed').textContent = t.grammarPassed;
     const list = byId('home-progress-list');
     if (list) list.innerHTML = [
-      progressMarkup('Homework', t.homeworkCompleted, t.homeworkTotal),
-      progressMarkup('Vocabulary', t.vocabularyKnown, t.vocabularyTotal, 'rose'),
-      progressMarkup('Grammar', t.grammarPassed, t.grammarTotal, 'green')
+      progressMarkup('Домашние задания', t.homeworkCompleted, t.homeworkTotal),
+      progressMarkup('Словарь', t.vocabularyKnown, t.vocabularyTotal, 'rose'),
+      progressMarkup('Грамматика', t.grammarPassed, t.grammarTotal, 'green')
     ].join('');
     const current = byId('current-material');
     if (current) {
@@ -554,15 +554,15 @@
         const href = currentHomework.page || `lesson.html?id=${encodeURIComponent(currentHomework.id)}`;
         current.innerHTML = `<a class="card interactive item-card current-material-card" href="${escapeHtml(href)}">
           <div class="item-icon">✨</div>
-          <div class="item-main"><span class="homework-number">Homework #${Number(currentHomework.number || 0)}</span><h3>${escapeHtml(safeText(currentHomework.title, 'Current assignment'))}</h3><p>${escapeHtml(safeText(currentHomework.subtitle, 'Continue working with the published material.'))}</p></div>
-          <span class="status-badge status-available">Continue</span>
+          <div class="item-main"><span class="homework-number">Домашняя работа №${Number(currentHomework.number || 0)}</span><h3>${escapeHtml(safeText(currentHomework.title, 'Текущее задание'))}</h3><p>${escapeHtml(safeText(currentHomework.subtitle, 'Продолжи работу с опубликованным материалом.'))}</p></div>
+          <span class="status-badge status-available">Продолжить</span>
         </a>`;
       } else {
         const publishedHomework = HOMEWORK_DATA.filter((item) => ['available', 'completed'].includes(item.status));
         const everythingCompleted = publishedHomework.length > 0 && publishedHomework.every((item) => item.status === 'completed' || homeworkProgress.completedIds.includes(item.id));
         current.innerHTML = everythingCompleted
-          ? '<a class="card interactive item-card current-material-card" href="homework.html"><div class="item-icon">✅</div><div class="item-main"><h3>All published materials are complete</h3><p>New material will appear after the teacher publishes it.</p></div><span class="arrow" aria-hidden="true">→</span></a>'
-          : '<div class="card disabled empty-state"><div class="empty-state-icon">✨</div><h3>No current material has been published yet</h3><p>The latest available homework assignment will appear here automatically.</p></div>';
+          ? '<a class="card interactive item-card current-material-card" href="homework.html"><div class="item-icon">✅</div><div class="item-main"><h3>Все опубликованные задания выполнены</h3><p>Новый материал появится после публикации преподавателем.</p></div><span class="arrow" aria-hidden="true">→</span></a>'
+          : '<div class="card disabled empty-state"><div class="empty-state-icon">✨</div><h3>Текущего задания пока нет</h3><p>Последнее доступное домашнее задание появится здесь автоматически.</p></div>';
       }
     }
   }
@@ -584,9 +584,9 @@
 
   function compactGrammarTitle(topic) {
     const id = safeText(topic?.id).toLowerCase();
-    if (id.includes('suffix')) return 'Suffixes';
-    if (id.includes('pronoun')) return 'Pronouns';
-    const title = safeText(topic?.title, 'Grammar').split(':')[0].trim();
+    if (id.includes('suffix')) return 'Суффиксы';
+    if (id.includes('pronoun')) return 'Местоимения';
+    const title = safeText(topic?.title, 'Грамматика').split(':')[0].trim();
     return title.length > 22 ? `${title.slice(0, 20).trim()}…` : title;
   }
 
@@ -606,9 +606,9 @@
         entries.push({
           type: 'vocab',
           icon: '💥',
-          label: 'Vocabulary',
-          shortLabel: 'Vocab',
-          title: safeText(vocabulary.title, 'Vocabulary'),
+          label: 'Словарь',
+          shortLabel: 'Словарь',
+          title: safeText(vocabulary.title, 'Словарь'),
           href
         });
       }
@@ -623,9 +623,9 @@
       entries.push({
         type: 'grammar',
         icon: '📐',
-        label: 'Grammar',
+        label: 'Грамматика',
         shortLabel: compactGrammarTitle(topic),
-        title: safeText(topic.title, 'Grammar'),
+        title: safeText(topic.title, 'Грамматика'),
         href
       });
     });
@@ -633,12 +633,12 @@
     if (!entries.length) return '';
 
     if (mode === 'hub') {
-      const links = entries.map((entry) => `<a class="lesson-material-chip ${escapeHtml(entry.type)}" href="${escapeHtml(entry.href)}" aria-label="Open: ${escapeHtml(entry.label)} — ${escapeHtml(entry.title)}" title="${escapeHtml(entry.title)}"><span class="lesson-material-chip-icon" aria-hidden="true">${escapeHtml(entry.icon)}</span><span class="lesson-material-chip-label">${escapeHtml(entry.shortLabel)}</span><span class="lesson-material-chip-arrow" aria-hidden="true">→</span></a>`).join('');
-      return `<div class="lesson-materials lesson-materials-hub"><span class="lesson-materials-compact-label">Materials</span><div class="lesson-material-links">${links}</div></div>`;
+      const links = entries.map((entry) => `<a class="lesson-material-chip ${escapeHtml(entry.type)}" href="${escapeHtml(entry.href)}" aria-label="Открыть: ${escapeHtml(entry.label)} — ${escapeHtml(entry.title)}" title="${escapeHtml(entry.title)}"><span class="lesson-material-chip-icon" aria-hidden="true">${escapeHtml(entry.icon)}</span><span class="lesson-material-chip-label">${escapeHtml(entry.shortLabel)}</span><span class="lesson-material-chip-arrow" aria-hidden="true">→</span></a>`).join('');
+      return `<div class="lesson-materials lesson-materials-hub"><span class="lesson-materials-compact-label">Материалы</span><div class="lesson-material-links">${links}</div></div>`;
     }
 
     const links = entries.map((entry) => `<a class="lesson-material-link ${escapeHtml(entry.type)}" href="${escapeHtml(entry.href)}"><span class="lesson-material-link-main"><span class="lesson-material-icon" aria-hidden="true">${escapeHtml(entry.icon)}</span><span class="lesson-material-text"><strong>${escapeHtml(entry.label)}</strong><small>${escapeHtml(entry.title)}</small></span></span><span class="lesson-material-arrow" aria-hidden="true">→</span></a>`).join('');
-    return `<div class="lesson-materials lesson-materials-lesson"><div class="lesson-materials-heading"><span class="eyebrow">Open lesson materials</span><p>Vocabulary and grammar for this homework assignment.</p></div><div class="lesson-material-links">${links}</div></div>`;
+    return `<div class="lesson-materials lesson-materials-lesson"><div class="lesson-materials-heading"><span class="eyebrow">Материалы к уроку</span><p>Словарь и грамматика для этого домашнего задания.</p></div><div class="lesson-material-links">${links}</div></div>`;
   }
 
   function renderHomework() {
@@ -649,27 +649,27 @@
     byId('hw-completed').textContent = completed;
     byId('hw-total').textContent = published.length;
     byId('hw-percent').textContent = `${percent}%`;
-    byId('hw-overall-progress').innerHTML = progressMarkup('Overall progress', completed, published.length);
+    byId('hw-overall-progress').innerHTML = progressMarkup('Общий прогресс', completed, published.length);
     const root = byId('homework-list');
     if (!published.length) {
-      root.innerHTML = emptyState('📝', 'No homework assignments yet', 'The teacher will add an interactive assignment here after the first lesson.');
+      root.innerHTML = emptyState('📝', 'Домашних заданий пока нет', 'После первого урока преподаватель добавит сюда интерактивное задание.');
       return;
     }
     root.innerHTML = [...published].sort((a,b) => (a.number || 0) - (b.number || 0)).map((item) => {
       const locked = item.status === 'locked';
       const complete = progress.completedIds.includes(item.id) || item.status === 'completed';
-      const title = locked ? '🔒 Coming soon' : safeText(item.title, 'Assignment');
-      const subtitle = locked ? 'The material will open after the teacher publishes it.' : safeText(item.subtitle, 'Interactive assignment');
+      const title = locked ? '🔒 Скоро' : safeText(item.title, 'Задание');
+      const subtitle = locked ? 'Материал откроется после публикации преподавателем.' : safeText(item.subtitle, 'Интерактивное задание');
       const status = complete ? 'completed' : safeText(item.status, 'available');
-      const label = complete ? 'Completed' : status === 'available' ? 'Available' : status === 'locked' ? 'Locked' : 'Draft';
+      const label = complete ? 'Выполнено' : status === 'available' ? 'Доступно' : status === 'locked' ? 'Закрыто' : 'Черновик';
       if (locked) {
-        return `<article class="card lesson-hub-card disabled"><div class="lesson-hub-main"><div class="item-icon">🔒</div><div class="item-main"><span class="homework-number">Homework #${Number(item.number || 0)}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(subtitle)}</p></div><span class="status-badge status-locked">${escapeHtml(label)}</span></div></article>`;
+        return `<article class="card lesson-hub-card disabled"><div class="lesson-hub-main"><div class="item-icon">🔒</div><div class="item-main"><span class="homework-number">Домашняя работа №${Number(item.number || 0)}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(subtitle)}</p></div><span class="status-badge status-locked">${escapeHtml(label)}</span></div></article>`;
       }
       const href = item.page || `lesson.html?id=${encodeURIComponent(item.id)}`;
       return `<article class="card lesson-hub-card">
         <a class="lesson-hub-main interactive" href="${escapeHtml(href)}">
           <div class="item-icon">${complete ? '✅' : '📝'}</div>
-          <div class="item-main"><span class="homework-number">Homework #${Number(item.number || 0)}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(subtitle)}</p></div>
+          <div class="item-main"><span class="homework-number">Домашняя работа №${Number(item.number || 0)}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(subtitle)}</p></div>
           <span class="status-badge status-${escapeHtml(status)}">${escapeHtml(label)}</span>
         </a>
         ${lessonMaterialLinks(item, 'hub')}
@@ -683,22 +683,22 @@
     const passed = published.filter((topic) => progress.topics[topic.id]?.passed || topic.passed).length;
     byId('grammar-passed').textContent = passed;
     byId('grammar-total').textContent = published.length;
-    byId('grammar-overall-progress').innerHTML = progressMarkup('Overall progress', passed, published.length, 'green');
+    byId('grammar-overall-progress').innerHTML = progressMarkup('Общий прогресс', passed, published.length, 'green');
     const root = byId('grammar-list');
     if (!published.length) {
-      root.innerHTML = emptyState('📐', 'No grammar topics have been published yet', `Materials will be added in line with the lessons and the coursebook “${safeText(student.textbook)}”.`);
+      root.innerHTML = emptyState('📐', 'Темы по грамматике пока не опубликованы', `Материалы будут добавляться по урокам и учебнику «${safeText(student.textbook)}».`);
       return;
     }
     root.innerHTML = [...published].sort((a,b) => (a.order || 0) - (b.order || 0)).map((topic) => {
       const locked = topic.status === 'locked';
       const isPassed = progress.topics[topic.id]?.passed || topic.passed;
-      const title = locked ? '🔒 Coming soon' : safeText(topic.title, 'Grammar topic');
+      const title = locked ? '🔒 Скоро' : safeText(topic.title, 'Тема по грамматике');
       const tag = locked ? 'div' : 'a';
       const href = locked ? '' : ` href="${escapeHtml(topic.page || `grammar-topic.html?id=${encodeURIComponent(topic.id)}`)}"`;
       return `<${tag} class="card item-card ${locked ? 'disabled' : 'interactive'}"${href}>
         <div class="item-icon">${isPassed ? '✅' : locked ? '🔒' : '📐'}</div>
-        <div class="item-main"><h3>${escapeHtml(title)}</h3><p>${locked ? 'The material has not been published yet.' : `${escapeHtml(topic.level || student.level)} · ${Number(progress.topics[topic.id]?.attempts || topic.attempts || 0)} attempts`}</p></div>
-        <span class="status-badge status-${isPassed ? 'completed' : locked ? 'locked' : 'available'}">${isPassed ? 'Completed' : locked ? 'Locked' : 'Open'}</span>
+        <div class="item-main"><h3>${escapeHtml(title)}</h3><p>${locked ? 'Материал пока не опубликован.' : `${escapeHtml(topic.level || student.level)} · ${Number(progress.topics[topic.id]?.attempts || topic.attempts || 0)} попыток`}</p></div>
+        <span class="status-badge status-${isPassed ? 'completed' : locked ? 'locked' : 'available'}">${isPassed ? 'Пройдено' : locked ? 'Закрыто' : 'Открыть'}</span>
       </${tag}>`;
     }).join('');
   }
@@ -711,7 +711,7 @@
     byId('vocab-total').textContent = totalWords;
     byId('vocab-topics').textContent = VOCABULARY_DATA.length;
     byId('vocab-percent').textContent = `${safePercent(knownCount, totalWords)}%`;
-    byId('vocab-overall-progress').innerHTML = progressMarkup('Overall progress', knownCount, totalWords, 'rose');
+    byId('vocab-overall-progress').innerHTML = progressMarkup('Общий прогресс', knownCount, totalWords, 'rose');
     const root = byId('vocabulary-list');
     const filters = byId('vocab-filters');
 
@@ -725,7 +725,7 @@
         return true;
       });
       if (!filtered.length) {
-        root.innerHTML = emptyState('💥', 'No vocabulary practice topics yet', 'New topics will appear after lessons. Duplicate words are excluded automatically.');
+        root.innerHTML = emptyState('💥', 'Словарных тем пока нет', 'Новые темы появятся после уроков. Повторяющиеся слова автоматически исключаются.');
         return;
       }
       root.innerHTML = filtered.map((topic) => {
@@ -734,8 +734,8 @@
         const complete = wordCount > 0 && topicKnown >= wordCount;
         return `<a class="card item-card interactive" href="${escapeHtml(topic.page || `vocabulary.html?id=${encodeURIComponent(topic.id)}`)}">
           <div class="item-icon">${escapeHtml(topic.icon || '💬')}</div>
-          <div class="item-main"><h3>${escapeHtml(topic.title || 'Vocabulary topic')}</h3><p>${escapeHtml(topic.label || '')} · ${topicKnown} of ${wordCount} words</p></div>
-          <span class="status-badge status-${complete ? 'completed' : 'available'}">${complete ? 'Completed' : 'Open'}</span>
+          <div class="item-main"><h3>${escapeHtml(topic.title || 'Словарная тема')}</h3><p>${escapeHtml(topic.label || '')} · ${topicKnown} из ${wordCount} слов</p></div>
+          <span class="status-badge status-${complete ? 'completed' : 'available'}">${complete ? 'Завершено' : 'Открыть'}</span>
         </a>`;
       }).join('');
     };
@@ -772,7 +772,7 @@
     if (item.example) {
       return `<div class="exercise-item exercise-example" data-exercise-item="${escapeHtml(itemId)}">
         <div class="exercise-item-header">${numberMarkup}<div class="exercise-prompt">${prompt}</div></div>
-        <div class="example-answer"><span>Example</span><strong>${escapeHtml(item.exampleAnswer || '')}</strong></div>
+        <div class="example-answer"><span>Пример</span><strong>${escapeHtml(item.exampleAnswer || '')}</strong></div>
       </div>`;
     }
 
@@ -781,13 +781,13 @@
       const inputType = item.input === 'multiple' ? 'checkbox' : 'radio';
       control = `<div class="option-list compact-options">${(item.options || []).map((option, optionIndex) => `<label class="option"><input type="${inputType}" name="${escapeHtml(inputId)}" value="${optionIndex}"><span>${escapeHtml(option)}</span></label>`).join('')}</div>`;
     } else if (item.input === 'select') {
-      control = `<select id="${escapeHtml(inputId)}"><option value="">Choose an answer</option>${(item.options || []).map((option, optionIndex) => `<option value="${optionIndex}">${escapeHtml(option)}</option>`).join('')}</select>`;
+      control = `<select id="${escapeHtml(inputId)}"><option value="">Выберите ответ</option>${(item.options || []).map((option, optionIndex) => `<option value="${optionIndex}">${escapeHtml(option)}</option>`).join('')}</select>`;
     } else if (item.input === 'textarea') {
       control = `<textarea id="${escapeHtml(inputId)}" placeholder="${escapeHtml(item.placeholder || '')}"></textarea>`;
     } else if (item.input === 'gaps') {
       const answers = Array.isArray(item.answers) ? item.answers : [];
       const segments = Array.isArray(item.segments) ? item.segments : [];
-      control = `<div class="sentence-gaps" aria-label="${prompt}">${answers.map((answer, gapIndex) => `${gapIndex < segments.length ? `<span>${escapeHtml(segments[gapIndex])}</span>` : ''}<input class="gap-input" data-gap-index="${gapIndex}" aria-label="Gap ${gapIndex + 1}" autocomplete="off">`).join('')}${segments.length > answers.length ? `<span>${escapeHtml(segments[segments.length - 1])}</span>` : ''}</div>`;
+      control = `<div class="sentence-gaps" aria-label="${prompt}">${answers.map((answer, gapIndex) => `${gapIndex < segments.length ? `<span>${escapeHtml(segments[gapIndex])}</span>` : ''}<input class="gap-input" data-gap-index="${gapIndex}" aria-label="Пропуск ${gapIndex + 1}" autocomplete="off">`).join('')}${segments.length > answers.length ? `<span>${escapeHtml(segments[segments.length - 1])}</span>` : ''}</div>`;
     } else {
       control = `<input class="text-field" id="${escapeHtml(inputId)}" autocomplete="off" placeholder="${escapeHtml(item.placeholder || '')}">`;
     }
@@ -805,13 +805,13 @@
     const text = escapeHtml(block.text || '').replaceAll('\n', '<br>');
 
     if (block.type === 'section') {
-      return `<header id="lesson-section-${index}" class="lesson-section-title lesson-block" data-lesson-section><span class="lesson-section-step">${escapeHtml(block.__sectionNumber || index + 1)}</span><div><span class="eyebrow">${escapeHtml(block.eyebrow || 'Material')}</span><h2>${title}</h2>${text ? `<p class="muted">${text}</p>` : ''}</div></header>`;
+      return `<header id="lesson-section-${index}" class="lesson-section-title lesson-block" data-lesson-section><span class="lesson-section-step">${escapeHtml(block.__sectionNumber || index + 1)}</span><div><span class="eyebrow">${escapeHtml(block.eyebrow || 'Материал')}</span><h2>${title}</h2>${text ? `<p class="muted">${text}</p>` : ''}</div></header>`;
     }
     if (block.type === 'info') return `<article class="card info-card lesson-block"><h3>${title}</h3><p>${text}</p></article>`;
     if (block.type === 'tip') return `<article class="card tip-card lesson-block"><h3>${title}</h3><p>${text}</p></article>`;
     if (block.type === 'reading') {
       const sectionCount = Array.isArray(block.sections) ? block.sections.length : 0;
-      return `<article class="card lesson-block reading-card"><div class="reading-title"><div><span class="eyebrow">Reading</span><h3>${title}</h3></div>${sectionCount ? `<span class="reading-count">${sectionCount} sections</span>` : ''}</div>${renderReadingSections(block)}</article>`;
+      return `<article class="card lesson-block reading-card"><div class="reading-title"><div><span class="eyebrow">Чтение</span><h3>${title}</h3></div>${sectionCount ? `<span class="reading-count">${sectionCount} разделов</span>` : ''}</div>${renderReadingSections(block)}</article>`;
     }
     if (block.type === 'image') {
       const src = escapeHtml(block.src || '');
@@ -821,11 +821,11 @@
     if (block.type === 'exercise') {
       const items = Array.isArray(block.items) ? block.items : [];
       const wordBank = Array.isArray(block.wordBank) && block.wordBank.length
-        ? `<div class="word-bank" aria-label="Word bank"><strong class="word-bank-label">Word bank</strong>${block.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>`
+        ? `<div class="word-bank" aria-label="Банк слов"><strong class="word-bank-label">Банк слов</strong>${block.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>`
         : '';
       const player = block.audio ? `<audio class="audio-player" controls preload="none" src="${escapeHtml(block.audio)}"></audio>` : '';
       return `<article class="card lesson-block exercise-card" data-task="${escapeHtml(id)}" data-type="exercise">
-        <div class="exercise-heading"><span class="eyebrow">Exercise</span><h3>${title}</h3>${block.instructions ? `<p class="muted exercise-instructions">${escapeHtml(block.instructions)}</p>` : ''}${player}${wordBank}</div>
+        <div class="exercise-heading"><span class="eyebrow">Упражнение</span><h3>${title}</h3>${block.instructions ? `<p class="muted exercise-instructions">${escapeHtml(block.instructions)}</p>` : ''}${player}${wordBank}</div>
         <div class="exercise-items">${items.map((item, itemIndex) => renderExerciseItem(item, id, itemIndex)).join('')}</div>
       </article>`;
     }
@@ -838,20 +838,20 @@
     }
     if (block.type === 'select') {
       const options = (block.options || []).map((option, optionIndex) => `<option value="${optionIndex}">${escapeHtml(option)}</option>`).join('');
-      return `<article class="card lesson-block" data-task="${escapeHtml(id)}" data-type="select"><label class="field-label" for="${escapeHtml(id)}">${title}</label><select id="${escapeHtml(id)}"><option value="">Choose an answer</option>${options}</select><div class="feedback"></div></article>`;
+      return `<article class="card lesson-block" data-task="${escapeHtml(id)}" data-type="select"><label class="field-label" for="${escapeHtml(id)}">${title}</label><select id="${escapeHtml(id)}"><option value="">Выберите ответ</option>${options}</select><div class="feedback"></div></article>`;
     }
     if (block.type === 'match') {
       const rights = (block.pairs || []).map((pair) => pair.right);
-      const rows = (block.pairs || []).map((pair, pairIndex) => `<div>${escapeHtml(pair.left)}</div><select data-match-index="${pairIndex}"><option value="">Choose a match</option>${rights.map((right, rightIndex) => `<option value="${rightIndex}">${escapeHtml(right)}</option>`).join('')}</select>`).join('');
+      const rows = (block.pairs || []).map((pair, pairIndex) => `<div>${escapeHtml(pair.left)}</div><select data-match-index="${pairIndex}"><option value="">Выберите пару</option>${rights.map((right, rightIndex) => `<option value="${rightIndex}">${escapeHtml(right)}</option>`).join('')}</select>`).join('');
       return `<article class="card lesson-block" data-task="${escapeHtml(id)}" data-type="match"><h3>${title}</h3><div class="match-grid">${rows}</div><div class="feedback"></div></article>`;
     }
     if (block.type === 'reorder') {
       const chips = shuffled(block.words || []).map((word) => `<button class="word-chip" type="button" data-word="${escapeHtml(word)}">${escapeHtml(word)}</button>`).join('');
-      return `<article class="card lesson-block" data-task="${escapeHtml(id)}" data-type="reorder"><h3>${title}</h3><div class="word-chips" data-reorder-source>${chips}</div><label class="field-label" for="${escapeHtml(id)}">Your sentence</label><input class="text-field" id="${escapeHtml(id)}" readonly><div class="feedback"></div></article>`;
+      return `<article class="card lesson-block" data-task="${escapeHtml(id)}" data-type="reorder"><h3>${title}</h3><div class="word-chips" data-reorder-source>${chips}</div><label class="field-label" for="${escapeHtml(id)}">Ваше предложение</label><input class="text-field" id="${escapeHtml(id)}" readonly><div class="feedback"></div></article>`;
     }
     if (block.type === 'audio') {
-      const player = block.audio ? `<audio class="audio-player" controls preload="none" src="${escapeHtml(block.audio)}"></audio>` : '<p class="muted">The audio file has not been added yet.</p>';
-      const response = block.response === false ? '' : `<input class="text-field" id="${escapeHtml(id)}" aria-label="Audio task answer"><div class="feedback"></div>`;
+      const player = block.audio ? `<audio class="audio-player" controls preload="none" src="${escapeHtml(block.audio)}"></audio>` : '<p class="muted">Аудиофайл пока не добавлен.</p>';
+      const response = block.response === false ? '' : `<input class="text-field" id="${escapeHtml(id)}" aria-label="Ответ на аудиозадание"><div class="feedback"></div>`;
       const taskAttrs = block.response === false ? '' : ` data-task="${escapeHtml(id)}" data-type="audio"`;
       return `<article class="card lesson-block audio-card"${taskAttrs}><div class="audio-icon" aria-hidden="true">🎧</div><div class="audio-content"><h3>${title}</h3>${text ? `<p class="muted">${text}</p>` : ''}${player}${response}</div></article>`;
     }
@@ -924,7 +924,7 @@
         itemNode.classList.add('is-saved');
         if (feedback) {
           feedback.className = 'feedback show neutral';
-          feedback.textContent = 'Your answer has been saved for the teacher.';
+          feedback.textContent = 'Ответ сохранён для преподавателя.';
         }
         return;
       }
@@ -936,7 +936,7 @@
       itemNode.classList.remove('is-saved');
       if (feedback) {
         feedback.className = `feedback show ${result.correct ? 'good' : 'bad'}`;
-        feedback.textContent = result.correct ? 'Correct!' : safeText(item.explanation, 'Check the answer and try again.');
+        feedback.textContent = result.correct ? 'Верно!' : safeText(item.explanation, 'Проверь ответ и попробуй ещё раз.');
       }
     });
 
@@ -1031,38 +1031,38 @@
     const lessonRecord = HOMEWORK_DATA.find((item) => item.id === id && item.status !== 'draft');
     const root = byId('lesson-root');
     if (!lessonRecord || lessonRecord.status === 'locked') {
-      root.innerHTML = emptyState('📝', 'The assignment has not been published yet', 'The teacher will add the material after the lesson.');
+      root.innerHTML = emptyState('📝', 'Задание пока не опубликовано', 'Преподаватель добавит материал после урока.');
       return;
     }
 
-    byId('lesson-hero-title').textContent = safeText(lessonRecord.title, 'Assignment');
-    byId('lesson-hero-subtitle').textContent = `Homework #${Number(lessonRecord.number || 0)} · ${safeText(lessonRecord.subtitle, 'Interactive practice')}`;
-    root.innerHTML = '<div class="card empty-state compact-empty"><div class="empty-state-icon">⏳</div><h3>Loading the assignment…</h3></div>';
+    byId('lesson-hero-title').textContent = safeText(lessonRecord.title, 'Задание');
+    byId('lesson-hero-subtitle').textContent = `Домашняя работа №${Number(lessonRecord.number || 0)} · ${safeText(lessonRecord.subtitle, 'Интерактивная практика')}`;
+    root.innerHTML = '<div class="card empty-state compact-empty"><div class="empty-state-icon">⏳</div><h3>Загружаем задание…</h3></div>';
 
     let lesson;
     try {
       lesson = await resolveLessonContent(lessonRecord);
     } catch (error) {
-      console.error('Lesson content loading error:', error);
-      root.innerHTML = emptyState('⚠️', 'Could not load the assignment', 'Check that the lesson JSON file exists in data/lessons and has the correct structure.');
+      console.error('Ошибка загрузки содержимого урока:', error);
+      root.innerHTML = emptyState('⚠️', 'Не удалось загрузить задание', 'Проверь наличие JSON-файла урока в папке data/lessons и правильность его структуры.');
       return;
     }
 
     const blocks = Array.isArray(lesson?.blocks) ? lesson.blocks : [];
     if (!blocks.length) {
-      root.innerHTML = emptyState('📝', 'The assignment has not been published yet', 'The content will appear after the teacher prepares it.');
+      root.innerHTML = emptyState('📝', 'Задание пока не опубликовано', 'Содержание появится после подготовки преподавателем.');
       return;
     }
 
     const progress = window.ProgressService.loadHomeworkProgress();
     const savedResult = progress.results[lesson.id];
-    const pointsLabel = Number(lesson.totalPoints || 0) > 0 ? `${escapeHtml(lesson.totalPoints)} checked answers` : 'No automatic score';
+    const pointsLabel = Number(lesson.totalPoints || 0) > 0 ? `${escapeHtml(lesson.totalPoints)} проверяемых ответов` : 'Без автоматической оценки';
     const hasManualResponses = blocks.some((block) => block.type === 'exercise' && (block.items || []).some((item) => item.scored === false));
     const lessonSections = blocks
       .map((block, blockIndex) => block.type === 'section' ? { block, blockIndex } : null)
       .filter(Boolean);
     const roadmap = lessonSections.length
-      ? `<nav class="card lesson-roadmap" aria-label="Homework plan"><div class="lesson-roadmap-heading"><span class="eyebrow">Assignment plan</span><p>Complete the sections in order — your answers will be saved after checking.</p></div><ol>${lessonSections.map(({ block, blockIndex }, sectionIndex) => `<li><a href="#lesson-section-${blockIndex}"><span>${sectionIndex + 1}</span><strong>${escapeHtml(block.title || `Part ${sectionIndex + 1}`)}</strong></a></li>`).join('')}</ol></nav>`
+      ? `<nav class="card lesson-roadmap" aria-label="План домашнего задания"><div class="lesson-roadmap-heading"><span class="eyebrow">План задания</span><p>Проходи разделы по порядку — ответы сохранятся после проверки.</p></div><ol>${lessonSections.map(({ block, blockIndex }, sectionIndex) => `<li><a href="#lesson-section-${blockIndex}"><span>${sectionIndex + 1}</span><strong>${escapeHtml(block.title || `Часть ${sectionIndex + 1}`)}</strong></a></li>`).join('')}</ol></nav>`
       : '';
     let sectionNumber = 0;
     const renderedBlocks = blocks.map((block, blockIndex) => {
@@ -1070,15 +1070,15 @@
       return renderLessonBlock(block.type === 'section' ? { ...block, __sectionNumber: sectionNumber } : block, blockIndex);
     }).join('');
     const linkedMaterials = lessonMaterialLinks(lesson, 'lesson');
-    root.innerHTML = `<div class="card lesson-intro"><div><span class="eyebrow">Homework #${Number(lesson.number || 0)}</span><p>${escapeHtml(lesson.subtitle || '')}</p></div><span class="lesson-points">${pointsLabel}</span></div>
+    root.innerHTML = `<div class="card lesson-intro"><div><span class="eyebrow">Домашняя работа №${Number(lesson.number || 0)}</span><p>${escapeHtml(lesson.subtitle || '')}</p></div><span class="lesson-points">${pointsLabel}</span></div>
       ${linkedMaterials}
       ${roadmap}
       <div id="lesson-blocks">${renderedBlocks}</div>
-      <div class="card section lesson-actions"><div id="lesson-result" aria-live="polite"></div><div class="button-row"><button class="btn btn-primary" id="check-lesson" type="button">Check answers</button><button class="btn btn-secondary" id="submit-lesson" type="button" ${savedResult ? '' : 'disabled'}>Submit to teacher</button></div><p class="muted save-note">After checking, your answers are saved on this device and synced with Supabase.</p></div>`;
+      <div class="card section lesson-actions"><div id="lesson-result" aria-live="polite"></div><div class="button-row"><button class="btn btn-primary" id="check-lesson" type="button">Проверить ответы</button><button class="btn btn-secondary" id="submit-lesson" type="button" ${savedResult ? '' : 'disabled'}>Отправить преподавателю</button></div><p class="muted save-note">После проверки ответы сохраняются на устройстве и синхронизируются с Supabase.</p></div>`;
 
     restoreLessonAnswers(root, blocks, savedResult?.answers);
     if (savedResult && Number(savedResult.total) > 0) {
-      byId('lesson-result').innerHTML = `<h3>Saved score: ${Number(savedResult.correct || 0)} of ${Number(savedResult.total || 0)}</h3><p class="muted">${Number(savedResult.percent || 0)}% correct</p>`;
+      byId('lesson-result').innerHTML = `<h3>Сохранённый результат: ${Number(savedResult.correct || 0)} из ${Number(savedResult.total || 0)}</h3><p class="muted">${Number(savedResult.percent || 0)}% правильных ответов</p>`;
     }
 
     root.querySelectorAll('[data-reorder-source]').forEach((source) => {
@@ -1112,13 +1112,13 @@
           const isCorrect = Number(result.correctCount || 0) === Number(result.total || 0);
           if (feedback) {
             feedback.className = `feedback show ${isCorrect ? 'good' : 'bad'}`;
-            feedback.textContent = isCorrect ? 'Correct!' : safeText(block.explanation, 'Check the answer and try again.');
+            feedback.textContent = isCorrect ? 'Верно!' : safeText(block.explanation, 'Проверь ответ и попробуй ещё раз.');
           }
         }
       });
       const percent = safePercent(correct, total);
-      const manualNote = hasManualResponses ? ' · the extended answer is saved separately and is not included in the score' : '';
-      byId('lesson-result').innerHTML = `<h3>Score: ${correct} of ${total}</h3><p class="muted">${percent}% correct${manualNote}</p>`;
+      const manualNote = hasManualResponses ? ' · развёрнутый ответ сохранён отдельно и не входит в оценку' : '';
+      byId('lesson-result').innerHTML = `<h3>Результат: ${correct} из ${total}</h3><p class="muted">${percent}% правильных ответов${manualNote}</p>`;
       const updatedProgress = window.ProgressService.loadHomeworkProgress();
       updatedProgress.results[lesson.id] = { correct, total, percent, answers, checkedAt: new Date().toISOString() };
       if (total > 0 && correct === total && !updatedProgress.completedIds.includes(lesson.id)) updatedProgress.completedIds.push(lesson.id);
@@ -1130,7 +1130,7 @@
       updatedProgress.submissions[lesson.id] = { savedAt: new Date().toISOString(), status: CloudService.isConfigured() ? 'pending-cloud' : 'local' };
       if (!updatedProgress.completedIds.includes(lesson.id)) updatedProgress.completedIds.push(lesson.id);
       window.ProgressService.saveHomeworkProgress(updatedProgress);
-      showToast(CloudService.isConfigured() ? 'Your answers have been saved and are being sent to Supabase.' : 'Your answers have been saved on this device.');
+      showToast(CloudService.isConfigured() ? 'Ответы сохранены и отправляются в Supabase.' : 'Ответы сохранены на этом устройстве.');
     });
   }
 
@@ -1142,14 +1142,14 @@
 
   function renderGrammarExercise(block, index) {
     const id = safeText(block.id, `grammar-exercise-${index + 1}`);
-    const title = escapeHtml(block.title || `Exercise ${index + 1}`);
-    const difficulty = safeText(block.difficulty, 'Practice');
+    const title = escapeHtml(block.title || `Упражнение ${index + 1}`);
+    const difficulty = safeText(block.difficulty, 'Практика');
     const wordBank = Array.isArray(block.wordBank) && block.wordBank.length
-      ? `<div class="word-bank" aria-label="Word bank"><strong class="word-bank-label">Word bank</strong>${block.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>`
+      ? `<div class="word-bank" aria-label="Банк слов"><strong class="word-bank-label">Банк слов</strong>${block.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>`
       : '';
     return `<article class="card lesson-block exercise-card grammar-exercise-card" data-task="${escapeHtml(id)}" data-type="exercise" data-grammar-exercise="${index}">
       <div class="exercise-heading grammar-exercise-heading">
-        <div class="grammar-step-row"><span class="grammar-step-badge">Step ${index + 1}</span><span class="grammar-difficulty">${escapeHtml(difficulty)}</span></div>
+        <div class="grammar-step-row"><span class="grammar-step-badge">Шаг ${index + 1}</span><span class="grammar-difficulty">${escapeHtml(difficulty)}</span></div>
         <h3>${title}</h3>
         ${block.instructions ? `<p class="muted exercise-instructions">${escapeHtml(block.instructions)}</p>` : ''}
         ${wordBank}
@@ -1161,15 +1161,15 @@
   function renderGrammarPractice(topic, root) {
     const exercises = Array.isArray(topic.exercises) ? topic.exercises : [];
     if (!exercises.length) {
-      root.innerHTML = emptyState('🧩', 'Practice has not been added yet', 'Exercises will appear with the teacher’s material.');
+      root.innerHTML = emptyState('🧩', 'Упражнения пока не добавлены', 'Они появятся вместе с материалом преподавателя.');
       return;
     }
 
     const renderPractice = () => {
       root.innerHTML = `${exercises.map((block, index) => renderGrammarExercise(block, index)).join('')}
         <div class="card grammar-practice-actions">
-          <div id="grammar-result"><h3>Practise step by step</h3><p class="muted">Start with the easier tasks and move on to the more challenging ones.</p></div>
-          <div class="button-row"><button class="btn btn-primary" type="button" id="check-grammar">Check exercises</button><button class="btn btn-secondary" type="button" id="retry-grammar">Start again</button></div>
+          <div id="grammar-result"><h3>Выполняй по шагам</h3><p class="muted">Начни с простых заданий и переходи к более сложным.</p></div>
+          <div class="button-row"><button class="btn btn-primary" type="button" id="check-grammar">Проверить упражнения</button><button class="btn btn-secondary" type="button" id="retry-grammar">Начать заново</button></div>
         </div>`;
 
       byId('check-grammar').addEventListener('click', () => {
@@ -1183,7 +1183,7 @@
           total += Number(result.total || 0);
         });
         const percent = safePercent(correct, total);
-        byId('grammar-result').innerHTML = `<h3>Score: ${correct} of ${total}</h3><p class="muted">${percent}% correct</p>${percent === 100 ? '<p class="grammar-success-note">Excellent! You have mastered the topic and can move on.</p>' : '<p class="grammar-success-note">Review the tables and the Common mistakes section above, then try again.</p>'}`;
+        byId('grammar-result').innerHTML = `<h3>Результат: ${correct} из ${total}</h3><p class="muted">${percent}% правильных ответов</p>${percent === 100 ? '<p class="grammar-success-note">Отлично! Тема усвоена, можно двигаться дальше.</p>' : '<p class="grammar-success-note">Повтори таблицы и раздел «Частые ошибки», затем попробуй ещё раз.</p>'}`;
         const progress = window.ProgressService.loadGrammarProgress();
         const previous = progress.topics[topic.id] || {};
         progress.topics[topic.id] = {
@@ -1206,12 +1206,12 @@
     const topic = GRAMMAR_DATA.find((item) => item.id === id && item.status !== 'draft');
     const root = byId('grammar-topic-root');
     if (!topic || topic.status === 'locked') {
-      root.innerHTML = emptyState('📐', 'This grammar topic has not been published yet', 'The material will appear after the teacher publishes it.');
+      root.innerHTML = emptyState('📐', 'Эта тема по грамматике пока не опубликована', 'Материал появится после публикации преподавателем.');
       return;
     }
 
-    byId('grammar-hero-title').textContent = safeText(topic.title, 'Grammar');
-    byId('grammar-hero-subtitle').textContent = `${safeText(topic.level, student.level)} Level · explanations and practice`;
+    byId('grammar-hero-title').textContent = safeText(topic.title, 'Грамматика');
+    byId('grammar-hero-subtitle').textContent = `${safeText(topic.level, student.level)} уровень · объяснения и упражнения`;
 
     const glanceCards = Array.isArray(topic.glanceCards) ? topic.glanceCards : [];
     const anchorLinks = Array.isArray(topic.anchorLinks) ? topic.anchorLinks : [];
@@ -1223,24 +1223,24 @@
 
     root.innerHTML = `
       <article class="card grammar-intro-card">
-        <span class="eyebrow">Grammar focus</span>
+        <span class="eyebrow">Грамматика</span>
         <h2>${escapeHtml(topic.title)}</h2>
         <p class="muted grammar-lead">${escapeHtml(topic.explanation || '')}</p>
-        ${topic.formula ? `<div class="grammar-formula-box"><strong>Quick formula</strong><p>${escapeHtml(topic.formula)}</p></div>` : ''}
+        ${topic.formula ? `<div class="grammar-formula-box"><strong>Краткая формула</strong><p>${escapeHtml(topic.formula)}</p></div>` : ''}
         ${anchorLinks.length ? `<div class="grammar-anchor-links">${anchorLinks.map((link) => `<a class="grammar-anchor-link" href="#${escapeHtml(link.id)}">${escapeHtml(link.title)}</a>`).join('')}</div>` : ''}
       </article>
 
-      ${glanceCards.length ? `<section class="section" id="grammar-at-a-glance" aria-labelledby="grammar-at-a-glance-title"><div class="section-heading"><div><span class="eyebrow">Quick overview</span><h2 id="grammar-at-a-glance-title">How to choose the right form quickly</h2></div></div><div class="grammar-glance-grid">${glanceCards.map((card) => `<article class="card grammar-glance-card"><div class="grammar-glance-head"><span class="grammar-glance-icon">${escapeHtml(card.icon || '✦')}</span><div><h3>${escapeHtml(card.label || '')}</h3><p class="muted">${escapeHtml(card.hint || '')}</p></div></div><div class="grammar-pattern">${escapeHtml(card.pattern || '')}</div><p class="grammar-example-sentence">${escapeHtml(card.example || '')}</p></article>`).join('')}</div></section>` : ''}
+      ${glanceCards.length ? `<section class="section" id="grammar-at-a-glance" aria-labelledby="grammar-at-a-glance-title"><div class="section-heading"><div><span class="eyebrow">Быстрый обзор</span><h2 id="grammar-at-a-glance-title">Как быстро выбрать правильную форму</h2></div></div><div class="grammar-glance-grid">${glanceCards.map((card) => `<article class="card grammar-glance-card"><div class="grammar-glance-head"><span class="grammar-glance-icon">${escapeHtml(card.icon || '✦')}</span><div><h3>${escapeHtml(card.label || '')}</h3><p class="muted">${escapeHtml(card.hint || '')}</p></div></div><div class="grammar-pattern">${escapeHtml(card.pattern || '')}</div><p class="grammar-example-sentence">${escapeHtml(card.example || '')}</p></article>`).join('')}</div></section>` : ''}
 
-      ${miniRules.length ? `<section class="section" id="grammar-rule-map" aria-labelledby="grammar-rule-map-title"><div class="section-heading"><div><span class="eyebrow">Rule map</span><h2 id="grammar-rule-map-title">Step-by-step guide</h2></div></div><div class="grammar-mini-grid">${miniRules.map((rule) => `<article class="card grammar-mini-card"><h3>${escapeHtml(rule.title || '')}</h3><p>${escapeHtml(rule.text || '')}</p>${rule.example ? `<div class="grammar-mini-example">${escapeHtml(rule.example)}</div>` : ''}</article>`).join('')}</div></section>` : ''}
+      ${miniRules.length ? `<section class="section" id="grammar-rule-map" aria-labelledby="grammar-rule-map-title"><div class="section-heading"><div><span class="eyebrow">Правила</span><h2 id="grammar-rule-map-title">Памятка по шагам</h2></div></div><div class="grammar-mini-grid">${miniRules.map((rule) => `<article class="card grammar-mini-card"><h3>${escapeHtml(rule.title || '')}</h3><p>${escapeHtml(rule.text || '')}</p>${rule.example ? `<div class="grammar-mini-example">${escapeHtml(rule.example)}</div>` : ''}</article>`).join('')}</div></section>` : ''}
 
-      ${tables.length ? `<section class="section" id="grammar-tables" aria-labelledby="grammar-tables-title"><div class="section-heading"><div><span class="eyebrow">Tables</span><h2 id="grammar-tables-title">Tables</h2></div></div><div class="list">${tables.map((table) => `<article class="card lesson-block"><h3>${escapeHtml(table.title || 'Table')}</h3>${grammarTable(table)}</article>`).join('')}</div></section>` : ''}
+      ${tables.length ? `<section class="section" id="grammar-tables" aria-labelledby="grammar-tables-title"><div class="section-heading"><div><span class="eyebrow">Таблицы</span><h2 id="grammar-tables-title">Таблицы</h2></div></div><div class="list">${tables.map((table) => `<article class="card lesson-block"><h3>${escapeHtml(table.title || 'Таблица')}</h3>${grammarTable(table)}</article>`).join('')}</div></section>` : ''}
 
-      ${exampleGroups.length || examples.length ? `<section class="section" id="grammar-examples" aria-labelledby="grammar-examples-title"><div class="section-heading"><div><span class="eyebrow">Examples</span><h2 id="grammar-examples-title">Examples in context</h2></div></div><div class="list">${exampleGroups.map((group) => `<article class="card lesson-block grammar-example-group"><h3>${escapeHtml(group.title || 'Examples')}</h3><div class="list">${(group.items || []).map((item) => `<p class="grammar-example-item">• ${escapeHtml(item)}</p>`).join('')}</div></article>`).join('')}${examples.length ? `<article class="card lesson-block grammar-example-group"><h3>More examples</h3><div class="list">${examples.map((example) => `<p class="grammar-example-item">• ${escapeHtml(example)}</p>`).join('')}</div></article>` : ''}</div></section>` : ''}
+      ${exampleGroups.length || examples.length ? `<section class="section" id="grammar-examples" aria-labelledby="grammar-examples-title"><div class="section-heading"><div><span class="eyebrow">Примеры</span><h2 id="grammar-examples-title">Примеры в контексте</h2></div></div><div class="list">${exampleGroups.map((group) => `<article class="card lesson-block grammar-example-group"><h3>${escapeHtml(group.title || 'Примеры')}</h3><div class="list">${(group.items || []).map((item) => `<p class="grammar-example-item">• ${escapeHtml(item)}</p>`).join('')}</div></article>`).join('')}${examples.length ? `<article class="card lesson-block grammar-example-group"><h3>Другие примеры</h3><div class="list">${examples.map((example) => `<p class="grammar-example-item">• ${escapeHtml(example)}</p>`).join('')}</div></article>` : ''}</div></section>` : ''}
 
-      ${mistakes.length ? `<section class="section" id="grammar-mistakes" aria-labelledby="grammar-mistakes-title"><div class="section-heading"><div><span class="eyebrow">Common mistakes</span><h2 id="grammar-mistakes-title">Common mistakes</h2></div></div><article class="card info-card lesson-block"><div class="list">${mistakes.map((mistake) => `<p>• ${escapeHtml(mistake)}</p>`).join('')}</div></article></section>` : ''}
+      ${mistakes.length ? `<section class="section" id="grammar-mistakes" aria-labelledby="grammar-mistakes-title"><div class="section-heading"><div><span class="eyebrow">Ошибки</span><h2 id="grammar-mistakes-title">Частые ошибки</h2></div></div><article class="card info-card lesson-block"><div class="list">${mistakes.map((mistake) => `<p>• ${escapeHtml(mistake)}</p>`).join('')}</div></article></section>` : ''}
 
-      <section class="section" id="grammar-practice-section" aria-labelledby="grammar-practice-title"><div class="section-heading"><div><span class="eyebrow">Practice</span><h2 id="grammar-practice-title">${Array.isArray(topic.exercises) ? topic.exercises.length : 0} exercises: from easier to more challenging</h2></div></div><div id="grammar-quiz"></div></section>
+      <section class="section" id="grammar-practice-section" aria-labelledby="grammar-practice-title"><div class="section-heading"><div><span class="eyebrow">Практика</span><h2 id="grammar-practice-title">${Array.isArray(topic.exercises) ? topic.exercises.length : 0} упражнений: от простого к сложному</h2></div></div><div id="grammar-quiz"></div></section>
     `;
 
     renderGrammarPractice(topic, byId('grammar-quiz'));
@@ -1269,22 +1269,22 @@
     const topic = VOCABULARY_CATALOG.allTopics.find((item) => item.id === id);
     const root = byId('vocabulary-root');
     if (!topic || !Array.isArray(topic.words) || !topic.words.length) {
-      root.innerHTML = emptyState('💥', 'No words have been added to this topic yet', 'The teacher will add the word list after the lesson. Words from earlier topics are not repeated here.');
+      root.innerHTML = emptyState('💥', 'В этой теме пока нет слов', 'Преподаватель добавит список после урока. Слова из предыдущих тем здесь не повторяются.');
       return;
     }
-    byId('vocab-hero-title').textContent = safeText(topic.title, 'Vocabulary');
-    byId('vocab-hero-subtitle').textContent = `${safeText(topic.label, 'Vocabulary topic')} · ${topic.words.length} unique words`;
+    byId('vocab-hero-title').textContent = safeText(topic.title, 'Словарь');
+    byId('vocab-hero-subtitle').textContent = `${safeText(topic.label, 'Словарная тема')} · ${topic.words.length} уникальных слов`;
     const progress = window.ProgressService.loadVocabularyProgress();
     const topicProgress = getTopicProgress(progress, topic.id);
     let mode = 'cards';
     let cardQueue = [];
     let testState = null;
 
-    root.innerHTML = `<div class="mode-tabs" id="vocab-modes" aria-label="Practice mode">
-      <button class="mode-btn active" type="button" data-mode="cards">New words</button>
-      <button class="mode-btn" type="button" data-mode="test">Test</button>
-      <button class="mode-btn" type="button" data-mode="all">All words</button>
-      <button class="mode-btn" type="button" data-mode="difficult">Difficult words</button>
+    root.innerHTML = `<div class="mode-tabs" id="vocab-modes" aria-label="Режим тренировки">
+      <button class="mode-btn active" type="button" data-mode="cards">Новые слова</button>
+      <button class="mode-btn" type="button" data-mode="test">Тест</button>
+      <button class="mode-btn" type="button" data-mode="all">Все слова</button>
+      <button class="mode-btn" type="button" data-mode="difficult">Трудные слова</button>
     </div><div id="vocab-mode-root" class="section"></div>`;
     const modeRoot = byId('vocab-mode-root');
 
@@ -1301,17 +1301,17 @@
         const isDifficult = mode === 'difficult';
         modeRoot.innerHTML = emptyState(
           isDifficult ? '🌟' : '🎉',
-          isDifficult ? 'No difficult words yet' : 'You have reviewed all new words in this topic',
-          isDifficult ? 'Mark a word as “Difficult” and it will appear here.' : 'Learned words remain in All words and are not repeated in New words mode.'
+          isDifficult ? 'Трудных слов пока нет' : 'Все новые слова в этой теме просмотрены',
+          isDifficult ? 'Отметь слово как «Трудное», и оно появится здесь.' : 'Выученные слова остаются в разделе «Все слова» и не повторяются в режиме «Новые слова».'
         );
         return;
       }
       const word = cardQueue[0];
       const remaining = cardQueue.length;
-      modeRoot.innerHTML = `<div class="flash-counter">Remaining: ${remaining}</div><div class="flashcard-stage"><div class="flashcard" id="flashcard" tabindex="0" role="button" aria-label="Flip the card">
-        <div class="flash-face flash-front"><div class="flash-word">${escapeHtml(word.en)}</div>${word.transcription ? `<div class="flash-transcription">${escapeHtml(word.transcription)}</div>` : ''}<p class="muted">Tap to see the translation</p></div>
+      modeRoot.innerHTML = `<div class="flash-counter">Осталось: ${remaining}</div><div class="flashcard-stage"><div class="flashcard" id="flashcard" tabindex="0" role="button" aria-label="Перевернуть карточку">
+        <div class="flash-face flash-front"><div class="flash-word">${escapeHtml(word.en)}</div>${word.transcription ? `<div class="flash-transcription">${escapeHtml(word.transcription)}</div>` : ''}<p class="muted">Нажми, чтобы увидеть перевод</p></div>
         <div class="flash-face flash-back"><div class="flash-word">${escapeHtml(word.ru)}</div>${word.exampleEn ? `<p class="flash-example">${escapeHtml(word.exampleEn)}${word.exampleRu ? `<br>${escapeHtml(word.exampleRu)}` : ''}</p>` : ''}</div>
-      </div></div><div class="trainer-actions"><button class="btn btn-danger" id="word-difficult" type="button">Difficult</button><button class="btn btn-success" id="word-known" type="button">I know it</button></div>`;
+      </div></div><div class="trainer-actions"><button class="btn btn-danger" id="word-difficult" type="button">Трудное</button><button class="btn btn-success" id="word-known" type="button">Знаю</button></div>`;
       const flashcard = byId('flashcard');
       const flip = () => flashcard.classList.toggle('flipped');
       flashcard.addEventListener('click', flip);
@@ -1332,7 +1332,7 @@
 
     const startTest = () => {
       if (topic.words.length < 4) {
-        modeRoot.innerHTML = emptyState('🧩', 'At least 4 words are needed for the test', 'Add more unique words to the topic to create four answer options.');
+        modeRoot.innerHTML = emptyState('🧩', 'Для теста нужно минимум 4 слова', 'Добавь больше уникальных слов, чтобы появились четыре варианта ответа.');
         return;
       }
       testState = { words: shuffled(topic.words), index: 0, firstTryCorrect: 0, answered: false, firstAnswers: {} };
@@ -1349,7 +1349,7 @@
       };
       topicProgress.tests.push(result);
       save();
-      modeRoot.innerHTML = `<div class="card empty-state"><div class="empty-state-icon">🏁</div><h3>Test complete</h3><p>First-try score: ${result.score} of ${result.total}</p><div class="button-row" style="justify-content:center"><button class="btn btn-primary" id="restart-vocab-test" type="button">Try again</button></div></div>`;
+      modeRoot.innerHTML = `<div class="card empty-state"><div class="empty-state-icon">🏁</div><h3>Тест завершён</h3><p>Правильно с первой попытки: ${result.score} из ${result.total}</p><div class="button-row" style="justify-content:center"><button class="btn btn-primary" id="restart-vocab-test" type="button">Пройти ещё раз</button></div></div>`;
       byId('restart-vocab-test').addEventListener('click', startTest);
     };
 
@@ -1359,7 +1359,7 @@
       const distractors = shuffled(topic.words.filter((item) => item.__wordKey !== word.__wordKey)).slice(0, 3);
       const options = shuffled([word, ...distractors]);
       testState.answered = false;
-      modeRoot.innerHTML = `<div class="flash-counter">Question ${testState.index + 1} of ${testState.words.length}</div><article class="card"><span class="eyebrow">Choose the translation</span><h2 class="flash-word">${escapeHtml(word.en)}</h2>${word.transcription ? `<p class="muted">${escapeHtml(word.transcription)}</p>` : ''}<div class="option-list section">${options.map((option) => `<button class="quiz-option" type="button" data-answer-key="${escapeHtml(option.__wordKey)}">${escapeHtml(option.ru)}</button>`).join('')}</div><div id="vocab-test-feedback" class="feedback"></div><div class="button-row"><button class="btn btn-primary" id="next-vocab-question" type="button" disabled>Next word</button></div></article>`;
+      modeRoot.innerHTML = `<div class="flash-counter">Вопрос ${testState.index + 1} из ${testState.words.length}</div><article class="card"><span class="eyebrow">Выбери перевод</span><h2 class="flash-word">${escapeHtml(word.en)}</h2>${word.transcription ? `<p class="muted">${escapeHtml(word.transcription)}</p>` : ''}<div class="option-list section">${options.map((option) => `<button class="quiz-option" type="button" data-answer-key="${escapeHtml(option.__wordKey)}">${escapeHtml(option.ru)}</button>`).join('')}</div><div id="vocab-test-feedback" class="feedback"></div><div class="button-row"><button class="btn btn-primary" id="next-vocab-question" type="button" disabled>Следующее слово</button></div></article>`;
       modeRoot.querySelectorAll('[data-answer-key]').forEach((button) => {
         button.addEventListener('click', () => {
           if (testState.answered) return;
@@ -1380,7 +1380,7 @@
           if (!correct) button.classList.add('wrong');
           const feedback = byId('vocab-test-feedback');
           feedback.className = `feedback show ${correct ? 'good' : 'bad'}`;
-          feedback.textContent = correct ? 'Correct on the first try!' : `Correct answer: ${word.ru}`;
+          feedback.textContent = correct ? 'Верно с первой попытки!' : `Правильный ответ: ${word.ru}`;
           byId('next-vocab-question').disabled = false;
         });
       });
@@ -1425,9 +1425,9 @@
     try {
       await renderers[view]?.();
     } catch (error) {
-      console.error('Page rendering error:', error);
+      console.error('Ошибка отображения страницы:', error);
       const main = document.querySelector('main');
-      if (main) main.innerHTML = emptyState('⚠️', 'Could not open the page', 'Check the data structure and refresh the page.');
+      if (main) main.innerHTML = emptyState('⚠️', 'Не удалось открыть страницу', 'Проверь структуру данных и обнови страницу.');
     }
   }
 
@@ -1450,7 +1450,7 @@
     } catch (error) {
       console.error('Supabase connection error:', error);
       const detail = safeText(error?.message || error?.details || error?.hint);
-      showToast(detail ? `Supabase error: ${detail}` : 'Supabase is temporarily unavailable.');
+      showToast(detail ? `Ошибка Supabase: ${detail}` : 'Supabase временно недоступен.');
     }
   }
 

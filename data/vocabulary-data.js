@@ -1,12 +1,12 @@
 /**
- * Milena’s vocabulary topics.
- * Russian translations are kept; the interface remains in English.
+ * Словарные темы Милены.
+ * Английские слова и примеры дополнены русскими переводами.
  */
 window.VOCABULARY_DATA = [
   {
     "id": "vocab-lesson-1",
-    "title": "Jobs: essential vocabulary",
-    "label": "Lesson 1 · Jobs",
+    "title": "Профессии: основные слова",
+    "label": "Урок 1 · Jobs",
     "icon": "💼",
     "type": "lesson",
     "linkedLessonId": "lesson-1",
@@ -18,7 +18,7 @@ window.VOCABULARY_DATA = [
         "ru": "актёр / актриса",
         "transcription": "",
         "exampleEn": "An actor works in films, TV or theatre.",
-        "exampleRu": "",
+        "exampleRu": "Актёр работает в кино, на телевидении или в театре.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -28,7 +28,7 @@ window.VOCABULARY_DATA = [
         "ru": "инженер",
         "transcription": "",
         "exampleEn": "An engineer designs machines, buildings and roads.",
-        "exampleRu": "",
+        "exampleRu": "Инженер проектирует машины, здания и дороги.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -38,7 +38,7 @@ window.VOCABULARY_DATA = [
         "ru": "журналист",
         "transcription": "",
         "exampleEn": "A journalist writes reports for newspapers or magazines.",
-        "exampleRu": "",
+        "exampleRu": "Журналист пишет материалы для газет или журналов.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -48,7 +48,7 @@ window.VOCABULARY_DATA = [
         "ru": "юрист, адвокат",
         "transcription": "",
         "exampleEn": "A lawyer gives people advice about the law.",
-        "exampleRu": "",
+        "exampleRu": "Юрист даёт людям советы по закону.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -58,7 +58,7 @@ window.VOCABULARY_DATA = [
         "ru": "медсестра / медбрат",
         "transcription": "",
         "exampleEn": "A nurse works in a hospital and cares for patients.",
-        "exampleRu": "",
+        "exampleRu": "Медсестра или медбрат работает в больнице и заботится о пациентах.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -68,7 +68,7 @@ window.VOCABULARY_DATA = [
         "ru": "фотограф",
         "transcription": "",
         "exampleEn": "A photographer takes photos for newspapers and magazines.",
-        "exampleRu": "",
+        "exampleRu": "Фотограф делает фотографии для газет и журналов.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -78,7 +78,7 @@ window.VOCABULARY_DATA = [
         "ru": "пилот",
         "transcription": "",
         "exampleEn": "A pilot flies planes, usually as a job.",
-        "exampleRu": "",
+        "exampleRu": "Пилот управляет самолётами, обычно это его работа.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -88,7 +88,7 @@ window.VOCABULARY_DATA = [
         "ru": "полицейский",
         "transcription": "",
         "exampleEn": "A police officer helps people and deals with emergencies.",
-        "exampleRu": "",
+        "exampleRu": "Полицейский помогает людям и работает в экстренных ситуациях.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -98,7 +98,7 @@ window.VOCABULARY_DATA = [
         "ru": "политик",
         "transcription": "",
         "exampleEn": "A politician works in government and tries to improve people’s lives.",
-        "exampleRu": "",
+        "exampleRu": "Политик работает в правительстве и старается улучшить жизнь людей.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -108,7 +108,7 @@ window.VOCABULARY_DATA = [
         "ru": "менеджер по продажам",
         "transcription": "",
         "exampleEn": "A sales manager runs a sales team.",
-        "exampleRu": "",
+        "exampleRu": "Менеджер по продажам руководит командой продавцов.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -118,7 +118,7 @@ window.VOCABULARY_DATA = [
         "ru": "учёный",
         "transcription": "",
         "exampleEn": "A scientist does research in a laboratory.",
-        "exampleRu": "",
+        "exampleRu": "Учёный проводит исследования в лаборатории.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -128,7 +128,7 @@ window.VOCABULARY_DATA = [
         "ru": "солдат, военнослужащий",
         "transcription": "",
         "exampleEn": "A soldier works in the army and does fitness training.",
-        "exampleRu": "",
+        "exampleRu": "Солдат служит в армии и занимается физической подготовкой.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -138,7 +138,7 @@ window.VOCABULARY_DATA = [
         "ru": "пожарный",
         "transcription": "",
         "exampleEn": "A firefighter goes to fires and rescues people.",
-        "exampleRu": "",
+        "exampleRu": "Пожарный выезжает на пожары и спасает людей.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -148,7 +148,7 @@ window.VOCABULARY_DATA = [
         "ru": "химик",
         "transcription": "",
         "exampleEn": "A chemist works for a company that makes perfumes.",
-        "exampleRu": "",
+        "exampleRu": "Химик работает в компании, которая производит духи.",
         "partOfSpeech": "noun",
         "category": "Jobs"
       },
@@ -158,7 +158,7 @@ window.VOCABULARY_DATA = [
         "ru": "спасать людей и животных",
         "transcription": "",
         "exampleEn": "Firefighters rescue people and animals.",
-        "exampleRu": "",
+        "exampleRu": "Пожарные спасают людей и животных.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -168,7 +168,7 @@ window.VOCABULARY_DATA = [
         "ru": "выезжать на пожары",
         "transcription": "",
         "exampleEn": "Megan sometimes goes to fires.",
-        "exampleRu": "",
+        "exampleRu": "Меган иногда выезжает на пожары.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -178,7 +178,7 @@ window.VOCABULARY_DATA = [
         "ru": "проверять оборудование",
         "transcription": "",
         "exampleEn": "Firefighters check equipment every day.",
-        "exampleRu": "",
+        "exampleRu": "Пожарные каждый день проверяют оборудование.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -188,7 +188,7 @@ window.VOCABULARY_DATA = [
         "ru": "оказывать первую помощь",
         "transcription": "",
         "exampleEn": "A firefighter can give first aid after an accident.",
-        "exampleRu": "",
+        "exampleRu": "Пожарный может оказать первую помощь после несчастного случая.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -198,7 +198,7 @@ window.VOCABULARY_DATA = [
         "ru": "заниматься физической подготовкой",
         "transcription": "",
         "exampleEn": "Firefighters do fitness training to stay strong.",
-        "exampleRu": "",
+        "exampleRu": "Пожарные занимаются физической подготовкой, чтобы оставаться сильными.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -208,7 +208,7 @@ window.VOCABULARY_DATA = [
         "ru": "писать отчёты о происшествиях",
         "transcription": "",
         "exampleEn": "They write reports on accidents.",
-        "exampleRu": "",
+        "exampleRu": "Они пишут отчёты о происшествиях.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -218,7 +218,7 @@ window.VOCABULARY_DATA = [
         "ru": "иметь дело с бомбами / обезвреживать бомбы",
         "transcription": "",
         "exampleEn": "Some firefighters deal with bombs.",
-        "exampleRu": "",
+        "exampleRu": "Некоторые пожарные имеют дело с бомбами.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -228,7 +228,7 @@ window.VOCABULARY_DATA = [
         "ru": "назначать встречи",
         "transcription": "",
         "exampleEn": "She makes appointments for school visits.",
-        "exampleRu": "",
+        "exampleRu": "Она назначает встречи для посещения школ.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -238,7 +238,7 @@ window.VOCABULARY_DATA = [
         "ru": "посещать школы",
         "transcription": "",
         "exampleEn": "Firefighters make visits to schools.",
-        "exampleRu": "",
+        "exampleRu": "Пожарные посещают школы.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -248,7 +248,7 @@ window.VOCABULARY_DATA = [
         "ru": "убирать пожарную станцию",
         "transcription": "",
         "exampleEn": "They clean the fire station in the afternoon.",
-        "exampleRu": "",
+        "exampleRu": "Они убирают пожарную станцию во второй половине дня.",
         "partOfSpeech": "verb phrase",
         "category": "Firefighter activities"
       },
@@ -258,7 +258,7 @@ window.VOCABULARY_DATA = [
         "ru": "строить",
         "transcription": "",
         "exampleEn": "They’re building a new sports stadium.",
-        "exampleRu": "",
+        "exampleRu": "Они строят новый спортивный стадион.",
         "partOfSpeech": "verb",
         "category": "Vocabulary Builder"
       },
@@ -268,7 +268,7 @@ window.VOCABULARY_DATA = [
         "ru": "конкурентный; соревновательный",
         "transcription": "",
         "exampleEn": "It’s very competitive to get a job in TV.",
-        "exampleRu": "",
+        "exampleRu": "Получить работу на телевидении очень сложно из-за высокой конкуренции.",
         "partOfSpeech": "adjective",
         "category": "Vocabulary Builder"
       },
@@ -278,7 +278,7 @@ window.VOCABULARY_DATA = [
         "ru": "строительство",
         "transcription": "",
         "exampleEn": "The new school is under construction.",
-        "exampleRu": "",
+        "exampleRu": "Новая школа находится в процессе строительства.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -288,7 +288,7 @@ window.VOCABULARY_DATA = [
         "ru": "клиент, покупатель",
         "transcription": "",
         "exampleEn": "A customer is someone who buys things in a shop.",
-        "exampleRu": "",
+        "exampleRu": "Покупатель — это человек, который покупает товары в магазине.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -298,7 +298,7 @@ window.VOCABULARY_DATA = [
         "ru": "ладить, иметь хорошие отношения",
         "transcription": "",
         "exampleEn": "Do you get on well with the people in the office?",
-        "exampleRu": "",
+        "exampleRu": "Ты хорошо ладишь с людьми в офисе?",
         "partOfSpeech": "phrasal verb",
         "category": "Vocabulary Builder"
       },
@@ -308,7 +308,7 @@ window.VOCABULARY_DATA = [
         "ru": "рабочие часы, время работы",
         "transcription": "",
         "exampleEn": "The hours are demanding, from 8 till 8.",
-        "exampleRu": "",
+        "exampleRu": "Рабочий график сложный: с восьми утра до восьми вечера.",
         "partOfSpeech": "noun plural",
         "category": "Vocabulary Builder"
       },
@@ -318,7 +318,7 @@ window.VOCABULARY_DATA = [
         "ru": "присоединиться, вступить",
         "transcription": "",
         "exampleEn": "He joined the police when he left university.",
-        "exampleRu": "",
+        "exampleRu": "Он начал работать в полиции после окончания университета.",
         "partOfSpeech": "verb",
         "category": "Vocabulary Builder"
       },
@@ -328,7 +328,7 @@ window.VOCABULARY_DATA = [
         "ru": "юридическая фирма",
         "transcription": "",
         "exampleEn": "A law firm provides advice and help about the law.",
-        "exampleRu": "",
+        "exampleRu": "Юридическая фирма даёт советы и помощь по вопросам закона.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -338,7 +338,7 @@ window.VOCABULARY_DATA = [
         "ru": "менеджер, руководитель",
         "transcription": "",
         "exampleEn": "A manager tells other people what work to do.",
-        "exampleRu": "",
+        "exampleRu": "Менеджер говорит другим людям, какую работу выполнять.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -348,7 +348,7 @@ window.VOCABULARY_DATA = [
         "ru": "маркетинг",
         "transcription": "",
         "exampleEn": "Marketing is about deciding how to advertise and sell a product.",
-        "exampleRu": "",
+        "exampleRu": "Маркетинг связан с тем, как рекламировать и продавать товар.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -358,7 +358,7 @@ window.VOCABULARY_DATA = [
         "ru": "начальная школа",
         "transcription": "",
         "exampleEn": "Children usually go to primary school from about five.",
-        "exampleRu": "",
+        "exampleRu": "Дети обычно ходят в начальную школу примерно с пяти лет.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -368,7 +368,7 @@ window.VOCABULARY_DATA = [
         "ru": "продукт, товар",
         "transcription": "",
         "exampleEn": "A product is something that is made and sold.",
-        "exampleRu": "",
+        "exampleRu": "Продукт — это то, что производят и продают.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -378,7 +378,7 @@ window.VOCABULARY_DATA = [
         "ru": "проект",
         "transcription": "",
         "exampleEn": "I’m working on a project for my class.",
-        "exampleRu": "",
+        "exampleRu": "Я работаю над проектом для своего класса.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -388,7 +388,7 @@ window.VOCABULARY_DATA = [
         "ru": "исследование; исследовать",
         "transcription": "",
         "exampleEn": "Scientists do research to find new information.",
-        "exampleRu": "",
+        "exampleRu": "Учёные проводят исследования, чтобы найти новую информацию.",
         "partOfSpeech": "noun / verb",
         "category": "Vocabulary Builder"
       },
@@ -398,7 +398,7 @@ window.VOCABULARY_DATA = [
         "ru": "управлять, руководить",
         "transcription": "",
         "exampleEn": "She runs a small restaurant in London.",
-        "exampleRu": "",
+        "exampleRu": "Она управляет небольшим рестораном в Лондоне.",
         "partOfSpeech": "verb",
         "category": "Vocabulary Builder"
       },
@@ -408,7 +408,7 @@ window.VOCABULARY_DATA = [
         "ru": "продажи",
         "transcription": "",
         "exampleEn": "Sales are the work involved in selling things.",
-        "exampleRu": "",
+        "exampleRu": "Продажи — это работа, связанная с продажей товаров.",
         "partOfSpeech": "noun plural",
         "category": "Vocabulary Builder"
       },
@@ -418,7 +418,7 @@ window.VOCABULARY_DATA = [
         "ru": "студия",
         "transcription": "",
         "exampleEn": "The photograph was taken in a studio.",
-        "exampleRu": "",
+        "exampleRu": "Фотография была сделана в студии.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -428,7 +428,7 @@ window.VOCABULARY_DATA = [
         "ru": "временный",
         "transcription": "",
         "exampleEn": "A temporary job only lasts for a limited time.",
-        "exampleRu": "",
+        "exampleRu": "Временная работа длится только ограниченный период.",
         "partOfSpeech": "adjective",
         "category": "Vocabulary Builder"
       },
@@ -438,7 +438,7 @@ window.VOCABULARY_DATA = [
         "ru": "обучение, подготовка",
         "transcription": "",
         "exampleEn": "Training is learning the skills you need to do a job.",
-        "exampleRu": "",
+        "exampleRu": "Обучение — это освоение навыков, необходимых для работы.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       },
@@ -448,7 +448,7 @@ window.VOCABULARY_DATA = [
         "ru": "опыт работы, стажировка",
         "transcription": "",
         "exampleEn": "You can get work experience over the summer.",
-        "exampleRu": "",
+        "exampleRu": "Летом можно получить опыт работы.",
         "partOfSpeech": "noun",
         "category": "Vocabulary Builder"
       }

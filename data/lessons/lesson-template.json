@@ -1,8 +1,8 @@
 {
   "id": "lesson-2",
   "number": 2,
-  "title": "Next lesson title",
-  "subtitle": "Short homework description",
+  "title": "Название следующего урока",
+  "subtitle": "Краткое описание домашнего задания",
   "status": "draft",
   "vocabularyId": "vocab-lesson-2",
   "grammarIds": [],
@@ -12,6 +12,6 @@
     "enabled": false,
     "version": 1
   },
-  "templateNote": "The next homework must be saved as lesson-2.json. Increase the number consistently in the filename, id, number, vocabularyId and linkedLessonId.",
+  "templateNote": "Следующую домашнюю работу нужно сохранить как lesson-2.json. Номер необходимо последовательно увеличить в имени файла, id, number, vocabularyId и linkedLessonId.",
   "blocks": []
 }

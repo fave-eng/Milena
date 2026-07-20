@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Personal English learning space">
-  <title>Homework</title>
+  <meta name="description" content="Персональное пространство для изучения английского языка">
+  <title>Домашние задания</title>
   <link rel="stylesheet" href="styles.css?v=4">
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
@@ -14,40 +14,40 @@
   <script src="app.js?v=4" defer></script>
 </head>
 <body class="has-bottom-nav" data-page="homework" data-view="homework">
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
 
   <header class="hero hero-compact">
     <span class="star one">✦</span><span class="star two">✦</span>
     <div class="container hero-content reveal">
-      <span class="hero-badge">✦ <span data-config="level"></span> Level · Individual Course</span>
-      <h1>Homework</h1>
-      <p>Interactive exercises and tasks after each lesson.</p>
+      <span class="hero-badge">✦ <span data-config="level"></span> уровень · Индивидуальный курс</span>
+      <h1>Домашние задания</h1>
+      <p>Упражнения и задания после каждого урока.</p>
     </div>
     <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#f8fafc" d="M0,66 C220,102 410,10 696,52 C963,91 1115,99 1440,35 L1440,100 L0,100 Z"></path></svg>
   </header>
 
   <main id="main" class="main-content container">
 
-    <section class="section reveal" aria-label="Homework statistics">
+    <section class="section reveal" aria-label="Статистика домашних заданий">
       <div class="summary-grid">
-        <div class="card summary-card"><strong id="hw-completed">0</strong><span>Completed</span></div>
-        <div class="card summary-card"><strong id="hw-total">0</strong><span>Total</span></div>
-        <div class="card summary-card"><strong id="hw-percent">0%</strong><span>Progress</span></div>
+        <div class="card summary-card"><strong id="hw-completed">0</strong><span>Выполнено</span></div>
+        <div class="card summary-card"><strong id="hw-total">0</strong><span>Всего</span></div>
+        <div class="card summary-card"><strong id="hw-percent">0%</strong><span>Прогресс</span></div>
       </div>
       <div class="card section"><div id="hw-overall-progress"></div></div>
     </section>
     <section class="section reveal" aria-labelledby="homework-list-title">
-      <div class="section-heading"><div><span class="eyebrow">Materials</span><h2 id="homework-list-title">Assignments</h2></div></div>
+      <div class="section-heading"><div><span class="eyebrow">Материалы</span><h2 id="homework-list-title">Задания</h2></div></div>
       <div id="homework-list" class="list"></div>
     </section>
 
   </main>
 
-  <nav class="bottom-nav" aria-label="Main navigation">
-    <a class="nav-link" data-nav="home" href="index.html"><span class="nav-icon">🏠</span><span>Home</span></a>
-    <a class="nav-link" data-nav="homework" href="homework.html"><span class="nav-icon">📝</span><span>HW</span></a>
-    <a class="nav-link" data-nav="grammar" href="grammar.html"><span class="nav-icon">📐</span><span>Grammar</span></a>
-    <a class="nav-link" data-nav="vocabulary" href="vocabulary-hub.html"><span class="nav-icon">💥</span><span>Vocab</span></a>
+  <nav class="bottom-nav" aria-label="Основная навигация">
+    <a class="nav-link" data-nav="home" href="index.html"><span class="nav-icon">🏠</span><span>Главная</span></a>
+    <a class="nav-link" data-nav="homework" href="homework.html"><span class="nav-icon">📝</span><span>ДЗ</span></a>
+    <a class="nav-link" data-nav="grammar" href="grammar.html"><span class="nav-icon">📐</span><span>Грамматика</span></a>
+    <a class="nav-link" data-nav="vocabulary" href="vocabulary-hub.html"><span class="nav-icon">💥</span><span>Словарь</span></a>
   </nav>
   <div class="toast" id="app-toast" role="status" aria-live="polite"></div>
 
