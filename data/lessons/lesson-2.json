@@ -1,0 +1,761 @@
+{
+  "id": "lesson-2",
+  "number": 2,
+  "title": "What do you do? What’s your day like?",
+  "subtitle": "Урок 1B: устойчивые глагольные фразы и Present Simple с he, she, it",
+  "status": "available",
+  "vocabularyId": "vocab-lesson-2",
+  "grammarIds": [
+    "grammar-present-simple-third-person"
+  ],
+  "publishedAt": "2026-07-20",
+  "totalPoints": 47,
+  "notification": {
+    "enabled": true,
+    "version": 1
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "eyebrow": "Рабочая тетрадь · Lesson 1B",
+      "title": "Vocabulary · Common verb phrases",
+      "text": "Выполни упражнения 1A–1C. Повтори устойчивые фразы о работе, учёбе и распорядке дня."
+    },
+    {
+      "type": "exercise",
+      "id": "wb-1a",
+      "title": "1A. Соедини начало и конец предложения",
+      "instructions": "Для каждого начала выбери правильное продолжение a–h.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "I’d like to play …",
+          "input": "select",
+          "options": [
+            "a. and economics at university.",
+            "b. a car?",
+            "c. late.",
+            "d. from home two days a week.",
+            "e. guitar.",
+            "f. to bed early on Sundays.",
+            "g. students from lots of countries.",
+            "h. alone in a small flat."
+          ],
+          "answer": 4,
+          "explanation": "I’d like to play guitar."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Jiya and Carlos study business …",
+          "input": "select",
+          "options": [
+            "a. and economics at university.",
+            "b. a car?",
+            "c. late.",
+            "d. from home two days a week.",
+            "e. guitar.",
+            "f. to bed early on Sundays.",
+            "g. students from lots of countries.",
+            "h. alone in a small flat."
+          ],
+          "answer": 0,
+          "explanation": "They study business and economics at university."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "We teach …",
+          "input": "select",
+          "options": [
+            "a. and economics at university.",
+            "b. a car?",
+            "c. late.",
+            "d. from home two days a week.",
+            "e. guitar.",
+            "f. to bed early on Sundays.",
+            "g. students from lots of countries.",
+            "h. alone in a small flat."
+          ],
+          "answer": 6,
+          "explanation": "We teach students from lots of countries."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "I work …",
+          "input": "select",
+          "options": [
+            "a. and economics at university.",
+            "b. a car?",
+            "c. late.",
+            "d. from home two days a week.",
+            "e. guitar.",
+            "f. to bed early on Sundays.",
+            "g. students from lots of countries.",
+            "h. alone in a small flat."
+          ],
+          "answer": 3,
+          "explanation": "I work from home two days a week."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "You live …",
+          "input": "select",
+          "options": [
+            "a. and economics at university.",
+            "b. a car?",
+            "c. late.",
+            "d. from home two days a week.",
+            "e. guitar.",
+            "f. to bed early on Sundays.",
+            "g. students from lots of countries.",
+            "h. alone in a small flat."
+          ],
+          "answer": 7,
+          "explanation": "You live alone in a small flat."
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "Do they have …",
+          "input": "select",
+          "options": [
+            "a. and economics at university.",
+            "b. a car?",
+            "c. late.",
+            "d. from home two days a week.",
+            "e. guitar.",
+            "f. to bed early on Sundays.",
+            "g. students from lots of countries.",
+            "h. alone in a small flat."
+          ],
+          "answer": 1,
+          "explanation": "Do they have a car?"
+        },
+        {
+          "id": "7",
+          "number": 7,
+          "prompt": "I always go …",
+          "input": "select",
+          "options": [
+            "a. and economics at university.",
+            "b. a car?",
+            "c. late.",
+            "d. from home two days a week.",
+            "e. guitar.",
+            "f. to bed early on Sundays.",
+            "g. students from lots of countries.",
+            "h. alone in a small flat."
+          ],
+          "answer": 5,
+          "explanation": "I always go to bed early on Sundays."
+        },
+        {
+          "id": "8",
+          "number": 8,
+          "prompt": "At the weekend, I get up …",
+          "input": "select",
+          "options": [
+            "a. and economics at university.",
+            "b. a car?",
+            "c. late.",
+            "d. from home two days a week.",
+            "e. guitar.",
+            "f. to bed early on Sundays.",
+            "g. students from lots of countries.",
+            "h. alone in a small flat."
+          ],
+          "answer": 2,
+          "explanation": "At the weekend, I get up late."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "wb-1b",
+      "title": "1B. Выбери правильное слово",
+      "instructions": "Выбери глагол или фразу, которая правильно дополняет предложение.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "Do you ______ out a lot at the weekend?",
+          "input": "single",
+          "options": [
+            "live",
+            "go",
+            "get up"
+          ],
+          "answer": 1,
+          "explanation": "Правильно: go out."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "I ______ from home, not in an office.",
+          "input": "single",
+          "options": [
+            "work",
+            "play",
+            "live"
+          ],
+          "answer": 0,
+          "explanation": "Правильно: work from home."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "At the weekend I usually ______ running.",
+          "input": "single",
+          "options": [
+            "play",
+            "have",
+            "go"
+          ],
+          "answer": 2,
+          "explanation": "Правильно: go running."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "We ______ in a small village.",
+          "input": "single",
+          "options": [
+            "have",
+            "go",
+            "live"
+          ],
+          "answer": 2,
+          "explanation": "Правильно: live in a small village."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "Do you ______ tennis?",
+          "input": "single",
+          "options": [
+            "play",
+            "go",
+            "have"
+          ],
+          "answer": 0,
+          "explanation": "Правильно: play tennis."
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "We need to ______ up early tomorrow.",
+          "input": "single",
+          "options": [
+            "live",
+            "get",
+            "have"
+          ],
+          "answer": 1,
+          "explanation": "Правильно: get up early."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "wb-1c",
+      "title": "1C. Поставь слова в правильном порядке",
+      "instructions": "Напиши полное предложение. Начинай с заглавной буквы.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "(university / I / a / teach / at)",
+          "input": "text",
+          "acceptedAnswers": [
+            "I teach at a university",
+            "I teach at a university."
+          ],
+          "explanation": "Правильно: I teach at a university."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "(day / I / up / early / every / get)",
+          "input": "text",
+          "acceptedAnswers": [
+            "I get up early every day",
+            "I get up early every day."
+          ],
+          "explanation": "Правильно: I get up early every day."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "(also / guitar / I / the / play)",
+          "input": "text",
+          "acceptedAnswers": [
+            "I also play the guitar",
+            "I also play the guitar."
+          ],
+          "explanation": "Правильно: I also play the guitar."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "(a / go / we / out / lot)",
+          "input": "text",
+          "acceptedAnswers": [
+            "We go out a lot",
+            "We go out a lot."
+          ],
+          "explanation": "Правильно: We go out a lot."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "(money / make / of / a / lot / don’t / I)",
+          "input": "text",
+          "acceptedAnswers": [
+            "I don't make a lot of money",
+            "I don’t make a lot of money",
+            "I don't make a lot of money.",
+            "I don’t make a lot of money."
+          ],
+          "explanation": "Правильно: I don’t make a lot of money."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "eyebrow": "Рабочая тетрадь · Lesson 1B",
+      "title": "Grammar · Present Simple: he, she, it",
+      "text": "Выполни упражнения 2A–2D. Обрати внимание на окончания -s / -es / -ies и вспомогательный глагол does."
+    },
+    {
+      "type": "tip",
+      "title": "Короткая подсказка",
+      "text": "В утвердительном предложении с he / she / it добавляем к глаголу -s: she works. В отрицании и вопросе используем does / doesn’t, а основной глагол снова становится обычным: Does she work? She doesn’t work."
+    },
+    {
+      "type": "exercise",
+      "id": "wb-2a",
+      "title": "2A. Найди и исправь ошибку",
+      "instructions": "Выбери вариант, который правильно исправляет подчёркнутую часть.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "What time your brother finishes work?",
+          "input": "single",
+          "options": [
+            "is your brother finish",
+            "does your brother finish",
+            "your brother finish"
+          ],
+          "answer": 1,
+          "explanation": "В вопросе: What time does your brother finish work?"
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Kate and her friends lives together.",
+          "input": "single",
+          "options": [
+            "live",
+            "are live",
+            "is live"
+          ],
+          "answer": 0,
+          "explanation": "Kate and her friends = they, поэтому live без -s."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "Robin don’t go out a lot.",
+          "input": "single",
+          "options": [
+            "isn’t",
+            "aren’t",
+            "doesn’t"
+          ],
+          "answer": 2,
+          "explanation": "С Robin / he используем doesn’t."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "Your children like their school?",
+          "input": "single",
+          "options": [
+            "Do your children",
+            "Does your children",
+            "Are your children"
+          ],
+          "answer": 0,
+          "explanation": "Children = they, поэтому вопрос начинается с Do."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "wb-2b",
+      "title": "2B. Выбери правильную форму",
+      "instructions": "Выбери правильный вариант для каждого предложения из текста.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "My brother is a nurse and he ______ at a hospital in our city.",
+          "input": "single",
+          "options": [
+            "work",
+            "works"
+          ],
+          "answer": 1,
+          "explanation": "He works."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "He ______ work at 10 a.m. every day.",
+          "input": "single",
+          "options": [
+            "start",
+            "starts"
+          ],
+          "answer": 1,
+          "explanation": "He starts."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "He ______ at 9 p.m.",
+          "input": "single",
+          "options": [
+            "finishes",
+            "finish"
+          ],
+          "answer": 0,
+          "explanation": "После -sh добавляем -es: finishes."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "On Saturdays, when he ______ at the hospital, …",
+          "input": "single",
+          "options": [
+            "doesn’t",
+            "isn’t"
+          ],
+          "answer": 1,
+          "explanation": "Здесь нужен глагол be: he isn’t at the hospital."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "… he ______ lunch at a café with friends.",
+          "input": "single",
+          "options": [
+            "eats",
+            "eat"
+          ],
+          "answer": 0,
+          "explanation": "He eats."
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "I usually ______ him on Sundays.",
+          "input": "single",
+          "options": [
+            "visit",
+            "visits"
+          ],
+          "answer": 0,
+          "explanation": "После I используем visit без -s."
+        },
+        {
+          "id": "7",
+          "number": 7,
+          "prompt": "We ______ tennis together.",
+          "input": "single",
+          "options": [
+            "play",
+            "plays"
+          ],
+          "answer": 0,
+          "explanation": "После we используем play."
+        },
+        {
+          "id": "8",
+          "number": 8,
+          "prompt": "We ______ lunch together.",
+          "input": "single",
+          "options": [
+            "cook",
+            "cooks"
+          ],
+          "answer": 0,
+          "explanation": "После we используем cook."
+        },
+        {
+          "id": "9",
+          "number": 9,
+          "prompt": "On Sunday evenings he ______ Italian for an hour.",
+          "input": "single",
+          "options": [
+            "study",
+            "studies"
+          ],
+          "answer": 1,
+          "explanation": "study → studies."
+        },
+        {
+          "id": "10",
+          "number": 10,
+          "prompt": "Then he ______ to bed early.",
+          "input": "single",
+          "options": [
+            "go",
+            "goes"
+          ],
+          "answer": 1,
+          "explanation": "go → goes."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "wb-2c",
+      "title": "2C. Поставь глаголы в правильную форму",
+      "instructions": "Используй глаголы из банка слов. В некоторых предложениях нужно два ответа.",
+      "wordBank": [
+        "get up",
+        "go",
+        "go out",
+        "have",
+        "start",
+        "study",
+        "teach",
+        "work"
+      ],
+      "items": [
+        {
+          "id": "a",
+          "number": "a",
+          "prompt": "She ______ work at 9 a.m. She ______ from home.",
+          "input": "gaps",
+          "segments": [
+            "She ",
+            " work at 9 a.m. She ",
+            " from home."
+          ],
+          "answers": [
+            [
+              "starts"
+            ],
+            [
+              "works"
+            ]
+          ],
+          "explanation": "She starts work. She works from home."
+        },
+        {
+          "id": "b",
+          "number": "b",
+          "prompt": "After that, she ______ with friends.",
+          "input": "gaps",
+          "segments": [
+            "After that, she ",
+            " with friends."
+          ],
+          "answers": [
+            [
+              "goes out"
+            ]
+          ],
+          "explanation": "go out → goes out."
+        },
+        {
+          "id": "c",
+          "number": "c",
+          "prompt": "She ______ running, then ______ breakfast.",
+          "input": "gaps",
+          "segments": [
+            "She ",
+            " running, then ",
+            " breakfast."
+          ],
+          "answers": [
+            [
+              "goes"
+            ],
+            [
+              "has"
+            ]
+          ],
+          "explanation": "She goes running, then has breakfast."
+        },
+        {
+          "id": "d",
+          "number": "d",
+          "prompt": "In the evening, she ______ French.",
+          "input": "gaps",
+          "segments": [
+            "In the evening, she ",
+            " French."
+          ],
+          "answers": [
+            [
+              "studies"
+            ]
+          ],
+          "explanation": "study → studies."
+        },
+        {
+          "id": "e",
+          "number": "e",
+          "prompt": "Anika ______ at 5 a.m.",
+          "input": "gaps",
+          "segments": [
+            "Anika ",
+            " at 5 a.m."
+          ],
+          "answers": [
+            [
+              "gets up"
+            ]
+          ],
+          "explanation": "get up → gets up."
+        },
+        {
+          "id": "f",
+          "number": "f",
+          "prompt": "In the afternoon, she ______ students online.",
+          "input": "gaps",
+          "segments": [
+            "In the afternoon, she ",
+            " students online."
+          ],
+          "answers": [
+            [
+              "teaches"
+            ]
+          ],
+          "explanation": "teach → teaches."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "wb-2d",
+      "title": "2D. Расставь предложения по порядку",
+      "instructions": "Выбери букву предложения для каждого этапа дня Аники.",
+      "wordBank": [
+        "a. She starts work at 9 a.m. She works from home.",
+        "b. After that, she goes out with friends.",
+        "c. She goes running, then has breakfast.",
+        "d. In the evening, she studies French.",
+        "e. Anika gets up at 5 a.m.",
+        "f. In the afternoon, she teaches students online."
+      ],
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "Первое предложение",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "answer": 4,
+          "explanation": "Сначала: e. Anika gets up at 5 a.m."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Второе предложение",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "answer": 2,
+          "explanation": "Затем: c. She goes running, then has breakfast."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "Третье предложение",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "answer": 0,
+          "explanation": "Далее: a. She starts work at 9 a.m."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "Четвёртое предложение",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "answer": 5,
+          "explanation": "После этого: f. In the afternoon, she teaches students online."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "Пятое предложение",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "answer": 3,
+          "explanation": "Потом: d. In the evening, she studies French."
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "Шестое предложение",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f"
+          ],
+          "answer": 1,
+          "explanation": "В конце: b. After that, she goes out with friends."
+        }
+      ]
+    }
+  ]
+}

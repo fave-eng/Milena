@@ -453,5 +453,306 @@ window.VOCABULARY_DATA = [
         "category": "Vocabulary Builder"
       }
     ]
+  },
+  {
+    "id": "vocab-lesson-2",
+    "title": "Распорядок дня и устойчивые глагольные фразы",
+    "label": "Урок 2 · Lesson 1B",
+    "icon": "⏰",
+    "type": "lesson",
+    "linkedLessonId": "lesson-2",
+    "page": "vocabulary.html?id=vocab-lesson-2",
+    "words": [
+      {
+        "id": "lesson-2-play-the-guitar",
+        "en": "play the guitar",
+        "ru": "играть на гитаре",
+        "transcription": "",
+        "exampleEn": "I play the guitar after work.",
+        "exampleRu": "Я играю на гитаре после работы.",
+        "partOfSpeech": "verb phrase",
+        "category": "Free time"
+      },
+      {
+        "id": "lesson-2-study-business-and-economics",
+        "en": "study business and economics",
+        "ru": "изучать бизнес и экономику",
+        "transcription": "",
+        "exampleEn": "They study business and economics at university.",
+        "exampleRu": "Они изучают бизнес и экономику в университете.",
+        "partOfSpeech": "verb phrase",
+        "category": "Study"
+      },
+      {
+        "id": "lesson-2-teach-at-a-university",
+        "en": "teach at a university",
+        "ru": "преподавать в университете",
+        "transcription": "",
+        "exampleEn": "I teach at a university.",
+        "exampleRu": "Я преподаю в университете.",
+        "partOfSpeech": "verb phrase",
+        "category": "Work"
+      },
+      {
+        "id": "lesson-2-teach-students-online",
+        "en": "teach students online",
+        "ru": "обучать студентов онлайн",
+        "transcription": "",
+        "exampleEn": "She teaches students online in the afternoon.",
+        "exampleRu": "Днём она обучает студентов онлайн.",
+        "partOfSpeech": "verb phrase",
+        "category": "Work"
+      },
+      {
+        "id": "lesson-2-work-from-home",
+        "en": "work from home",
+        "ru": "работать из дома",
+        "transcription": "",
+        "exampleEn": "She works from home two days a week.",
+        "exampleRu": "Она работает из дома два дня в неделю.",
+        "partOfSpeech": "verb phrase",
+        "category": "Work"
+      },
+      {
+        "id": "lesson-2-work-at-a-hospital",
+        "en": "work at a hospital",
+        "ru": "работать в больнице",
+        "transcription": "",
+        "exampleEn": "He works at a hospital.",
+        "exampleRu": "Он работает в больнице.",
+        "partOfSpeech": "verb phrase",
+        "category": "Work"
+      },
+      {
+        "id": "lesson-2-live-alone",
+        "en": "live alone",
+        "ru": "жить одному / одной",
+        "transcription": "",
+        "exampleEn": "I live alone in a small flat.",
+        "exampleRu": "Я живу одна в небольшой квартире.",
+        "partOfSpeech": "verb phrase",
+        "category": "Home"
+      },
+      {
+        "id": "lesson-2-live-in-a-small-village",
+        "en": "live in a small village",
+        "ru": "жить в маленькой деревне",
+        "transcription": "",
+        "exampleEn": "We live in a small village.",
+        "exampleRu": "Мы живём в маленькой деревне.",
+        "partOfSpeech": "verb phrase",
+        "category": "Home"
+      },
+      {
+        "id": "lesson-2-have-a-car",
+        "en": "have a car",
+        "ru": "иметь машину",
+        "transcription": "",
+        "exampleEn": "Do they have a car?",
+        "exampleRu": "У них есть машина?",
+        "partOfSpeech": "verb phrase",
+        "category": "Everyday life"
+      },
+      {
+        "id": "lesson-2-get-up-early",
+        "en": "get up early",
+        "ru": "вставать рано",
+        "transcription": "",
+        "exampleEn": "I get up early every day.",
+        "exampleRu": "Я встаю рано каждый день.",
+        "partOfSpeech": "verb phrase",
+        "category": "Daily routine"
+      },
+      {
+        "id": "lesson-2-get-up-late",
+        "en": "get up late",
+        "ru": "вставать поздно",
+        "transcription": "",
+        "exampleEn": "At the weekend, I get up late.",
+        "exampleRu": "На выходных я встаю поздно.",
+        "partOfSpeech": "verb phrase",
+        "category": "Daily routine"
+      },
+      {
+        "id": "lesson-2-go-to-bed-early",
+        "en": "go to bed early",
+        "ru": "ложиться спать рано",
+        "transcription": "",
+        "exampleEn": "He goes to bed early on Sundays.",
+        "exampleRu": "По воскресеньям он ложится спать рано.",
+        "partOfSpeech": "verb phrase",
+        "category": "Daily routine"
+      },
+      {
+        "id": "lesson-2-go-out",
+        "en": "go out",
+        "ru": "выходить из дома; проводить время вне дома",
+        "transcription": "",
+        "exampleEn": "We go out a lot at the weekend.",
+        "exampleRu": "Мы часто куда-нибудь ходим на выходных.",
+        "partOfSpeech": "verb phrase",
+        "category": "Free time"
+      },
+      {
+        "id": "lesson-2-go-running",
+        "en": "go running",
+        "ru": "ходить на пробежку",
+        "transcription": "",
+        "exampleEn": "She goes running before breakfast.",
+        "exampleRu": "Она ходит на пробежку до завтрака.",
+        "partOfSpeech": "verb phrase",
+        "category": "Free time"
+      },
+      {
+        "id": "lesson-2-play-tennis",
+        "en": "play tennis",
+        "ru": "играть в теннис",
+        "transcription": "",
+        "exampleEn": "We play tennis on Sundays.",
+        "exampleRu": "Мы играем в теннис по воскресеньям.",
+        "partOfSpeech": "verb phrase",
+        "category": "Free time"
+      },
+      {
+        "id": "lesson-2-start-work",
+        "en": "start work",
+        "ru": "начинать работу",
+        "transcription": "",
+        "exampleEn": "She starts work at 9 a.m.",
+        "exampleRu": "Она начинает работу в 9 утра.",
+        "partOfSpeech": "verb phrase",
+        "category": "Daily routine"
+      },
+      {
+        "id": "lesson-2-finish-work",
+        "en": "finish work",
+        "ru": "заканчивать работу",
+        "transcription": "",
+        "exampleEn": "He finishes work at 9 p.m.",
+        "exampleRu": "Он заканчивает работу в 9 вечера.",
+        "partOfSpeech": "verb phrase",
+        "category": "Daily routine"
+      },
+      {
+        "id": "lesson-2-eat-lunch",
+        "en": "eat lunch",
+        "ru": "обедать",
+        "transcription": "",
+        "exampleEn": "He eats lunch at a café.",
+        "exampleRu": "Он обедает в кафе.",
+        "partOfSpeech": "verb phrase",
+        "category": "Daily routine"
+      },
+      {
+        "id": "lesson-2-have-breakfast",
+        "en": "have breakfast",
+        "ru": "завтракать",
+        "transcription": "",
+        "exampleEn": "She has breakfast after her run.",
+        "exampleRu": "Она завтракает после пробежки.",
+        "partOfSpeech": "verb phrase",
+        "category": "Daily routine"
+      },
+      {
+        "id": "lesson-2-cook-lunch",
+        "en": "cook lunch",
+        "ru": "готовить обед",
+        "transcription": "",
+        "exampleEn": "We cook lunch together.",
+        "exampleRu": "Мы готовим обед вместе.",
+        "partOfSpeech": "verb phrase",
+        "category": "Daily routine"
+      },
+      {
+        "id": "lesson-2-visit-friends",
+        "en": "visit friends",
+        "ru": "навещать друзей",
+        "transcription": "",
+        "exampleEn": "I visit friends on Sundays.",
+        "exampleRu": "Я навещаю друзей по воскресеньям.",
+        "partOfSpeech": "verb phrase",
+        "category": "Free time"
+      },
+      {
+        "id": "lesson-2-study-italian",
+        "en": "study Italian",
+        "ru": "изучать итальянский язык",
+        "transcription": "",
+        "exampleEn": "He studies Italian in the evening.",
+        "exampleRu": "Вечером он изучает итальянский язык.",
+        "partOfSpeech": "verb phrase",
+        "category": "Study"
+      },
+      {
+        "id": "lesson-2-every-day",
+        "en": "every day",
+        "ru": "каждый день",
+        "transcription": "",
+        "exampleEn": "I get up at seven every day.",
+        "exampleRu": "Я встаю в семь каждый день.",
+        "partOfSpeech": "time phrase",
+        "category": "Time"
+      },
+      {
+        "id": "lesson-2-at-the-weekend",
+        "en": "at the weekend",
+        "ru": "на выходных",
+        "transcription": "",
+        "exampleEn": "What do you do at the weekend?",
+        "exampleRu": "Что ты делаешь на выходных?",
+        "partOfSpeech": "time phrase",
+        "category": "Time"
+      },
+      {
+        "id": "lesson-2-on-sundays",
+        "en": "on Sundays",
+        "ru": "по воскресеньям",
+        "transcription": "",
+        "exampleEn": "We play tennis on Sundays.",
+        "exampleRu": "Мы играем в теннис по воскресеньям.",
+        "partOfSpeech": "time phrase",
+        "category": "Time"
+      },
+      {
+        "id": "lesson-2-in-the-afternoon",
+        "en": "in the afternoon",
+        "ru": "днём; во второй половине дня",
+        "transcription": "",
+        "exampleEn": "She teaches online in the afternoon.",
+        "exampleRu": "Днём она преподаёт онлайн.",
+        "partOfSpeech": "time phrase",
+        "category": "Time"
+      },
+      {
+        "id": "lesson-2-in-the-evening",
+        "en": "in the evening",
+        "ru": "вечером",
+        "transcription": "",
+        "exampleEn": "He studies in the evening.",
+        "exampleRu": "Он занимается вечером.",
+        "partOfSpeech": "time phrase",
+        "category": "Time"
+      },
+      {
+        "id": "lesson-2-a-lot",
+        "en": "a lot",
+        "ru": "много; часто",
+        "transcription": "",
+        "exampleEn": "We go out a lot.",
+        "exampleRu": "Мы часто куда-нибудь ходим.",
+        "partOfSpeech": "adverb phrase",
+        "category": "Frequency"
+      },
+      {
+        "id": "lesson-2-make-money",
+        "en": "make money",
+        "ru": "зарабатывать деньги",
+        "transcription": "",
+        "exampleEn": "I don’t make a lot of money.",
+        "exampleRu": "Я не зарабатываю много денег.",
+        "partOfSpeech": "verb phrase",
+        "category": "Work"
+      }
+    ]
   }
 ];

@@ -1,17 +1,17 @@
 {
-  "id": "lesson-2",
-  "number": 2,
+  "id": "lesson-3",
+  "number": 3,
   "title": "Название следующего урока",
   "subtitle": "Краткое описание домашнего задания",
   "status": "draft",
-  "vocabularyId": "vocab-lesson-2",
+  "vocabularyId": "vocab-lesson-3",
   "grammarIds": [],
-  "publishedAt": "2026-07-20",
+  "publishedAt": "2026-07-21",
   "totalPoints": 0,
   "notification": {
     "enabled": false,
     "version": 1
   },
-  "templateNote": "Следующую домашнюю работу нужно сохранить как lesson-2.json. Номер необходимо последовательно увеличить в имени файла, id, number, vocabularyId и linkedLessonId.",
+  "templateNote": "Следующую домашнюю работу нужно сохранить как lesson-3.json. Номер необходимо последовательно увеличить в имени файла, id, number, vocabularyId и linkedLessonId.",
   "blocks": []
 }
