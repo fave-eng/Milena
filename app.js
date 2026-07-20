@@ -641,6 +641,35 @@
     return `<div class="lesson-materials lesson-materials-lesson"><div class="lesson-materials-heading"><span class="eyebrow">Материалы к уроку</span><p>Словарь и грамматика для этого домашнего задания.</p></div><div class="lesson-material-links">${links}</div></div>`;
   }
 
+  function renderHomeworkCard(item, progress) {
+    const locked = item.status === 'locked';
+    const complete = progress.completedIds.includes(item.id) || item.status === 'completed';
+    const title = locked ? '🔒 Скоро' : safeText(item.title, 'Задание');
+    const subtitle = locked ? 'Материал откроется после публикации преподавателем.' : safeText(item.subtitle, 'Интерактивное задание');
+    const status = complete ? 'completed' : safeText(item.status, 'available');
+    const label = complete ? 'Выполнено' : status === 'available' ? 'Доступно' : status === 'locked' ? 'Закрыто' : 'Черновик';
+
+    if (locked) {
+      return `<article class="card lesson-hub-card disabled"><div class="lesson-hub-main"><div class="item-icon">🔒</div><div class="item-main"><span class="homework-number">Домашняя работа №${Number(item.number || 0)}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(subtitle)}</p></div><span class="status-badge status-locked">${escapeHtml(label)}</span></div></article>`;
+    }
+
+    const href = item.page || `lesson.html?id=${encodeURIComponent(item.id)}`;
+    return `<article class="card lesson-hub-card">
+      <a class="lesson-hub-main interactive" href="${escapeHtml(href)}">
+        <div class="item-icon">${complete ? '✅' : '📝'}</div>
+        <div class="item-main"><span class="homework-number">Домашняя работа №${Number(item.number || 0)}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(subtitle)}</p></div>
+        <span class="status-badge status-${escapeHtml(status)}">${escapeHtml(label)}</span>
+      </a>
+      ${lessonMaterialLinks(item, 'hub')}
+    </article>`;
+  }
+
+  function renderHomeworkGroup(title, items, progress, emptyText = '') {
+    const cards = items.map((item) => renderHomeworkCard(item, progress)).join('');
+    const content = cards || `<div class="card homework-group-empty"><p>${escapeHtml(emptyText)}</p></div>`;
+    return `<section class="homework-group" aria-label="${escapeHtml(title)}"><div class="homework-group-heading"><h3>${escapeHtml(title)}</h3><span>${items.length}</span></div><div class="homework-group-list">${content}</div></section>`;
+  }
+
   function renderHomework() {
     const progress = window.ProgressService.loadHomeworkProgress();
     const published = HOMEWORK_DATA.filter((item) => item.status !== 'draft');
@@ -655,26 +684,12 @@
       root.innerHTML = emptyState('📝', 'Домашних заданий пока нет', 'После первого урока преподаватель добавит сюда интерактивное задание.');
       return;
     }
-    root.innerHTML = [...published].sort((a,b) => (a.number || 0) - (b.number || 0)).map((item) => {
-      const locked = item.status === 'locked';
-      const complete = progress.completedIds.includes(item.id) || item.status === 'completed';
-      const title = locked ? '🔒 Скоро' : safeText(item.title, 'Задание');
-      const subtitle = locked ? 'Материал откроется после публикации преподавателем.' : safeText(item.subtitle, 'Интерактивное задание');
-      const status = complete ? 'completed' : safeText(item.status, 'available');
-      const label = complete ? 'Выполнено' : status === 'available' ? 'Доступно' : status === 'locked' ? 'Закрыто' : 'Черновик';
-      if (locked) {
-        return `<article class="card lesson-hub-card disabled"><div class="lesson-hub-main"><div class="item-icon">🔒</div><div class="item-main"><span class="homework-number">Домашняя работа №${Number(item.number || 0)}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(subtitle)}</p></div><span class="status-badge status-locked">${escapeHtml(label)}</span></div></article>`;
-      }
-      const href = item.page || `lesson.html?id=${encodeURIComponent(item.id)}`;
-      return `<article class="card lesson-hub-card">
-        <a class="lesson-hub-main interactive" href="${escapeHtml(href)}">
-          <div class="item-icon">${complete ? '✅' : '📝'}</div>
-          <div class="item-main"><span class="homework-number">Домашняя работа №${Number(item.number || 0)}</span><h3>${escapeHtml(title)}</h3><p>${escapeHtml(subtitle)}</p></div>
-          <span class="status-badge status-${escapeHtml(status)}">${escapeHtml(label)}</span>
-        </a>
-        ${lessonMaterialLinks(item, 'hub')}
-      </article>`;
-    }).join('');
+
+    const sorted = [...published].sort((a,b) => (a.number || 0) - (b.number || 0));
+    const availableItems = sorted.filter((item) => !(progress.completedIds.includes(item.id) || item.status === 'completed'));
+    const completedItems = sorted.filter((item) => progress.completedIds.includes(item.id) || item.status === 'completed');
+
+    root.innerHTML = `${renderHomeworkGroup('Доступные', availableItems, progress, 'Все доступные задания уже выполнены.')}${renderHomeworkGroup('Завершённые', completedItems, progress, 'Здесь появятся выполненные домашние работы.')}`;
   }
 
   function renderGrammar() {
@@ -735,7 +750,7 @@
         return `<a class="card item-card interactive" href="${escapeHtml(topic.page || `vocabulary.html?id=${encodeURIComponent(topic.id)}`)}">
           <div class="item-icon">${escapeHtml(topic.icon || '💬')}</div>
           <div class="item-main"><h3>${escapeHtml(topic.title || 'Словарная тема')}</h3><p>${escapeHtml(topic.label || '')} · ${topicKnown} из ${wordCount} слов</p></div>
-          <span class="status-badge status-${complete ? 'completed' : 'available'}">${complete ? 'Завершено' : 'Открыть'}</span>
+          <span class="status-badge status-available">Открыть</span>
         </a>`;
       }).join('');
     };

@@ -1530,3 +1530,51 @@ body[data-view="lesson"] #lesson-root {
 .lesson-image-card { padding: 14px; }
 .lesson-image { display: block; width: min(100%, 430px); height: auto; margin: 0 auto; border-radius: 14px; }
 .lesson-image-card figcaption { margin-top: 10px; color: var(--muted); text-align: center; font-size: .86rem; }
+
+/* Homework sections: available first, completed below */
+#homework-list {
+  display: grid;
+  gap: 28px;
+}
+
+.homework-group {
+  display: grid;
+  gap: 12px;
+}
+
+.homework-group-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 2px;
+}
+
+.homework-group-heading h3 {
+  font-size: 1.12rem;
+}
+
+.homework-group-heading span {
+  min-width: 30px;
+  height: 30px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.homework-group-list {
+  display: grid;
+  gap: 14px;
+}
+
+.homework-group-empty {
+  padding: 18px 20px;
+  box-shadow: none;
+  background: #f8fafc;
+  color: var(--muted);
+}
