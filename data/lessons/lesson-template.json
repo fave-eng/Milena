@@ -1,0 +1,17 @@
+{
+  "id": "lesson-2",
+  "number": 2,
+  "title": "Next lesson title",
+  "subtitle": "Short homework description",
+  "status": "draft",
+  "vocabularyId": "vocab-lesson-2",
+  "grammarIds": [],
+  "publishedAt": "2026-07-20",
+  "totalPoints": 0,
+  "notification": {
+    "enabled": false,
+    "version": 1
+  },
+  "templateNote": "The next homework must be saved as lesson-2.json. Increase the number consistently in the filename, id, number, vocabularyId and linkedLessonId.",
+  "blocks": []
+}

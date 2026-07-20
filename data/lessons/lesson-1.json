@@ -1,0 +1,738 @@
+{
+  "id": "lesson-1",
+  "number": 1,
+  "title": "Jobs",
+  "subtitle": "Workbook practice: vocabulary, questions about jobs and listening",
+  "status": "available",
+  "vocabularyId": "vocab-lesson-1",
+  "grammarIds": [],
+  "publishedAt": "2026-07-09",
+  "totalPoints": 37,
+  "notification": {
+    "enabled": false,
+    "version": 1
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "eyebrow": "Workbook · Lesson 1",
+      "title": "Jobs and photographs",
+      "text": "Match each job with photograph a–h."
+    },
+    {
+      "type": "image",
+      "src": "assets/lesson-1-jobs.jpg",
+      "alt": "Eight job photographs labelled a to h",
+      "caption": "Use the letters a–h in Exercise 1."
+    },
+    {
+      "type": "exercise",
+      "id": "jobs-photo-match",
+      "title": "1. Match the job with the photograph",
+      "instructions": "Choose the correct letter for each job.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "journalist",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h"
+          ],
+          "answer": 4,
+          "explanation": "Journalist → e."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "pilot",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h"
+          ],
+          "answer": 6,
+          "explanation": "Pilot → g."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "nurse",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h"
+          ],
+          "answer": 0,
+          "explanation": "Nurse → a."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "engineer",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h"
+          ],
+          "answer": 5,
+          "explanation": "Engineer → f."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "sales manager",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h"
+          ],
+          "answer": 7,
+          "explanation": "Sales Manager → h."
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "soldier",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h"
+          ],
+          "answer": 1,
+          "explanation": "Soldier → b."
+        },
+        {
+          "id": "7",
+          "number": 7,
+          "prompt": "scientist",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h"
+          ],
+          "answer": 2,
+          "explanation": "Scientist → c."
+        },
+        {
+          "id": "8",
+          "number": 8,
+          "prompt": "police officer",
+          "input": "select",
+          "options": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h"
+          ],
+          "answer": 3,
+          "explanation": "Police Officer → d."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "job-descriptions",
+      "title": "2. Complete the job descriptions",
+      "instructions": "Choose the correct profession for each description.",
+      "wordBank": [
+        "journalist",
+        "pilot",
+        "nurse",
+        "engineer",
+        "sales manager",
+        "soldier",
+        "scientist",
+        "police officer"
+      ],
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "A ______ works as part of a team and cares for people with health problems. They give medication to patients and help to make a patient comfortable in hospital.",
+          "input": "select",
+          "options": [
+            "journalist",
+            "pilot",
+            "nurse",
+            "engineer",
+            "sales manager",
+            "soldier",
+            "scientist",
+            "police officer"
+          ],
+          "answer": 2,
+          "explanation": "The correct job is nurse."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "A ______ works alone or in a team. They study very hard, do research and experiment both in a laboratory and outdoors.",
+          "input": "select",
+          "options": [
+            "journalist",
+            "pilot",
+            "nurse",
+            "engineer",
+            "sales manager",
+            "soldier",
+            "scientist",
+            "police officer"
+          ],
+          "answer": 6,
+          "explanation": "The correct job is scientist."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "A ______ investigates crime and responds to emergencies. They may ask people questions and control traffic or crowds.",
+          "input": "select",
+          "options": [
+            "journalist",
+            "pilot",
+            "nurse",
+            "engineer",
+            "sales manager",
+            "soldier",
+            "scientist",
+            "police officer"
+          ],
+          "answer": 7,
+          "explanation": "The correct job is police officer."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "A ______ usually does a training course to learn how to fly the airline’s planes. They travel abroad and sometimes do several flights a day.",
+          "input": "select",
+          "options": [
+            "journalist",
+            "pilot",
+            "nurse",
+            "engineer",
+            "sales manager",
+            "soldier",
+            "scientist",
+            "police officer"
+          ],
+          "answer": 1,
+          "explanation": "The correct job is pilot."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "A ______ does research and writes news stories. They ask people questions and may work for television, radio and newspaper companies.",
+          "input": "select",
+          "options": [
+            "journalist",
+            "pilot",
+            "nurse",
+            "engineer",
+            "sales manager",
+            "soldier",
+            "scientist",
+            "police officer"
+          ],
+          "answer": 0,
+          "explanation": "The correct job is journalist."
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "A ______ runs a sales team, organises training courses, motivates the team and works with the marketing department.",
+          "input": "select",
+          "options": [
+            "journalist",
+            "pilot",
+            "nurse",
+            "engineer",
+            "sales manager",
+            "soldier",
+            "scientist",
+            "police officer"
+          ],
+          "answer": 4,
+          "explanation": "The correct job is sales manager."
+        },
+        {
+          "id": "7",
+          "number": 7,
+          "prompt": "A ______ does a tough training course and must keep fit. They work for the army and sometimes fight in wars.",
+          "input": "select",
+          "options": [
+            "journalist",
+            "pilot",
+            "nurse",
+            "engineer",
+            "sales manager",
+            "soldier",
+            "scientist",
+            "police officer"
+          ],
+          "answer": 5,
+          "explanation": "The correct job is soldier."
+        },
+        {
+          "id": "8",
+          "number": 8,
+          "prompt": "An ______ does research, designs and develops new materials and products, and works hard to find practical solutions.",
+          "input": "select",
+          "options": [
+            "journalist",
+            "pilot",
+            "nurse",
+            "engineer",
+            "sales manager",
+            "soldier",
+            "scientist",
+            "police officer"
+          ],
+          "answer": 3,
+          "explanation": "The correct job is engineer."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "eyebrow": "Grammar in context",
+      "title": "Questions about work",
+      "text": "Put the words in the correct order to make questions."
+    },
+    {
+      "type": "exercise",
+      "id": "questions-order",
+      "title": "4. Write the questions in the correct order",
+      "instructions": "Write the full question. The final question mark is optional.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "do / what / do / you?",
+          "input": "text",
+          "answer": "What do you do?",
+          "acceptedAnswers": [
+            "What do you do?",
+            "What do you do"
+          ],
+          "explanation": "Correct question: What do you do? Answer: I’m a chemist. I work for a company that makes perfumes."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "it / enjoy / you / do?",
+          "input": "text",
+          "answer": "Do you enjoy it?",
+          "acceptedAnswers": [
+            "Do you enjoy it?",
+            "Do you enjoy it"
+          ],
+          "explanation": "Correct question: Do you enjoy it? Answer: Yes, it can be fun. We try to create different aromas."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "the / what / like / are / hours?",
+          "input": "text",
+          "answer": "What are the hours like?",
+          "acceptedAnswers": [
+            "What are the hours like?",
+            "What are the hours like"
+          ],
+          "explanation": "Correct question: What are the hours like? Answer: OK. I usually work from eight until four."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "worked / long / you / have / there / how?",
+          "input": "text",
+          "answer": "How long have you worked there?",
+          "acceptedAnswers": [
+            "How long have you worked there?",
+            "How long have you worked there"
+          ],
+          "explanation": "Correct question: How long have you worked there? Answer: About six years now."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "people / you / with / get on / do / the / work / you / with?",
+          "input": "text",
+          "answer": "Do you get on with the people you work with?",
+          "acceptedAnswers": [
+            "Do you get on with the people you work with?",
+            "Do you get on with the people you work with"
+          ],
+          "explanation": "Correct question: Do you get on with the people you work with? Answer: Generally, yes, but we do occasionally have disagreements."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "eyebrow": "Listening",
+      "title": "A firefighter’s job",
+      "text": "Make your predictions, listen, and check the statements."
+    },
+    {
+      "type": "exercise",
+      "id": "firefighter-prediction",
+      "title": "5a. Predict before listening",
+      "instructions": "Choose True or False. This prediction is saved but is not included in the score.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "There are over 300 women firefighters in London.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "scored": false
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Most of the work is about fighting fires.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "scored": false
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "Firefighters do a lot of first aid.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "scored": false
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "Firefighters need to be in good physical condition.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "scored": false
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "A small part of the job is about educating people.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "scored": false
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "Firefighters give a lot of talks.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "scored": false
+        }
+      ]
+    },
+    {
+      "type": "audio",
+      "id": "firefighter-listening",
+      "title": "Listen to the recording",
+      "text": "Listen carefully, then complete Exercise 5b.",
+      "audio": "audio/lessons/lesson-1-listening-1.mp3",
+      "response": false
+    },
+    {
+      "type": "exercise",
+      "id": "firefighter-check",
+      "title": "5b. Check after listening",
+      "instructions": "Choose the answer you confirmed in the recording.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "There are over 300 women firefighters in London.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "explanation": "The correct answer is False."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Most of the work is about fighting fires.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "explanation": "The correct answer is False."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "Firefighters do a lot of first aid.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "explanation": "The correct answer is True."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "Firefighters need to be in good physical condition.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "explanation": "The correct answer is True."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "A small part of the job is about educating people.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "explanation": "The correct answer is False."
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "Firefighters give a lot of talks.",
+          "input": "single",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "explanation": "The correct answer is True."
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "audio-confirmation",
+      "title": "6. Listening check",
+      "instructions": "Confirm that you listened and checked your answers. This item is not included in the score.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "I listened to the recording and checked Exercise 5.",
+          "input": "single",
+          "options": [
+            "Yes, completed"
+          ],
+          "answer": 0,
+          "scored": false
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "firefighter-activities",
+      "title": "7. Which activities are part of a firefighter’s job?",
+      "instructions": "Choose Tick or Do not tick for every activity.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "rescue people and animals",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 0,
+          "explanation": "This activity should be ticked."
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "go to fires",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 0,
+          "explanation": "This activity should be ticked."
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "check equipment",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 0,
+          "explanation": "This activity should be ticked."
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "give first aid",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 0,
+          "explanation": "This activity should be ticked."
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "do fitness training",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 0,
+          "explanation": "This activity should be ticked."
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "write reports on accidents",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 0,
+          "explanation": "This activity should be ticked."
+        },
+        {
+          "id": "7",
+          "number": 7,
+          "prompt": "deal with bombs",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 1,
+          "explanation": "This activity should not be ticked."
+        },
+        {
+          "id": "8",
+          "number": 8,
+          "prompt": "make appointments",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 1,
+          "explanation": "This activity should not be ticked."
+        },
+        {
+          "id": "9",
+          "number": 9,
+          "prompt": "make visits to schools",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 0,
+          "explanation": "This activity should be ticked."
+        },
+        {
+          "id": "10",
+          "number": 10,
+          "prompt": "clean the fire station",
+          "input": "single",
+          "options": [
+            "Tick",
+            "Do not tick"
+          ],
+          "answer": 1,
+          "explanation": "This activity should not be ticked."
+        }
+      ]
+    }
+  ]
+}

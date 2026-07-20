@@ -1,0 +1,5 @@
+-- OPTIONAL cleanup. Do not run until the new site has been tested successfully.
+-- The migration deliberately keeps both public.progress and public.progress_legacy_backup.
+-- When you are completely satisfied, you may archive or drop the old table manually.
+-- Example only:
+-- alter table public.progress rename to progress_retired_2026_07_20;

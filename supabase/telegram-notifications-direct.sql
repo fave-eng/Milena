@@ -1,0 +1,3 @@
+-- Milena now uses the complete v2 schema.
+-- Run 01-schema-v2.sql, then 02-migrate-legacy-progress.sql.
+-- This file is kept only so old deployment instructions do not point to missing content.

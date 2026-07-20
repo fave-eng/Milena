@@ -1,12 +1,55 @@
-<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Homework — Milena</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
-*{box-sizing:border-box;margin:0;padding:0}:root{--indigo:#4f46e5;--violet:#8b5cf6;--rose:#f43f5e;--emerald:#10b981;--amber:#f59e0b;--sky:#0ea5e9;--dark:#0f172a;--bg:#f1f5f9;--card:#fff;--muted:#64748b;--border:#e2e8f0}body{font-family:Inter,sans-serif;background:var(--bg);color:#0f172a;padding-bottom:110px;min-height:100vh}.hero{padding:44px 24px 56px;color:white;position:relative;overflow:hidden}.hero:before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.15) 1px,transparent 1px);background-size:28px 28px}.page{max-width:780px;margin:0 auto;padding:0 20px}.hero .page{position:relative;z-index:1}.back{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:700}.badge{display:inline-flex;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:800;margin-top:18px;margin-bottom:14px}.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(30px,6vw,46px);font-weight:800}.hero p{opacity:.84;margin-top:8px;line-height:1.55;max-width:620px}.wave{background:var(--bg);line-height:0}.wave svg{width:100%;display:block}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0}.stat{background:white;border:1.5px solid var(--border);border-radius:20px;padding:16px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.05)}.num{font-family:'Plus Jakarta Sans',sans-serif;font-size:26px;font-weight:800}.lbl{font-size:11px;color:var(--muted);font-weight:700;margin-top:2px}.section{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin:28px 0 14px}.empty{background:white;border:1.5px dashed var(--border);border-radius:22px;padding:28px;text-align:center;color:var(--muted);line-height:1.55}.nav{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f172a;border-radius:100px;padding:12px 20px;display:flex;gap:4px;box-shadow:0 8px 32px rgba(15,23,42,.3);z-index:100}.nav a{color:rgba(255,255,255,.65);font-size:12px;font-weight:700;text-decoration:none;padding:7px 12px;border-radius:100px;white-space:nowrap}.nav a.active,.nav a:hover{background:var(--indigo);color:white}@media(max-width:680px){.stats{grid-template-columns:1fr}.nav{padding:10px}.nav a{padding:6px 8px}}
-.hero{background:linear-gradient(135deg,#4f46e5,#7c3aed)}.list{display:flex;flex-direction:column;gap:14px}.card{background:white;border:1.5px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05)}.main{padding:18px 20px;display:flex;gap:16px;align-items:center;text-decoration:none;color:inherit}.icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;background:#ede9fe;flex-shrink:0}.info{flex:1;min-width:0}.lesson{font-size:11px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:1px}.title{font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:800;margin:4px 0}.meta{font-size:13px;color:var(--muted);line-height:1.45}.pill{font-size:12px;font-weight:800;border-radius:100px;padding:5px 10px;white-space:nowrap}.done{background:#d1fae5;color:#065f46}.todo{background:#ede9fe;color:#5b21b6}.strip{border-top:1px solid var(--border);padding:10px 20px;background:#fafbff;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted)}.strip a{color:var(--rose);font-weight:800;text-decoration:none}@media(max-width:640px){.main{align-items:flex-start}.pill{white-space:normal;text-align:center}}
-</style></head><body><div class="hero"><div class="page"><a class="back" href="index.html">← На главную</a><br><div class="badge">📝 Homework Board</div><h1>Homework</h1><p>Рекомендую сначала повторить слова, а потом спокойно переходить к заданиям — так будет легче и увереннее 💪</p></div></div><div class="wave"><svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="#f1f5f9"/></svg></div><main class="page"><div class="stats"><div class="stat"><div class="num" id="doneNum">0</div><div class="lbl">Выполнено</div></div><div class="stat"><div class="num" id="todoNum">0</div><div class="lbl">Доступно</div></div><div class="stat"><div class="num" id="totalNum">0</div><div class="lbl">Всего</div></div></div><div id="doneBlock"><div class="section">✅ Выполнено</div><div class="list" id="doneList"></div></div><div class="section">Твои задания</div><div class="list" id="todoList"><div class="empty">Загружаю задания…</div></div></main><nav class="nav"><a href="index.html">🏠 Home</a><a href="grammar-hub.html">📖 Grammar</a><a class="active" href="homework.html">📝 HW</a><a href="vocabulary-hub.html">💥 Vocab</a></nav><script src="config.js"></script><script>
-const C=window.APP_CONFIG||{},api=C.SB_URL?C.SB_URL+'/rest/v1':'',headers=C.SB_KEY?{apikey:C.SB_KEY,Authorization:'Bearer '+C.SB_KEY}:{};
-function doneScore(x){if(!x)return false;if(typeof x==='object')return !!(x.score_text||x.percent||x.score||x.done);return String(x).trim()!==''&&String(x).trim()!=='0/0'}
-function scoreText(x){if(!x)return '';if(typeof x==='object')return x.score_text||`${x.score||0}/${x.max_score||0}`;return String(x)}
-function lessonItems(d){return Object.entries((d&&d.published_lessons)||{}).filter(([_,x])=>x&&x.published!==false&&x.homework_url).sort((a,b)=>Number(a[0])-Number(b[0]))}
-function card(k,x,done,score){return `<div class="card"><a class="main" href="${x.homework_url}"><div class="icon">📝</div><div class="info"><div class="lesson">Lesson ${k}</div><div class="title">${x.title||'Homework'}</div><div class="meta">${done?'Результат: '+score:'Выполнить и отправить отчёт'}</div></div><span class="pill ${done?'done':'todo'}">${done?'✅ Сдано':'📝 Выполнить'}</span></a><div class="strip"><span>${x.vocab_title?`📚 Vocabulary: ${x.vocab_title}`:''}${x.grammar_title?` · 📖 Grammar: ${x.grammar_title}`:''}</span><span>${x.vocab_url?`<a href="${x.vocab_url}">Vocabulary</a>`:''} ${x.grammar_url?`<a href="${x.grammar_url}">Grammar</a>`:''}</span></div></div>`}
-function reset(){doneNum.textContent=0;todoNum.textContent=0;totalNum.textContent=0;doneBlock.style.display='none';todoList.innerHTML='<div class="empty">Скоро здесь появятся домашние задания.</div>'}
-window.addEventListener('load',async()=>{reset();if(!api||!C.STUDENT)return;try{const r=await fetch(`${api}/progress?student=eq.${C.STUDENT}&select=published_lessons,hw_scores`,{headers});const d=(await r.json())[0]||{};const scores=d.hw_scores||{};const items=lessonItems(d);const done=items.filter(([k])=>doneScore(scores[k]));const todo=items.filter(([k])=>!doneScore(scores[k]));doneNum.textContent=done.length;todoNum.textContent=todo.length;totalNum.textContent=items.length;doneBlock.style.display=done.length?'':'none';doneList.innerHTML=done.map(([k,x])=>card(k,x,true,scoreText(scores[k]))).join('');todoList.innerHTML=todo.length?todo.map(([k,x])=>card(k,x,false,'')).join(''):'<div class="empty">Все доступные задания выполнены. Отличная работа ✨</div>';if(!items.length)todoList.innerHTML='<div class="empty">Скоро здесь появятся домашние задания.</div>'}catch(e){todoList.innerHTML='<div class="empty">Не удалось загрузить данные. Проверь config.js и Supabase.</div>';console.warn(e)}});
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Personal English learning space">
+  <title>Homework</title>
+  <link rel="stylesheet" href="styles.css?v=4">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="config.js" defer></script>
+  <script src="data/vocabulary-data.js" defer></script>
+  <script src="data/grammar-data.js" defer></script>
+  <script src="app.js?v=4" defer></script>
+</head>
+<body class="has-bottom-nav" data-page="homework" data-view="homework">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero hero-compact">
+    <span class="star one">✦</span><span class="star two">✦</span>
+    <div class="container hero-content reveal">
+      <span class="hero-badge">✦ <span data-config="level"></span> Level · Individual Course</span>
+      <h1>Homework</h1>
+      <p>Interactive exercises and tasks after each lesson.</p>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#f8fafc" d="M0,66 C220,102 410,10 696,52 C963,91 1115,99 1440,35 L1440,100 L0,100 Z"></path></svg>
+  </header>
+
+  <main id="main" class="main-content container">
+
+    <section class="section reveal" aria-label="Homework statistics">
+      <div class="summary-grid">
+        <div class="card summary-card"><strong id="hw-completed">0</strong><span>Completed</span></div>
+        <div class="card summary-card"><strong id="hw-total">0</strong><span>Total</span></div>
+        <div class="card summary-card"><strong id="hw-percent">0%</strong><span>Progress</span></div>
+      </div>
+      <div class="card section"><div id="hw-overall-progress"></div></div>
+    </section>
+    <section class="section reveal" aria-labelledby="homework-list-title">
+      <div class="section-heading"><div><span class="eyebrow">Materials</span><h2 id="homework-list-title">Assignments</h2></div></div>
+      <div id="homework-list" class="list"></div>
+    </section>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <a class="nav-link" data-nav="home" href="index.html"><span class="nav-icon">🏠</span><span>Home</span></a>
+    <a class="nav-link" data-nav="homework" href="homework.html"><span class="nav-icon">📝</span><span>HW</span></a>
+    <a class="nav-link" data-nav="grammar" href="grammar.html"><span class="nav-icon">📐</span><span>Grammar</span></a>
+    <a class="nav-link" data-nav="vocabulary" href="vocabulary-hub.html"><span class="nav-icon">💥</span><span>Vocab</span></a>
+  </nav>
+  <div class="toast" id="app-toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
