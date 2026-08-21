@@ -1,0 +1,69 @@
+[
+  [
+    "vocab-lesson-3",
+    "feelings and suggestions",
+    "Lesson 1C",
+    [
+      [
+        "thirsty",
+        "испытывающий жажду",
+        "I am thirsty."
+      ],
+      [
+        "ill",
+        "больной",
+        "He is ill."
+      ],
+      [
+        "angry",
+        "злой",
+        "She is angry."
+      ],
+      [
+        "bored",
+        "скучающий",
+        "I am bored."
+      ],
+      [
+        "all right",
+        "нормально",
+        "I am all right."
+      ],
+      [
+        "tired",
+        "уставший",
+        "I am tired."
+      ],
+      [
+        "hungry",
+        "голодный",
+        "I am hungry."
+      ],
+      [
+        "relaxed",
+        "расслабленный",
+        "I feel relaxed."
+      ],
+      [
+        "make suggestions",
+        "предлагать идеи",
+        "Let’s make suggestions."
+      ],
+      [
+        "meet",
+        "встречаться",
+        "Can we meet tomorrow?"
+      ],
+      [
+        "café",
+        "кафе",
+        "Meet me at the café."
+      ],
+      [
+        "cinema",
+        "кинотеатр",
+        "Let’s go to the cinema."
+      ]
+    ]
+  ]
+]
