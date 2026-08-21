@@ -1,13 +1,13 @@
 {
   "id": "lesson-3",
   "number": 3,
-  "title": "Feelings and making suggestions",
-  "subtitle": "Урок 1C: чувства, время и предложения",
+  "title": "Best friends but different!",
+  "subtitle": "Lesson 1C: feelings, time phrases, making suggestions and pronunciation",
   "status": "available",
   "vocabularyId": "vocab-lesson-3",
   "grammarIds": [],
   "publishedAt": "2026-08-21",
-  "totalPoints": 27,
+  "totalPoints": 35,
   "notification": {
     "enabled": false,
     "version": 1
@@ -15,61 +15,328 @@
   "blocks": [
     {
       "type": "section",
-      "eyebrow": "Рабочая тетрадь · Lesson 1C",
+      "eyebrow": "Workbook · Lesson 1C",
+      "title": "Best friends but different!",
+      "text": "Выполни задания по чтению, словарю, фразам времени, произношению и говорению."
+    },
+    {
+      "type": "exercise",
+      "id": "lesson-1c-vocabulary-feelings",
       "title": "Vocabulary · adjectives for feelings",
-      "text": "Выполни задания по словам о чувствах и временным фразам."
-    },
-    {
-      "type": "exercise",
-      "id": "1c-vocabulary-1",
-      "title": "1. Complete the sentences with the adjectives from the box",
-      "instructions": "Выбери подходящее слово.",
+      "instructions": "Complete the sentences with the adjectives from the box.",
       "items": [
-        {"id":"1","number":1,"prompt":"Can I have some water? I’m really ______.","input":"select","options":["thirsty","angry","bored"],"answer":0},
-        {"id":"2","number":2,"prompt":"Greg isn’t at work today. He’s at the doctor’s because he’s ______.","input":"select","options":["ill","relaxed","hungry"],"answer":0},
-        {"id":"3","number":3,"prompt":"I’m sorry I’m late. Please don’t be ______!","input":"select","options":["angry","tired","thirsty"],"answer":0},
-        {"id":"4","number":4,"prompt":"I feel ______. Not happy, not sad. Just normal.","input":"select","options":["all right","bored","hungry"],"answer":0}
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "Can I have some water? I'm really ...",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 6
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Greg isn't at work today. He's at the doctor's because he's ...",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 4
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "I'm sorry I'm late. Please don't be ...",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "I'm ... Let's do something interesting.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "I feel ... not happy, not sad. Just normal.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "I want to go to bed. I'm very ...",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 7
+        },
+        {
+          "id": "7",
+          "number": 7,
+          "prompt": "What time is dinner? I'm really ...",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "8",
+          "number": 8,
+          "prompt": "I always feel ... after a hot bath.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 5
+        }
       ]
     },
     {
       "type": "exercise",
-      "id": "1c-vocabulary-2",
-      "title": "2. Time phrases",
-      "instructions": "Выбери правильный вариант.",
+      "id": "lesson-1c-time-phrases",
+      "title": "Time phrases",
+      "instructions": "Choose the correct answer to complete the sentences.",
       "items": [
-        {"id":"1","number":1,"prompt":"I get up ___ 5 a.m. every day.","input":"select","options":["at","on","this"],"answer":0},
-        {"id":"2","number":2,"prompt":"Do we have a class ___ week?","input":"select","options":["next","at","this"],"answer":0},
-        {"id":"3","number":3,"prompt":"Let’s play tennis ___ tomorrow.","input":"select","options":["-","at","on"],"answer":0},
-        {"id":"4","number":4,"prompt":"I teach German ___ Tuesdays.","input":"select","options":["on","at","next"],"answer":0}
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "I get up ... 5 a.m. every day.",
+          "input": "select",
+          "options": [
+            "up",
+            "on",
+            "at"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Do we have a class ... week?",
+          "input": "select",
+          "options": [
+            "next",
+            "at",
+            "on"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "Let's play tennis ... tomorrow.",
+          "input": "select",
+          "options": [
+            "on",
+            "next",
+            "at"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "I teach German ... Tuesdays.",
+          "input": "select",
+          "options": [
+            "at",
+            "on",
+            "this"
+          ],
+          "answer": 1
+        }
       ]
     },
     {
-      "type": "section",
-      "eyebrow": "How to ...",
-      "title": "Make suggestions"
-    },
-    {
       "type": "exercise",
-      "id": "1c-suggestions",
-      "title": "3. Complete the conversation",
-      "instructions": "Выбери подходящее слово.",
+      "id": "lesson-1c-speaking",
+      "title": "Speaking · complete the conversation",
+      "instructions": "Complete the conversation with the words in the box.",
       "items": [
-        {"id":"1","number":1,"prompt":"I’m bored. How about you? — I’m all right. ______ you like to have dinner?","input":"select","options":["Would","Bye","things"],"answer":0},
-        {"id":"2","number":2,"prompt":"Good idea. How about meeting at 5 o’clock? — OK. I ______ go at 5.","input":"select","options":["can’t","would","Bye"],"answer":0},
-        {"id":"3","number":3,"prompt":"Sure. Can we meet at the restaurant? — OK. See you then. ______","input":"select","options":["Bye","things","would"],"answer":0},
-        {"id":"4","number":4,"prompt":"Can we do something this evening? — What would you like to do? Let’s talk about ______.","input":"select","options":["things","Bye","can’t"],"answer":0}
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "Hello, how are ...?",
+          "input": "select",
+          "options": [
+            "bye",
+            "can't",
+            "OK",
+            "things",
+            "would"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "I’m all right. ... you like to have dinner?",
+          "input": "select",
+          "options": [
+            "bye",
+            "can't",
+            "OK",
+            "things",
+            "would"
+          ],
+          "answer": 4
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "Sure. Can we meet at the restaurant? ...",
+          "input": "select",
+          "options": [
+            "bye",
+            "can't",
+            "OK",
+            "things",
+            "would"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "See you then. ...",
+          "input": "select",
+          "options": [
+            "bye",
+            "can't",
+            "OK",
+            "things",
+            "would"
+          ],
+          "answer": 0
+        }
       ]
     },
     {
       "type": "exercise",
-      "id": "1c-speaking",
-      "title": "4. Write your own suggestions",
-      "instructions": "Напиши предложения.",
+      "id": "lesson-1c-pronunciation",
+      "title": "Pronunciation",
+      "instructions": "Choose the correct answer.",
       "items": [
-        {"id":"1","number":1,"prompt":"Make a suggestion for the evening.","input":"textarea","exampleAnswer":"Let’s meet at the cinema."},
-        {"id":"2","number":2,"prompt":"Ask a friend what they would like to do.","input":"textarea"},
-        {"id":"3","number":3,"prompt":"Invite someone to meet at a place.","input":"textarea"},
-        {"id":"4","number":4,"prompt":"Say goodbye after making plans.","input":"textarea"}
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "studies",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "sits",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "works",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "goes",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 1
+        }
       ]
     }
   ]

@@ -755,4 +755,22 @@ window.VOCABULARY_DATA = [
       }
     ]
   }
-];
+
+,
+  {
+    "id": "vocab-lesson-3",
+    "title": "Feelings and suggestions",
+    "label": "Урок 3 · Lesson 1C",
+    "icon": "💬",
+    "type": "lesson",
+    "linkedLessonId": "lesson-3",
+    "page": "vocabulary.html?id=vocab-lesson-3",
+    "words": [
+      {"id":"lesson-3-hungry","en":"hungry","ru":"голодный","transcription":"","exampleEn":"I'm hungry.","exampleRu":"Я голоден.","partOfSpeech":"adjective","category":"Feelings"},
+      {"id":"lesson-3-thirsty","en":"thirsty","ru":"испытывающий жажду","transcription":"","exampleEn":"I'm thirsty.","exampleRu":"Я хочу пить.","partOfSpeech":"adjective","category":"Feelings"},
+      {"id":"lesson-3-relaxed","en":"relaxed","ru":"расслабленный","transcription":"","exampleEn":"I feel relaxed.","exampleRu":"Я чувствую себя расслабленно.","partOfSpeech":"adjective","category":"Feelings"},
+      {"id":"lesson-3-bored","en":"bored","ru":"скучающий","transcription":"","exampleEn":"I'm bored.","exampleRu":"Мне скучно.","partOfSpeech":"adjective","category":"Feelings"},
+      {"id":"lesson-3-suggestions","en":"suggestion","ru":"предложение / идея","transcription":"","exampleEn":"I have a suggestion.","exampleRu":"У меня есть предложение.","partOfSpeech":"noun","category":"Suggestions"}
+    ]
+  }
+]
