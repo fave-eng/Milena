@@ -9,8 +9,8 @@ window.APP_CONFIG = {
   },
 
   supabase: {
-    url: "https://cbpvujtyuepioqmrreji.supabase.co",
-    anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNicHZ1anR5dWVwaW9xbXJyZWppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM2MDY4NTMsImV4cCI6MjA5OTE4Mjg1M30.W_5ms3GRCRJhcww9zeYZU3MxcIE87pfQlHynzHoAb4U",
+    url: "https://zqzgarvmpqqqaobeicpc.supabase.co",
+    anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxemdhcnZtcHFxcWFvYmVpY3BjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE2ODQwNTIsImV4cCI6MjA5NzI2MDA1Mn0.gARetYwVZfInx3QKS0RvB2I5cOwegPMY5q3nJPX4ZP8",
     tables: {
       homework: "homework_progress",
       vocabulary: "vocabulary_progress",
