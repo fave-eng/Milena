@@ -147,7 +147,7 @@
 
       const readResponse = await client
         .from(homeworkTable)
-        .select('student_id,lesson_id,lesson_title,status,checked_at,submitted_at,score_correct,score_total,score_percent,answers,created_at,updated_at')
+        .select('student_id,lesson_id,lesson_title,status,checked_at,submitted_at,locked_at,report_status,report_sent_at,score_correct,score_total,score_percent,answers,created_at,updated_at')
         .eq('student_id', studentId)
         .order('lesson_id', { ascending: false })
         .limit(50);
@@ -161,12 +161,12 @@
         addCheck('3. Supabase Database / чтение homework_progress', 'ok', `Доступ есть. Получено строк: ${(readResponse.data || []).length}.`);
 
         const suspicious = (readResponse.data || [])
-          .filter((row) => (row.status === 'submitted' && !row.submitted_at) || (row.status === 'checked' && row.submitted_at))
+          .filter((row) => (row.status === 'submitted' && (!row.submitted_at || !row.locked_at || row.report_status !== 'sent' || !row.report_sent_at)) || (row.status === 'draft' && (row.submitted_at || row.locked_at || row.report_status !== 'not_sent' || row.report_sent_at)) || (row.status === 'submitted_pending_report' && (!row.submitted_at || !row.locked_at || !['pending', 'failed'].includes(row.report_status || ''))))
           .map((row) => row.lesson_id);
         if (suspicious.length) {
           addCheck('4. Состояние сохранённых ДЗ', 'warn', `Есть несогласованные записи: ${suspicious.join(', ')}.`);
         } else {
-          addCheck('4. Состояние сохранённых ДЗ', 'ok', 'Записи соответствуют текущей схеме checked/submitted.');
+          addCheck('4. Состояние сохранённых ДЗ', 'ok', 'Записи соответствуют текущей схеме draft → submitted_pending_report → submitted.');
         }
       }
 
@@ -265,16 +265,20 @@
         student_name: student.nameRu || student.nameEn || studentId,
         lesson_id: probeId,
         lesson_title: 'Diagnostics homework write probe',
-        status: 'checked',
+        status: 'draft',
         answers: { __diagnostic: true },
         score_correct: null,
         score_total: null,
         score_percent: null,
-        checked_at: now,
-        submitted_at: null
+        checked_at: null,
+        submitted_at: null,
+        locked_at: null,
+        report_status: 'not_sent',
+        report_sent_at: null,
+        report_error: null
       });
 
-      if (insertError) throw new Error(`browser_checked_insert: ${formatError(insertError)}`);
+      if (insertError) throw new Error(`browser_draft_insert: ${formatError(insertError)}`);
 
       const probe = await invokeDiagnostic({
         kind: 'diagnostics_homework_probe',
@@ -286,7 +290,7 @@
         throw new Error(probe.data?.error || explainFunctionFailure(probe));
       }
 
-      dbWriteResultEl.innerHTML = '<div class="summary ok">✓ Полный путь homework_progress работает: browser checked → submitted → cleanup. Реальные ДЗ не изменялись.</div>';
+      dbWriteResultEl.innerHTML = '<div class="summary ok">✓ Полный путь homework_progress работает: browser draft → submitted → cleanup. Реальные ДЗ не изменялись.</div>';
       lastReport.databaseWriteProbe = { ok: true, lessonId: probeId, stages: probe.data.stages || null };
     } catch (error) {
       const detail = formatError(error);
