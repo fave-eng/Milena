@@ -210,6 +210,8 @@
     client: null,
     syncing: false,
     timers: {},
+    available: true,
+    unavailableReason: '',
     isConfigured() {
       return Boolean(
         config.features?.cloudSync &&
@@ -217,6 +219,14 @@
         safeText(config.supabase?.anonKey).trim() &&
         window.supabase?.createClient
       );
+    },
+    isAvailable() {
+      return this.isConfigured() && this.available;
+    },
+    markUnavailable(error) {
+      this.available = false;
+      this.unavailableReason = safeText(error?.message || error?.details || error?.hint || error);
+      console.warn('Supabase sync is unavailable in this session. Local progress will still work.', error);
     },
     async init() {
       if (!this.isConfigured()) return null;
@@ -253,7 +263,7 @@
       return this.client;
     },
     queue(section) {
-      if (!this.isConfigured() || !this.client || this.syncing) return;
+      if (!this.isAvailable() || !this.client || this.syncing) return;
       window.clearTimeout(this.timers[section]);
       this.timers[section] = window.setTimeout(() => {
         window.ProgressService.syncToCloud(section).catch((error) => {
@@ -321,7 +331,7 @@
       return ok;
     },
     async syncFromCloud() {
-      if (!CloudService.isConfigured()) return false;
+      if (!CloudService.isAvailable()) return false;
       if (!CloudService.client) await CloudService.init();
       CloudService.syncing = true;
       try {
@@ -397,7 +407,7 @@
       }
     },
     async syncToCloud(section = 'all') {
-      if (!CloudService.isConfigured()) return false;
+      if (!CloudService.isAvailable()) return false;
       if (!CloudService.client) await CloudService.init();
       const client = CloudService.client;
       const sections = section === 'all' ? ['homework', 'vocabulary', 'grammar'] : [section];
@@ -866,7 +876,7 @@
         const label = entry.heading ? `Digital illustration for ${entry.heading}` : 'Digital illustration';
         return `<div class="reference-portrait reference-portrait-${escapeHtml(illustration)}" role="img" aria-label="${escapeHtml(label)}"><span class="portrait-hair"></span><span class="portrait-face"></span><span class="portrait-body"></span></div>`;
       };
-      return `<aside class="exercise-reference article-reference ${reference.sticky ? 'sticky-reference' : ''}">
+      return `<aside class="exercise-reference article-reference ${reference.sticky ? 'sticky-reference' : ''}" ${reference.sticky ? 'data-sticky-reference="true" data-sync-scroll-reference="true"' : ''}>
         ${reference.title ? `<h4>${escapeHtml(reference.title)}</h4>` : ''}
         ${entries.map((entry, entryIndex) => `<section class="reference-profile">
           <div class="reference-profile-head">${portrait(entry)}<h5>${escapeHtml(entry.heading || `Part ${entryIndex + 1}`)}</h5></div>
@@ -875,7 +885,7 @@
       </aside>`;
     }
     if (reference.type === 'box') {
-      return `<aside class="exercise-reference box-reference ${reference.sticky ? 'sticky-reference' : ''}">
+      return `<aside class="exercise-reference box-reference ${reference.sticky ? 'sticky-reference' : ''}" ${reference.sticky ? 'data-sticky-reference="true"' : ''}>
         ${reference.title ? `<h4>${escapeHtml(reference.title)}</h4>` : ''}
         ${reference.text ? `<p>${escapeHtml(reference.text)}</p>` : ''}${bank}
       </aside>`;
@@ -1165,7 +1175,7 @@
       ${linkedMaterials}
       ${roadmap}
       <div id="lesson-blocks">${renderedBlocks}</div>
-      <div class="card section lesson-actions"><div id="lesson-result" aria-live="polite"></div><div class="button-row"><button class="btn btn-primary" id="check-lesson" type="button">Проверить ответы</button><button class="btn btn-secondary" id="submit-lesson" type="button" ${savedResult ? '' : 'disabled'}>Отправить преподавателю</button></div><p class="muted save-note">После проверки ответы сохраняются на устройстве и синхронизируются с Supabase.</p></div>`;
+      <div class="card section lesson-actions"><div id="lesson-result" aria-live="polite"></div><div class="button-row"><button class="btn btn-primary" id="check-lesson" type="button">Проверить ответы</button><button class="btn btn-secondary" id="submit-lesson" type="button" ${savedResult ? '' : 'disabled'}>Отправить преподавателю</button></div><p class="muted save-note">После проверки ответы сохраняются на устройстве. Если Supabase доступен, прогресс синхронизируется автоматически.</p></div>`;
 
     restoreLessonAnswers(root, blocks, savedResult?.answers);
     if (savedResult && Number(savedResult.total) > 0) {
@@ -1218,10 +1228,10 @@
     });
     byId('submit-lesson').addEventListener('click', () => {
       const updatedProgress = window.ProgressService.loadHomeworkProgress();
-      updatedProgress.submissions[lesson.id] = { savedAt: new Date().toISOString(), status: CloudService.isConfigured() ? 'pending-cloud' : 'local' };
+      updatedProgress.submissions[lesson.id] = { savedAt: new Date().toISOString(), status: CloudService.isAvailable() ? 'pending-cloud' : 'local' };
       if (!updatedProgress.completedIds.includes(lesson.id)) updatedProgress.completedIds.push(lesson.id);
       window.ProgressService.saveHomeworkProgress(updatedProgress);
-      showToast(CloudService.isConfigured() ? 'Ответы сохранены и отправляются в Supabase.' : 'Ответы сохранены на этом устройстве.');
+      showToast(CloudService.isAvailable() ? 'Ответы сохранены и отправляются в Supabase.' : 'Ответы сохранены на этом устройстве.');
     });
   }
 
@@ -1502,6 +1512,70 @@
     drawMode();
   }
 
+  let cleanupStickyReferences = null;
+
+  function setupStickyReferences() {
+    if (typeof cleanupStickyReferences === 'function') cleanupStickyReferences();
+    cleanupStickyReferences = null;
+
+    const references = Array.from(document.querySelectorAll('[data-sync-scroll-reference="true"]'));
+    if (!references.length) return;
+
+    const media = window.matchMedia('(min-width: 880px)');
+    let ticking = false;
+
+    const clampValue = (value, min, max) => Math.min(max, Math.max(min, value));
+
+    const update = () => {
+      ticking = false;
+      references.forEach((reference) => {
+        if (!media.matches) {
+          reference.scrollTop = 0;
+          reference.style.removeProperty('--reference-scroll-progress');
+          return;
+        }
+
+        const exercise = reference.closest('.exercise-card-with-reference');
+        if (!exercise) return;
+
+        const maxScroll = Math.max(0, reference.scrollHeight - reference.clientHeight);
+        if (!maxScroll) {
+          reference.scrollTop = 0;
+          reference.style.setProperty('--reference-scroll-progress', '0');
+          return;
+        }
+
+        const rect = exercise.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 1;
+        const stickyTop = 90;
+        const scrollRange = Math.max(1, rect.height - viewportHeight + stickyTop + 120);
+        const progress = clampValue((stickyTop - rect.top) / scrollRange, 0, 1);
+        reference.scrollTop = maxScroll * progress;
+        reference.style.setProperty('--reference-scroll-progress', progress.toFixed(3));
+      });
+    };
+
+    const schedule = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    if (typeof media.addEventListener === 'function') media.addEventListener('change', schedule);
+    else if (typeof media.addListener === 'function') media.addListener(schedule);
+
+    cleanupStickyReferences = () => {
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      if (typeof media.removeEventListener === 'function') media.removeEventListener('change', schedule);
+      else if (typeof media.removeListener === 'function') media.removeListener(schedule);
+    };
+
+    schedule();
+  }
+
   async function refreshCurrentView() {
     const view = document.body.dataset.view;
     const renderers = {
@@ -1515,6 +1589,7 @@
     };
     try {
       await renderers[view]?.();
+      setupStickyReferences();
     } catch (error) {
       console.error('Ошибка отображения страницы:', error);
       const main = document.querySelector('main');
@@ -1539,9 +1614,7 @@
       await window.ProgressService.syncFromCloud();
       await refreshCurrentView();
     } catch (error) {
-      console.error('Supabase connection error:', error);
-      const detail = safeText(error?.message || error?.details || error?.hint);
-      showToast(detail ? `Ошибка Supabase: ${detail}` : 'Supabase временно недоступен.');
+      CloudService.markUnavailable(error);
     }
   }
 

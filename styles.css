@@ -1845,8 +1845,16 @@ body[data-view="lesson"] #lesson-root {
   .sticky-reference {
     position: sticky;
     top: 90px;
-    max-height: calc(100vh - 120px);
-    overflow: auto;
+    max-height: min(78vh, calc(100vh - 120px));
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scroll-behavior: auto;
+  }
+
+  .article-reference.sticky-reference {
+    will-change: scroll-position;
   }
 }
 
