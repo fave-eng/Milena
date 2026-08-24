@@ -122,6 +122,7 @@
       .normalize('NFKC')
       .toLocaleLowerCase('en')
       .replace(/[’‘`]/g, "'")
+      .replace(/[–—−]/g, '-')
       .trim()
       .replace(/\s+/g, ' ')
       .replace(/^[\s.,!?;:()[\]{}"“”]+|[\s.,!?;:()[\]{}"“”]+$/g, '');
@@ -777,12 +778,29 @@
     </section>`).join('')}</div>`;
   }
 
-  function renderExerciseItem(item, blockId, index) {
+  function renderExerciseItem(item, blockId, index, block = {}) {
     const itemId = safeText(item.id, `${index + 1}`);
     const number = item.number === undefined ? index + 1 : item.number;
     const prompt = escapeHtml(item.prompt || '');
     const inputId = `exercise-${blockId}-${itemId}`.replace(/[^a-zA-Z0-9_-]/g, '-');
     const numberMarkup = number === '' || number === null ? '' : `<span class="exercise-number">${escapeHtml(number)}</span>`;
+
+    if (item.static) {
+      if (block.layout === 'dialogue') {
+        return `<div class="dialogue-static-line">
+          ${item.speaker ? `<span class="exercise-speaker">${escapeHtml(item.speaker)}</span>` : ''}
+          <p>${escapeHtml(item.title || item.text || '').replaceAll('\n', '<br>')}</p>
+        </div>`;
+      }
+      if (block.layout === 'chat') {
+        return `<div class="chat-static-line">${escapeHtml(item.title || item.text || '')}</div>`;
+      }
+      return `<div class="exercise-subblock ${item.variant ? `exercise-subblock-${escapeHtml(item.variant)}` : ''}">
+        ${item.label ? `<span class="eyebrow">${escapeHtml(item.label)}</span>` : ''}
+        ${item.title ? `<h4>${escapeHtml(item.title)}</h4>` : ''}
+        ${item.text ? `<p class="muted">${escapeHtml(item.text)}</p>` : ''}
+      </div>`;
+    }
 
     if (item.example) {
       return `<div class="exercise-item exercise-example" data-exercise-item="${escapeHtml(itemId)}">
@@ -802,9 +820,30 @@
     } else if (item.input === 'gaps') {
       const answers = Array.isArray(item.answers) ? item.answers : [];
       const segments = Array.isArray(item.segments) ? item.segments : [];
-      control = `<div class="sentence-gaps" aria-label="${prompt}">${answers.map((answer, gapIndex) => `${gapIndex < segments.length ? `<span>${escapeHtml(segments[gapIndex])}</span>` : ''}<input class="gap-input" data-gap-index="${gapIndex}" aria-label="Пропуск ${gapIndex + 1}" autocomplete="off">`).join('')}${segments.length > answers.length ? `<span>${escapeHtml(segments[segments.length - 1])}</span>` : ''}</div>`;
+      const sharedGapOptions = Array.isArray(item.gapOptions) && item.gapOptions.every((option) => typeof option === 'string') ? item.gapOptions : null;
+      const gapOptionGroups = Array.isArray(item.gapOptions) && !sharedGapOptions ? item.gapOptions : [];
+      const gapControl = (gapIndex) => {
+        const options = sharedGapOptions || (Array.isArray(gapOptionGroups[gapIndex]) ? gapOptionGroups[gapIndex] : []);
+        if (!options.length) return `<input class="gap-input" data-gap-index="${gapIndex}" aria-label="Пропуск ${gapIndex + 1}" autocomplete="off">`;
+        return `<select class="gap-input gap-select" data-gap-index="${gapIndex}" aria-label="Пропуск ${gapIndex + 1}"><option value="">Выберите ответ</option>${options.map((option) => `<option value="${escapeHtml(option)}">${escapeHtml(option)}</option>`).join('')}</select>`;
+      };
+      const gapNumber = (gapIndex) => Array.isArray(item.gapNumbers) && item.gapNumbers[gapIndex] !== undefined ? `<span class="gap-number">${escapeHtml(item.gapNumbers[gapIndex])}</span>` : '';
+      control = `<div class="sentence-gaps" aria-label="${prompt}">${answers.map((answer, gapIndex) => `${gapIndex < segments.length ? `<span>${escapeHtml(segments[gapIndex])}</span>` : ''}${gapNumber(gapIndex)}${gapControl(gapIndex)}`).join('')}${segments.length > answers.length ? `<span>${escapeHtml(segments[segments.length - 1])}</span>` : ''}</div>`;
     } else {
       control = `<input class="text-field" id="${escapeHtml(inputId)}" autocomplete="off" placeholder="${escapeHtml(item.placeholder || '')}">`;
+    }
+
+    const speakerMarkup = item.speaker ? `<span class="exercise-speaker">${escapeHtml(item.speaker)}</span>` : '';
+    const alignClass = item.align ? ` ${escapeHtml(item.align)}` : '';
+    if (block.layout === 'chat') {
+      return `<div class="exercise-item chat-exercise-item${alignClass}" data-exercise-item="${escapeHtml(itemId)}" data-input-type="${escapeHtml(item.input || 'text')}">
+        <div class="chat-bubble"><div class="exercise-item-header">${numberMarkup}${speakerMarkup || `<label class="exercise-prompt" for="${escapeHtml(inputId)}">${prompt}</label>`}</div><div class="exercise-control">${control}</div><div class="feedback" aria-live="polite"></div></div>
+      </div>`;
+    }
+    if (block.layout === 'dialogue') {
+      return `<div class="exercise-item dialogue-exercise-item" data-exercise-item="${escapeHtml(itemId)}" data-input-type="${escapeHtml(item.input || 'text')}">
+        <div class="dialogue-speaker-row">${numberMarkup}${speakerMarkup || `<label class="exercise-prompt" for="${escapeHtml(inputId)}">${prompt}</label>`}</div><div class="exercise-control">${control}</div><div class="feedback" aria-live="polite"></div>
+      </div>`;
     }
 
     return `<div class="exercise-item" data-exercise-item="${escapeHtml(itemId)}" data-input-type="${escapeHtml(item.input || 'text')}">
@@ -812,6 +851,36 @@
       <div class="exercise-control">${control}</div>
       <div class="feedback" aria-live="polite"></div>
     </div>`;
+  }
+
+  function renderExerciseReference(reference) {
+    if (!reference || typeof reference !== 'object') return '';
+    const entries = Array.isArray(reference.entries) ? reference.entries : [];
+    const bank = Array.isArray(reference.wordBank) && reference.wordBank.length
+      ? `<div class="reference-word-bank">${reference.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>`
+      : '';
+    if (reference.type === 'article') {
+      const portrait = (entry) => {
+        const illustration = safeText(entry.illustration || entry.avatar || entry.heading || '').toLocaleLowerCase('en').replace(/[^a-z0-9_-]/g, '');
+        if (!illustration) return '';
+        const label = entry.heading ? `Digital illustration for ${entry.heading}` : 'Digital illustration';
+        return `<div class="reference-portrait reference-portrait-${escapeHtml(illustration)}" role="img" aria-label="${escapeHtml(label)}"><span class="portrait-hair"></span><span class="portrait-face"></span><span class="portrait-body"></span></div>`;
+      };
+      return `<aside class="exercise-reference article-reference ${reference.sticky ? 'sticky-reference' : ''}">
+        ${reference.title ? `<h4>${escapeHtml(reference.title)}</h4>` : ''}
+        ${entries.map((entry, entryIndex) => `<section class="reference-profile">
+          <div class="reference-profile-head">${portrait(entry)}<h5>${escapeHtml(entry.heading || `Part ${entryIndex + 1}`)}</h5></div>
+          <p>${escapeHtml(entry.text || '').replaceAll('\n', '<br>')}</p>
+        </section>`).join('')}
+      </aside>`;
+    }
+    if (reference.type === 'box') {
+      return `<aside class="exercise-reference box-reference ${reference.sticky ? 'sticky-reference' : ''}">
+        ${reference.title ? `<h4>${escapeHtml(reference.title)}</h4>` : ''}
+        ${reference.text ? `<p>${escapeHtml(reference.text)}</p>` : ''}${bank}
+      </aside>`;
+    }
+    return '';
   }
 
   function renderLessonBlock(block, index) {
@@ -839,9 +908,11 @@
         ? `<div class="word-bank" aria-label="Банк слов"><strong class="word-bank-label">Банк слов</strong>${block.wordBank.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>`
         : '';
       const player = block.audio ? `<audio class="audio-player" controls preload="none" src="${escapeHtml(block.audio)}"></audio>` : '';
-      return `<article class="card lesson-block exercise-card" data-task="${escapeHtml(id)}" data-type="exercise">
-        <div class="exercise-heading"><span class="eyebrow">Упражнение</span><h3>${title}</h3>${block.instructions ? `<p class="muted exercise-instructions">${escapeHtml(block.instructions)}</p>` : ''}${player}${wordBank}</div>
-        <div class="exercise-items">${items.map((item, itemIndex) => renderExerciseItem(item, id, itemIndex)).join('')}</div>
+      const reference = renderExerciseReference(block.reference);
+      const content = `<div class="exercise-heading"><span class="eyebrow">Упражнение</span><h3>${title}</h3>${block.instructions ? `<p class="muted exercise-instructions">${escapeHtml(block.instructions)}</p>` : ''}${player}${wordBank}</div>
+        <div class="exercise-items ${block.layout ? `exercise-items-${escapeHtml(block.layout)}` : ''}">${items.map((item, itemIndex) => renderExerciseItem(item, id, itemIndex, block)).join('')}</div>`;
+      return `<article class="card lesson-block exercise-card ${reference ? 'exercise-card-with-reference' : ''} ${block.layout ? `exercise-layout-${escapeHtml(block.layout)}` : ''}" data-task="${escapeHtml(id)}" data-type="exercise">
+        ${reference ? `<div class="exercise-reference-grid">${reference}<div class="exercise-main">${content}</div></div>` : content}
       </article>`;
     }
     if (block.type === 'text' || block.type === 'translate') return `<article class="card lesson-block" data-task="${escapeHtml(id)}" data-type="${escapeHtml(block.type)}"><label class="field-label" for="${escapeHtml(id)}">${title}</label>${block.source ? `<p class="muted">${escapeHtml(block.source)}</p>` : ''}<input class="text-field" id="${escapeHtml(id)}" name="${escapeHtml(id)}" autocomplete="off"><div class="feedback"></div></article>`;
@@ -877,6 +948,7 @@
     return safeText(value)
       .normalize('NFKC')
       .replace(/[’‘`]/g, "'")
+      .replace(/[–—−]/g, '-')
       .trim()
       .toLocaleLowerCase('en')
       .replace(/[.!?,;:]+$/g, '')
@@ -908,10 +980,12 @@
     } else if (inputType === 'gaps') {
       actual = [...itemNode.querySelectorAll('[data-gap-index]')].map((input) => input.value);
       const expected = Array.isArray(item.answers) ? item.answers : [];
-      correct = expected.length > 0 && expected.every((answer, index) => {
+      const gapResults = expected.map((answer, index) => {
         const accepted = Array.isArray(answer) ? answer : [answer];
         return accepted.some((variant) => normalizeAnswer(variant) === normalizeAnswer(actual[index]));
       });
+      correct = expected.length > 0 && gapResults.every(Boolean);
+      return { actual, correct, correctCount: gapResults.filter(Boolean).length, total: expected.length };
     } else {
       actual = itemNode.querySelector('input, textarea')?.value || '';
       correct = textAnswerMatches(item, actual);
@@ -926,7 +1000,7 @@
     let total = 0;
 
     (Array.isArray(block.items) ? block.items : []).forEach((item, index) => {
-      if (item.example) return;
+      if (item.example || item.static) return;
       const itemId = safeText(item.id, `${index + 1}`);
       const itemNode = node.querySelector(`[data-exercise-item="${CSS.escape(itemId)}"]`);
       if (!itemNode) return;
@@ -944,14 +1018,16 @@
         return;
       }
 
-      total += 1;
-      if (result.correct) correctCount += 1;
+      const itemTotal = Number(result.total || 1);
+      const itemCorrectCount = Number(result.correctCount ?? (result.correct ? itemTotal : 0));
+      total += itemTotal;
+      correctCount += itemCorrectCount;
       itemNode.classList.toggle('is-correct', result.correct);
       itemNode.classList.toggle('is-wrong', !result.correct);
       itemNode.classList.remove('is-saved');
       if (feedback) {
         feedback.className = `feedback show ${result.correct ? 'good' : 'bad'}`;
-        feedback.textContent = result.correct ? 'Верно!' : safeText(item.explanation, 'Проверь ответ и попробуй ещё раз.');
+        feedback.textContent = result.correct ? 'Верно!' : (itemTotal > 1 && itemCorrectCount > 0 ? `${itemCorrectCount} из ${itemTotal} верно. Проверь остальные ответы и попробуй ещё раз.` : safeText(item.explanation, 'Проверь ответ и попробуй ещё раз.'));
       }
     });
 
@@ -986,7 +1062,7 @@
   function restoreExerciseAnswers(block, node, saved) {
     if (!saved || typeof saved !== 'object') return;
     (Array.isArray(block.items) ? block.items : []).forEach((item, index) => {
-      if (item.example) return;
+      if (item.example || item.static) return;
       const itemId = safeText(item.id, `${index + 1}`);
       const value = saved[itemId];
       if (value === undefined) return;

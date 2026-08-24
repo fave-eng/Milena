@@ -1,17 +1,17 @@
 {
-  "id": "lesson-3",
-  "number": 3,
+  "id": "lesson-template",
+  "number": 0,
   "title": "Название следующего урока",
   "subtitle": "Краткое описание домашнего задания",
   "status": "draft",
-  "vocabularyId": "vocab-lesson-3",
+  "vocabularyId": "",
   "grammarIds": [],
-  "publishedAt": "2026-07-21",
+  "publishedAt": "",
   "totalPoints": 0,
   "notification": {
     "enabled": false,
     "version": 1
   },
-  "templateNote": "Следующую домашнюю работу нужно сохранить как lesson-3.json. Номер необходимо последовательно увеличить в имени файла, id, number, vocabularyId и linkedLessonId.",
+  "templateNote": "Template only. Copy this file to lesson-N.json and set a unique id, number, vocabularyId and linkedLessonId before publishing.",
   "blocks": []
 }

@@ -758,19 +758,294 @@ window.VOCABULARY_DATA = [
 
 ,
   {
-    "id": "vocab-lesson-3",
-    "title": "Feelings and suggestions",
-    "label": "Урок 3 · Lesson 1C",
-    "icon": "💬",
-    "type": "lesson",
-    "linkedLessonId": "lesson-3",
-    "page": "vocabulary.html?id=vocab-lesson-3",
-    "words": [
-      {"id":"lesson-3-hungry","en":"hungry","ru":"голодный","transcription":"","exampleEn":"I'm hungry.","exampleRu":"Я голоден.","partOfSpeech":"adjective","category":"Feelings"},
-      {"id":"lesson-3-thirsty","en":"thirsty","ru":"испытывающий жажду","transcription":"","exampleEn":"I'm thirsty.","exampleRu":"Я хочу пить.","partOfSpeech":"adjective","category":"Feelings"},
-      {"id":"lesson-3-relaxed","en":"relaxed","ru":"расслабленный","transcription":"","exampleEn":"I feel relaxed.","exampleRu":"Я чувствую себя расслабленно.","partOfSpeech":"adjective","category":"Feelings"},
-      {"id":"lesson-3-bored","en":"bored","ru":"скучающий","transcription":"","exampleEn":"I'm bored.","exampleRu":"Мне скучно.","partOfSpeech":"adjective","category":"Feelings"},
-      {"id":"lesson-3-suggestions","en":"suggestion","ru":"предложение / идея","transcription":"","exampleEn":"I have a suggestion.","exampleRu":"У меня есть предложение.","partOfSpeech":"noun","category":"Suggestions"}
-    ]
+      "id": "vocab-lesson-3",
+      "title": "Feelings, time phrases and suggestions",
+      "label": "Урок 3 · Lesson 1C",
+      "icon": "💬",
+      "type": "lesson",
+      "linkedLessonId": "lesson-3",
+      "page": "vocabulary.html?id=vocab-lesson-3",
+      "words": [
+          {
+              "id": "lesson-3-hungry",
+              "en": "hungry",
+              "ru": "голодный; хочется есть",
+              "transcription": "",
+              "exampleEn": "I’m hungry. What time is dinner?",
+              "exampleRu": "Я голодна. Во сколько ужин?",
+              "partOfSpeech": "adjective",
+              "category": "Feelings"
+          },
+          {
+              "id": "lesson-3-thirsty",
+              "en": "thirsty",
+              "ru": "испытывающий жажду; хочется пить",
+              "transcription": "",
+              "exampleEn": "Can I have some water? I’m thirsty.",
+              "exampleRu": "Можно мне воды? Я хочу пить.",
+              "partOfSpeech": "adjective",
+              "category": "Feelings"
+          },
+          {
+              "id": "lesson-3-ill",
+              "en": "ill",
+              "ru": "больной; плохо себя чувствующий",
+              "transcription": "",
+              "exampleEn": "He’s at the doctor’s because he’s ill.",
+              "exampleRu": "Он у врача, потому что болен.",
+              "partOfSpeech": "adjective",
+              "category": "Feelings"
+          },
+          {
+              "id": "lesson-3-angry",
+              "en": "angry",
+              "ru": "сердитый; злой",
+              "transcription": "",
+              "exampleEn": "Please don’t be angry!",
+              "exampleRu": "Пожалуйста, не сердись!",
+              "partOfSpeech": "adjective",
+              "category": "Feelings"
+          },
+          {
+              "id": "lesson-3-bored",
+              "en": "bored",
+              "ru": "скучающий; которому скучно",
+              "transcription": "",
+              "exampleEn": "I’m bored. Let’s do something interesting.",
+              "exampleRu": "Мне скучно. Давай сделаем что-нибудь интересное.",
+              "partOfSpeech": "adjective",
+              "category": "Feelings"
+          },
+          {
+              "id": "lesson-3-all-right",
+              "en": "all right",
+              "ru": "нормально; в порядке",
+              "transcription": "",
+              "exampleEn": "I feel all right — not happy, not sad.",
+              "exampleRu": "Я чувствую себя нормально — не радостно и не грустно.",
+              "partOfSpeech": "adjective phrase",
+              "category": "Feelings"
+          },
+          {
+              "id": "lesson-3-tired",
+              "en": "tired",
+              "ru": "уставший",
+              "transcription": "",
+              "exampleEn": "I want to go to bed. I’m very tired.",
+              "exampleRu": "Я хочу спать. Я очень устала.",
+              "partOfSpeech": "adjective",
+              "category": "Feelings"
+          },
+          {
+              "id": "lesson-3-relaxed",
+              "en": "relaxed",
+              "ru": "расслабленный",
+              "transcription": "",
+              "exampleEn": "I always feel relaxed after a hot bath.",
+              "exampleRu": "Я всегда чувствую себя расслабленно после горячей ванны.",
+              "partOfSpeech": "adjective",
+              "category": "Feelings"
+          },
+          {
+              "id": "lesson-3-make-suggestions",
+              "en": "make suggestions",
+              "ru": "предлагать идеи; делать предложения",
+              "transcription": "",
+              "exampleEn": "In this lesson, you learn how to make suggestions.",
+              "exampleRu": "В этом уроке ты учишься предлагать идеи.",
+              "partOfSpeech": "verb phrase",
+              "category": "Making suggestions"
+          },
+          {
+              "id": "lesson-3-can-we-meet-at-two",
+              "en": "Can we meet at two?",
+              "ru": "Мы можем встретиться в два?",
+              "transcription": "",
+              "exampleEn": "Can we meet at two?",
+              "exampleRu": "Мы можем встретиться в два?",
+              "partOfSpeech": "phrase",
+              "category": "Making suggestions"
+          },
+          {
+              "id": "lesson-3-what-would-you-like-to-do",
+              "en": "What would you like to do?",
+              "ru": "Что бы ты хотел(а) сделать?",
+              "transcription": "",
+              "exampleEn": "What would you like to do this evening?",
+              "exampleRu": "Что бы ты хотел(а) сделать сегодня вечером?",
+              "partOfSpeech": "phrase",
+              "category": "Making suggestions"
+          },
+          {
+              "id": "lesson-3-lets-meet-at-the-cinema",
+              "en": "Let’s meet at the cinema.",
+              "ru": "Давай встретимся у кинотеатра.",
+              "transcription": "",
+              "exampleEn": "Let’s meet at the cinema.",
+              "exampleRu": "Давай встретимся у кинотеатра.",
+              "partOfSpeech": "phrase",
+              "category": "Making suggestions"
+          },
+          {
+              "id": "lesson-3-how-about-meeting-at-5-oclock",
+              "en": "How about meeting at 5 o’clock?",
+              "ru": "Как насчёт встретиться в пять часов?",
+              "transcription": "",
+              "exampleEn": "How about meeting at 5 o’clock?",
+              "exampleRu": "Как насчёт встретиться в пять часов?",
+              "partOfSpeech": "phrase",
+              "category": "Making suggestions"
+          },
+          {
+              "id": "lesson-3-good-idea",
+              "en": "Good idea.",
+              "ru": "Хорошая идея.",
+              "transcription": "",
+              "exampleEn": "Good idea. How about meeting at 5 o’clock?",
+              "exampleRu": "Хорошая идея. Как насчёт встретиться в пять часов?",
+              "partOfSpeech": "phrase",
+              "category": "Making suggestions"
+          },
+          {
+              "id": "lesson-3-thats-fine-with-me",
+              "en": "That’s fine with me.",
+              "ru": "Мне это подходит.",
+              "transcription": "",
+              "exampleEn": "That’s fine with me.",
+              "exampleRu": "Мне это подходит.",
+              "partOfSpeech": "phrase",
+              "category": "Making suggestions"
+          },
+          {
+              "id": "lesson-3-see-you-then",
+              "en": "See you then.",
+              "ru": "Тогда увидимся.",
+              "transcription": "",
+              "exampleEn": "Perfect! See you then.",
+              "exampleRu": "Отлично! Тогда увидимся.",
+              "partOfSpeech": "phrase",
+              "category": "Making suggestions"
+          },
+          {
+              "id": "lesson-3-this-evening",
+              "en": "this evening",
+              "ru": "сегодня вечером",
+              "transcription": "",
+              "exampleEn": "Can we do something this evening?",
+              "exampleRu": "Мы можем что-нибудь сделать сегодня вечером?",
+              "partOfSpeech": "time phrase",
+              "category": "Time phrases"
+          },
+          {
+              "id": "lesson-3-this-weekend",
+              "en": "this weekend",
+              "ru": "в эти выходные",
+              "transcription": "",
+              "exampleEn": "Do you want to do something this weekend?",
+              "exampleRu": "Хочешь что-нибудь сделать в эти выходные?",
+              "partOfSpeech": "time phrase",
+              "category": "Time phrases"
+          },
+          {
+              "id": "lesson-3-next-weekend",
+              "en": "next weekend",
+              "ru": "в следующие выходные",
+              "transcription": "",
+              "exampleEn": "Next weekend Rowan wants to cook dinner.",
+              "exampleRu": "В следующие выходные Роуэн хочет приготовить ужин.",
+              "partOfSpeech": "time phrase",
+              "category": "Time phrases"
+          },
+          {
+              "id": "lesson-3-on-saturday",
+              "en": "on Saturday",
+              "ru": "в субботу",
+              "transcription": "",
+              "exampleEn": "Can we meet for a coffee on Saturday?",
+              "exampleRu": "Мы можем встретиться на кофе в субботу?",
+              "partOfSpeech": "time phrase",
+              "category": "Time phrases"
+          },
+          {
+              "id": "lesson-3-at-noon",
+              "en": "at noon",
+              "ru": "в полдень",
+              "transcription": "",
+              "exampleEn": "Yes, it’s at noon.",
+              "exampleRu": "Да, это в полдень.",
+              "partOfSpeech": "time phrase",
+              "category": "Time phrases"
+          },
+          {
+              "id": "lesson-3-shop-assistant",
+              "en": "shop assistant",
+              "ru": "продавец-консультант; помощник в магазине",
+              "transcription": "",
+              "exampleEn": "I’m a shop assistant and I work in a supermarket.",
+              "exampleRu": "Я продавец-консультант и работаю в супермаркете.",
+              "partOfSpeech": "noun",
+              "category": "Reading"
+          },
+          {
+              "id": "lesson-3-supermarket",
+              "en": "supermarket",
+              "ru": "супермаркет",
+              "transcription": "",
+              "exampleEn": "He works in a supermarket.",
+              "exampleRu": "Он работает в супермаркете.",
+              "partOfSpeech": "noun",
+              "category": "Reading"
+          },
+          {
+              "id": "lesson-3-boyfriend",
+              "en": "boyfriend",
+              "ru": "парень; молодой человек",
+              "transcription": "",
+              "exampleEn": "Her boyfriend is from Argentina.",
+              "exampleRu": "Её парень из Аргентины.",
+              "partOfSpeech": "noun",
+              "category": "Reading"
+          },
+          {
+              "id": "lesson-3-make-time-to-see-each-other",
+              "en": "make time to see each other",
+              "ru": "находить время, чтобы видеться друг с другом",
+              "transcription": "",
+              "exampleEn": "We still make time to see each other.",
+              "exampleRu": "Мы всё равно находим время, чтобы видеться.",
+              "partOfSpeech": "verb phrase",
+              "category": "Reading"
+          },
+          {
+              "id": "lesson-3-spend-time-together",
+              "en": "spend time together",
+              "ru": "проводить время вместе",
+              "transcription": "",
+              "exampleEn": "It’s interesting to spend time together.",
+              "exampleRu": "Интересно проводить время вместе.",
+              "partOfSpeech": "verb phrase",
+              "category": "Reading"
+          },
+          {
+              "id": "lesson-3-go-for-walks",
+              "en": "go for walks",
+              "ru": "ходить гулять",
+              "transcription": "",
+              "exampleEn": "I like going for walks or to the cinema.",
+              "exampleRu": "Мне нравится ходить гулять или в кино.",
+              "partOfSpeech": "verb phrase",
+              "category": "Reading"
+          },
+          {
+              "id": "lesson-3-free-time",
+              "en": "free time",
+              "ru": "свободное время",
+              "transcription": "",
+              "exampleEn": "What do we do in our free time?",
+              "exampleRu": "Что мы делаем в свободное время?",
+              "partOfSpeech": "noun phrase",
+              "category": "Reading"
+          }
+      ]
   }
 ]

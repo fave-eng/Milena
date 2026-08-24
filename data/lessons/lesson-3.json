@@ -1,0 +1,1072 @@
+{
+  "id": "lesson-3",
+  "number": 3,
+  "title": "Best friends but different! · Lesson 1C",
+  "subtitle": "Workbook: pronunciation, reading, adjectives for feelings, time phrases and making suggestions",
+  "status": "available",
+  "vocabularyId": "vocab-lesson-3",
+  "grammarIds": [],
+  "publishedAt": "2026-08-24",
+  "totalPoints": 66,
+  "notification": {
+    "enabled": true,
+    "version": 1
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "eyebrow": "Workbook · Lesson 1B",
+      "title": "Pronunciation and reading"
+    },
+    {
+      "type": "exercise",
+      "id": "pronunciation-3a",
+      "title": "3A. [1.03] third person -s",
+      "instructions": "Listen and choose the correct -s sound for each verb (/s/, /z/ or /ɪz/).",
+      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1B_Audio_1_03.mp3",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "studies",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "sits",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "works",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "plays",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "does",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "finishes",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "7",
+          "number": 7,
+          "prompt": "goes",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "8",
+          "number": 8,
+          "prompt": "stops",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "9",
+          "number": 9,
+          "prompt": "watches",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "10",
+          "number": 10,
+          "prompt": "lives",
+          "input": "select",
+          "options": [
+            "/s/",
+            "/z/",
+            "/ɪz/"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "type": "audio",
+      "id": "pronunciation-3b",
+      "title": "3B. [1.03] Listen again and repeat.",
+      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1B_Audio_1_03.mp3",
+      "response": false
+    },
+    {
+      "type": "exercise",
+      "id": "reading-4-5",
+      "title": "READING",
+      "reference": {
+        "type": "article",
+        "title": "Best friends but different!",
+        "sticky": true,
+        "entries": [
+          {
+            "heading": "Rowan",
+            "text": "My best friend is Annie. She’s great. We have very different lives though. She’s a lawyer. She gets up at 7 a.m. every day. She has breakfast and then goes to work. She often works late (sometimes until 9 p.m.!), but not on Thursdays. She has a Spanish class on Thursday evenings. She studies Spanish because her boyfriend is from Argentina. I don’t study. I’m a shop assistant and I work in a supermarket in the centre of town. I don’t start work until 12, so I usually get up late – around 10.30 a.m. I go to work by bus and work hard all day. I finish work at 8 p.m., then come home and cook dinner. Annie and I have very different lives, but we still make time to see each other.",
+            "illustration": "rowan"
+          },
+          {
+            "heading": "Annie",
+            "text": "I know my good friend Rowan from school. We live in the same town and we always see each other at weekends. We have different interests, so it’s usually interesting to spend time together! Rowan plays a lot of sports, like football and tennis, but I like going for walks or to the cinema. So, how do we decide what to do in our free time? It’s easy. One weekend I choose what to do, and the next weekend Rowan chooses. This weekend I want to watch a film, and next weekend Rowan wants to cook dinner. He loves cooking, but I hate it, so he cooks and I eat. It’s perfect. I think we’re good friends because we do things together that we don’t usually do alone.",
+            "illustration": "annie"
+          }
+        ]
+      },
+      "items": [
+        {
+          "static": true,
+          "label": "4",
+          "title": "Choose the correct word to complete the sentences."
+        },
+        {
+          "id": "4-1",
+          "number": "",
+          "prompt": "Rowan is a shop assistant. He ______ in a supermarket. He starts at 12 p.m. and he finishes at 8 p.m.",
+          "input": "single",
+          "options": [
+            "a lives",
+            "b works",
+            "c meets"
+          ],
+          "answer": 1
+        },
+        {
+          "static": true,
+          "label": "5A",
+          "title": "Read the article. Are the statements True (T) or False (F)?"
+        },
+        {
+          "id": "5a-1",
+          "number": 1,
+          "prompt": "Annie is Rowan’s wife.",
+          "input": "single",
+          "options": [
+            "True (T)",
+            "False (F)"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "5a-2",
+          "number": 2,
+          "prompt": "Annie’s boyfriend is Spanish.",
+          "input": "single",
+          "options": [
+            "True (T)",
+            "False (F)"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "5a-3",
+          "number": 3,
+          "prompt": "Rowan works for eight hours every day.",
+          "input": "single",
+          "options": [
+            "True (T)",
+            "False (F)"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "5a-4",
+          "number": 4,
+          "prompt": "Annie always sees Rowan at the weekend.",
+          "input": "single",
+          "options": [
+            "True (T)",
+            "False (F)"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "5a-5",
+          "number": 5,
+          "prompt": "Annie and Rowan go to the same school.",
+          "input": "single",
+          "options": [
+            "True (T)",
+            "False (F)"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "5a-6",
+          "number": 6,
+          "prompt": "They like doing the same things.",
+          "input": "single",
+          "options": [
+            "True (T)",
+            "False (F)"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "5a-7",
+          "number": 7,
+          "prompt": "Rowan likes sport.",
+          "input": "single",
+          "options": [
+            "True (T)",
+            "False (F)"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "5a-8",
+          "number": 8,
+          "prompt": "Annie likes cooking.",
+          "input": "single",
+          "options": [
+            "True (T)",
+            "False (F)"
+          ],
+          "answer": 1
+        },
+        {
+          "static": true,
+          "label": "5B",
+          "title": "Read the article again. Choose one option (a–c) to complete the questions (1–6)."
+        },
+        {
+          "id": "5b-1",
+          "number": 1,
+          "prompt": "What’s Annie’s job?",
+          "input": "single",
+          "options": [
+            "a a teacher",
+            "b a shop assistant",
+            "c a lawyer"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "5b-2",
+          "number": 2,
+          "prompt": "What does she do in the morning?",
+          "input": "single",
+          "options": [
+            "a She has breakfast and goes to work.",
+            "b She reads books or studies.",
+            "c She goes to Spanish classes."
+          ],
+          "answer": 0
+        },
+        {
+          "id": "5b-3",
+          "number": 3,
+          "prompt": "What does she do on Thursdays?",
+          "input": "single",
+          "options": [
+            "a She studies.",
+            "b She cooks dinner.",
+            "c She watches TV or reads books."
+          ],
+          "answer": 0
+        },
+        {
+          "id": "5b-4",
+          "number": 4,
+          "prompt": "How does Rowan know Annie?",
+          "input": "single",
+          "options": [
+            "a from work",
+            "b from his Spanish class",
+            "c from school"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "5b-5",
+          "number": 5,
+          "prompt": "What does Annie hate?",
+          "input": "single",
+          "options": [
+            "a watching films",
+            "b cooking food",
+            "c going to the cinema"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "5b-6",
+          "number": 6,
+          "prompt": "What does Annie say about being different to Rowan?",
+          "input": "single",
+          "options": [
+            "a She doesn’t like it.",
+            "b She likes it.",
+            "c It’s OK."
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "eyebrow": "Workbook · Lesson 1C",
+      "title": "Vocabulary and time phrases"
+    },
+    {
+      "type": "exercise",
+      "id": "vocabulary-1",
+      "title": "1. Adjectives for feelings",
+      "instructions": "Complete the sentences with the adjectives from the box.",
+      "wordBank": [
+        "all right",
+        "angry",
+        "bored",
+        "hungry",
+        "ill",
+        "relaxed",
+        "thirsty",
+        "tired"
+      ],
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "Can I have some water? I’m really ______.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 6
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Greg isn’t at work today. He’s at the doctor’s because he’s ______.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 4
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "I’m sorry I’m late. Please don’t be ______!",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "I’m ______! Let’s do something interesting.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "I feel ______ — not happy, not sad. Just normal.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "I want to go to bed. I’m very ______.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 7
+        },
+        {
+          "id": "7",
+          "number": 7,
+          "prompt": "What time is dinner? I’m really ______.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "8",
+          "number": 8,
+          "prompt": "I always feel ______ after a hot bath.",
+          "input": "select",
+          "options": [
+            "all right",
+            "angry",
+            "bored",
+            "hungry",
+            "ill",
+            "relaxed",
+            "thirsty",
+            "tired"
+          ],
+          "answer": 5
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "time-phrases-2a",
+      "title": "2A. Time phrases",
+      "instructions": "Choose the correct answer to complete the sentences.",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "I get up ______ 5 a.m. every day.",
+          "input": "single",
+          "options": [
+            "at",
+            "on"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Do we have a class ______ week?",
+          "input": "single",
+          "options": [
+            "next",
+            "at"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "Let’s play tennis ______ tomorrow.",
+          "input": "single",
+          "options": [
+            "on",
+            "–",
+            "next"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "I teach German ______ Tuesdays.",
+          "input": "single",
+          "options": [
+            "on",
+            "this"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "I have an English class ______ Thursday morning.",
+          "input": "single",
+          "options": [
+            "at",
+            "–",
+            "on"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "What shall we do ______ evening?",
+          "input": "single",
+          "options": [
+            "this",
+            "next",
+            "at"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "time-phrases-2b",
+      "title": "2B. English class",
+      "instructions": "Complete the messages with one word in each gap. If no word is necessary, write (–).",
+      "layout": "chat",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "speaker": "Aiko",
+          "align": "left",
+          "input": "gaps",
+          "segments": [
+            "Do we have a class ",
+            " today?"
+          ],
+          "answers": [
+            [
+              "–",
+              "-"
+            ]
+          ]
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "speaker": "Victor",
+          "align": "right",
+          "input": "gaps",
+          "segments": [
+            "Yes, it’s ",
+            " noon."
+          ],
+          "answers": [
+            "at"
+          ]
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "speaker": "Gloria",
+          "align": "left",
+          "input": "gaps",
+          "segments": [
+            "I can’t come. I need to study for a French test ",
+            " tonight."
+          ],
+          "answers": [
+            [
+              "–",
+              "-"
+            ]
+          ]
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "speaker": "Aiko",
+          "align": "left",
+          "input": "gaps",
+          "segments": [
+            "Gloria and Victor, do you want to do something ",
+            " weekend?"
+          ],
+          "answers": [
+            "this"
+          ]
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "speaker": "Gloria",
+          "align": "right",
+          "input": "gaps",
+          "segments": [
+            "Sure! Can we meet for a coffee ",
+            " Saturday?"
+          ],
+          "answers": [
+            [
+              "on",
+              "this"
+            ]
+          ]
+        },
+        {
+          "id": "6",
+          "number": "",
+          "speaker": "Victor",
+          "align": "left",
+          "input": "gaps",
+          "segments": [
+            "I can’t do Saturday. Can we meet ",
+            " Sunday afternoon, ",
+            " 10 o’clock?"
+          ],
+          "answers": [
+            [
+              "on",
+              "this"
+            ],
+            "at"
+          ],
+          "gapNumbers": [
+            6,
+            7
+          ]
+        },
+        {
+          "id": "8",
+          "number": 8,
+          "speaker": "Gloria",
+          "align": "right",
+          "input": "gaps",
+          "segments": [
+            "Great! See you ",
+            " the weekend!"
+          ],
+          "answers": [
+            "at"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "eyebrow": "Workbook · Lesson 1C",
+      "title": "How to make suggestions"
+    },
+    {
+      "type": "exercise",
+      "id": "how-to-3a",
+      "title": "3A. [1.04] Make suggestions",
+      "instructions": "Listen to the conversation. Answer the questions with Miki (M) or Fran (F).",
+      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1C_Audio_1_04.mp3",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "Who feels hungry?",
+          "input": "single",
+          "options": [
+            "M",
+            "F"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Who has a class at twelve?",
+          "input": "single",
+          "options": [
+            "M",
+            "F"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "Who asks to meet at the café on East Street?",
+          "input": "single",
+          "options": [
+            "M",
+            "F"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "Who loves the café?",
+          "input": "single",
+          "options": [
+            "M",
+            "F"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "Who asks to meet at two?",
+          "input": "single",
+          "options": [
+            "M",
+            "F"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "exercise",
+      "id": "how-to-3b",
+      "title": "3B. [1.05] Listen to the recording. Write what you hear. You will hear the sentences only once.",
+      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1C_Audio_1_05.mp3",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "Sentence 1",
+          "input": "text",
+          "answer": "Can we do something this evening?"
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Sentence 2",
+          "input": "text",
+          "answer": "What would you like to do?"
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "Sentence 3",
+          "input": "text",
+          "answer": "Let’s meet at the cinema."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "eyebrow": "Workbook · Lesson 1C",
+      "title": "Pronunciation and speaking"
+    },
+    {
+      "type": "exercise",
+      "id": "pronunciation-4a",
+      "title": "4A. [1.06] Intonation to show interest",
+      "instructions": "Listen to the phrases. Do the people sound interested (I) or not interested (N)?",
+      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1C_Audio_1_06.mp3",
+      "items": [
+        {
+          "id": "1",
+          "number": 1,
+          "prompt": "Sure!",
+          "input": "single",
+          "options": [
+            "interested (I)",
+            "not interested (N)"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "prompt": "Good idea.",
+          "input": "single",
+          "options": [
+            "interested (I)",
+            "not interested (N)"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "prompt": "I’d love to!",
+          "input": "single",
+          "options": [
+            "interested (I)",
+            "not interested (N)"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "prompt": "Perfect!",
+          "input": "single",
+          "options": [
+            "interested (I)",
+            "not interested (N)"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "prompt": "Sure, that’s fine.",
+          "input": "single",
+          "options": [
+            "interested (I)",
+            "not interested (N)"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "6",
+          "number": 6,
+          "prompt": "OK.",
+          "input": "single",
+          "options": [
+            "interested (I)",
+            "not interested (N)"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "type": "audio",
+      "id": "pronunciation-4b",
+      "title": "4B. [1.07] Listen and repeat the interested phrases.",
+      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1C_Audio_1_07.mp3",
+      "response": false
+    },
+    {
+      "type": "exercise",
+      "id": "speaking-5a",
+      "title": "5A. [1.08] Complete the conversation with the words in the box. Then listen and check.",
+      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1C_Audio_1_08.mp3",
+      "wordBank": [
+        "bye",
+        "can’t",
+        "OK",
+        "things",
+        "would"
+      ],
+      "layout": "dialogue",
+      "items": [
+        {
+          "static": true,
+          "title": "Hi!",
+          "speaker": "A:"
+        },
+        {
+          "id": "1",
+          "number": 1,
+          "speaker": "B:",
+          "input": "gaps",
+          "segments": [
+            "Hello, how are ",
+            "?"
+          ],
+          "answers": [
+            "things"
+          ],
+          "gapOptions": [
+            "bye",
+            "can’t",
+            "OK",
+            "things",
+            "would"
+          ]
+        },
+        {
+          "static": true,
+          "title": "I’m bored. How about you?",
+          "speaker": "A:"
+        },
+        {
+          "id": "2",
+          "number": 2,
+          "speaker": "B:",
+          "input": "gaps",
+          "segments": [
+            "I’m all right. ",
+            " you like to have dinner?"
+          ],
+          "answers": [
+            "Would"
+          ],
+          "gapOptions": [
+            "bye",
+            "can’t",
+            "OK",
+            "things",
+            "would"
+          ]
+        },
+        {
+          "static": true,
+          "title": "Good idea. How about meeting at 5 o’clock?",
+          "speaker": "A:"
+        },
+        {
+          "id": "3",
+          "number": 3,
+          "speaker": "B:",
+          "input": "gaps",
+          "segments": [
+            "Sorry, I ",
+            ". What about 6.30?"
+          ],
+          "answers": [
+            [
+              "can’t",
+              "can't"
+            ]
+          ],
+          "gapOptions": [
+            "bye",
+            "can’t",
+            "OK",
+            "things",
+            "would"
+          ]
+        },
+        {
+          "static": true,
+          "title": "Sure. Can we meet at the restaurant?",
+          "speaker": "A:"
+        },
+        {
+          "id": "4",
+          "number": 4,
+          "speaker": "B:",
+          "input": "gaps",
+          "segments": [
+            "",
+            ""
+          ],
+          "answers": [
+            "OK"
+          ],
+          "gapOptions": [
+            "bye",
+            "can’t",
+            "OK",
+            "things",
+            "would"
+          ]
+        },
+        {
+          "static": true,
+          "title": "Perfect! See you then.",
+          "speaker": "A:"
+        },
+        {
+          "id": "5",
+          "number": 5,
+          "speaker": "B:",
+          "input": "gaps",
+          "segments": [
+            "See you then. ",
+            "."
+          ],
+          "answers": [
+            "Bye"
+          ],
+          "gapOptions": [
+            "bye",
+            "can’t",
+            "OK",
+            "things",
+            "would"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "audio",
+      "id": "speaking-5b",
+      "title": "5B. [1.09] You are B in the conversation in Ex 5A. Listen and speak after the beep. Record the conversation if you can.",
+      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1C_Audio_1_09.mp3",
+      "response": false
+    },
+    {
+      "type": "info",
+      "id": "speaking-5c",
+      "title": "5C. Listen to your recording and compare it with the model in Ex 5A.",
+      "text": "This part is for speaking practice and is not checked automatically."
+    }
+  ]
+}

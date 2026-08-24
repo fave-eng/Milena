@@ -1,18 +1,11 @@
 name: 2 - Notify about new materials
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'data/lessons/lesson-*.json'
-      - 'data/vocabulary-data.js'
-      - 'data/grammar-data.js'
   workflow_dispatch:
     inputs:
       lesson_id:
-        description: 'Lesson ID, for example lesson-1. Leave empty to check all lessons.'
-        required: false
+        description: 'Lesson ID, for example lesson-3.'
+        required: true
         type: string
 
 permissions:
@@ -27,7 +20,7 @@ jobs:
       STUDENT_ID: ${{ vars.STUDENT_ID }}
       SUPABASE_PROJECT_ID: ${{ vars.SUPABASE_PROJECT_ID }}
       NOTIFY_WEBHOOK_SECRET: ${{ secrets.NOTIFY_WEBHOOK_SECRET }}
-      LESSON_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.lesson_id || '' }}
+      LESSON_ID: ${{ inputs.lesson_id }}
 
     steps:
       - uses: actions/checkout@v4
