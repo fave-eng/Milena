@@ -1850,8 +1850,12 @@ body[data-view="lesson"] #lesson-root {
     position: sticky;
     top: 90px;
     align-self: start;
-    max-height: none;
-    overflow: visible;
+    max-height: min(720px, calc(100vh - 170px));
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    padding-right: 12px;
   }
 }
 

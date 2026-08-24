@@ -148,11 +148,24 @@
       ]
     },
     {
-      "type": "audio",
+      "type": "exercise",
       "id": "pronunciation-3b",
       "title": "3B. [1.03] Listen again and repeat.",
-      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1B_Audio_1_03.mp3",
-      "response": false
+      "items": [
+        {
+          "id": "done",
+          "number": "",
+          "prompt": "Отметьте, если вы послушали ещё раз и повторили вслух.",
+          "input": "multiple",
+          "options": [
+            "Сделано"
+          ],
+          "answer": [
+            0
+          ],
+          "scored": false
+        }
+      ]
     },
     {
       "type": "exercise",
@@ -905,11 +918,24 @@
       ]
     },
     {
-      "type": "audio",
+      "type": "exercise",
       "id": "pronunciation-4b",
       "title": "4B. [1.07] Listen and repeat the interested phrases.",
-      "audio": "audio/Speakout_A2_WB_Unit 1_Audio/SO3_A2_WB_1C_Audio_1_07.mp3",
-      "response": false
+      "items": [
+        {
+          "id": "done",
+          "number": "",
+          "prompt": "Отметьте, если вы повторили interested phrases вслух.",
+          "input": "multiple",
+          "options": [
+            "Сделано"
+          ],
+          "answer": [
+            0
+          ],
+          "scored": false
+        }
+      ]
     },
     {
       "type": "exercise",
