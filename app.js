@@ -876,7 +876,7 @@
         const label = entry.heading ? `Digital illustration for ${entry.heading}` : 'Digital illustration';
         return `<div class="reference-portrait reference-portrait-${escapeHtml(illustration)}" role="img" aria-label="${escapeHtml(label)}"><span class="portrait-hair"></span><span class="portrait-face"></span><span class="portrait-body"></span></div>`;
       };
-      return `<aside class="exercise-reference article-reference ${reference.sticky ? 'sticky-reference' : ''}" ${reference.sticky ? 'data-sticky-reference="true" data-sync-scroll-reference="true"' : ''}>
+      return `<aside class="exercise-reference article-reference ${reference.sticky ? 'sticky-reference' : ''}">
         ${reference.title ? `<h4>${escapeHtml(reference.title)}</h4>` : ''}
         ${entries.map((entry, entryIndex) => `<section class="reference-profile">
           <div class="reference-profile-head">${portrait(entry)}<h5>${escapeHtml(entry.heading || `Part ${entryIndex + 1}`)}</h5></div>
@@ -885,7 +885,7 @@
       </aside>`;
     }
     if (reference.type === 'box') {
-      return `<aside class="exercise-reference box-reference ${reference.sticky ? 'sticky-reference' : ''}" ${reference.sticky ? 'data-sticky-reference="true"' : ''}>
+      return `<aside class="exercise-reference box-reference ${reference.sticky ? 'sticky-reference' : ''}">
         ${reference.title ? `<h4>${escapeHtml(reference.title)}</h4>` : ''}
         ${reference.text ? `<p>${escapeHtml(reference.text)}</p>` : ''}${bank}
       </aside>`;
@@ -1512,70 +1512,6 @@
     drawMode();
   }
 
-  let cleanupStickyReferences = null;
-
-  function setupStickyReferences() {
-    if (typeof cleanupStickyReferences === 'function') cleanupStickyReferences();
-    cleanupStickyReferences = null;
-
-    const references = Array.from(document.querySelectorAll('[data-sync-scroll-reference="true"]'));
-    if (!references.length) return;
-
-    const media = window.matchMedia('(min-width: 880px)');
-    let ticking = false;
-
-    const clampValue = (value, min, max) => Math.min(max, Math.max(min, value));
-
-    const update = () => {
-      ticking = false;
-      references.forEach((reference) => {
-        if (!media.matches) {
-          reference.scrollTop = 0;
-          reference.style.removeProperty('--reference-scroll-progress');
-          return;
-        }
-
-        const exercise = reference.closest('.exercise-card-with-reference');
-        if (!exercise) return;
-
-        const maxScroll = Math.max(0, reference.scrollHeight - reference.clientHeight);
-        if (!maxScroll) {
-          reference.scrollTop = 0;
-          reference.style.setProperty('--reference-scroll-progress', '0');
-          return;
-        }
-
-        const rect = exercise.getBoundingClientRect();
-        const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 1;
-        const stickyTop = 90;
-        const scrollRange = Math.max(1, rect.height - viewportHeight + stickyTop + 120);
-        const progress = clampValue((stickyTop - rect.top) / scrollRange, 0, 1);
-        reference.scrollTop = maxScroll * progress;
-        reference.style.setProperty('--reference-scroll-progress', progress.toFixed(3));
-      });
-    };
-
-    const schedule = () => {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(update);
-    };
-
-    window.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', schedule);
-    if (typeof media.addEventListener === 'function') media.addEventListener('change', schedule);
-    else if (typeof media.addListener === 'function') media.addListener(schedule);
-
-    cleanupStickyReferences = () => {
-      window.removeEventListener('scroll', schedule);
-      window.removeEventListener('resize', schedule);
-      if (typeof media.removeEventListener === 'function') media.removeEventListener('change', schedule);
-      else if (typeof media.removeListener === 'function') media.removeListener(schedule);
-    };
-
-    schedule();
-  }
-
   async function refreshCurrentView() {
     const view = document.body.dataset.view;
     const renderers = {
@@ -1589,7 +1525,6 @@
     };
     try {
       await renderers[view]?.();
-      setupStickyReferences();
     } catch (error) {
       console.error('Ошибка отображения страницы:', error);
       const main = document.querySelector('main');

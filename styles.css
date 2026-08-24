@@ -1837,6 +1837,10 @@ body[data-view="lesson"] #lesson-root {
 }
 
 @media (min-width: 880px) {
+  .exercise-card-with-reference {
+    overflow: visible;
+  }
+
   .exercise-reference-grid {
     grid-template-columns: minmax(280px, 38%) minmax(0, 1fr);
     align-items: start;
@@ -1845,16 +1849,9 @@ body[data-view="lesson"] #lesson-root {
   .sticky-reference {
     position: sticky;
     top: 90px;
-    max-height: min(78vh, calc(100vh - 120px));
-    overflow-y: auto;
-    overflow-x: hidden;
-    overscroll-behavior: contain;
-    scrollbar-gutter: stable;
-    scroll-behavior: auto;
-  }
-
-  .article-reference.sticky-reference {
-    will-change: scroll-position;
+    align-self: start;
+    max-height: none;
+    overflow: visible;
   }
 }
 
